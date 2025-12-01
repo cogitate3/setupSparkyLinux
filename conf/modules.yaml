@@ -1,0 +1,11 @@
+enabled:
+  - logging
+  - fonts
+  - zsh
+  - davfs2
+  - sshfs
+  - autostart
+  - gh-assets
+  - gh-download
+  - detect-installer
+  - cmd-manager
