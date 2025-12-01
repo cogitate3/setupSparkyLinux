@@ -30,10 +30,8 @@ register_module() {
   M_DEPS_CMDS["$id"]="${MOD_DEPS_CMDS[*]-}"
   M_DEPS_PKGS["$id"]="${MOD_DEPS_PKGS[*]-}"
   M_REQUIRES["$id"]="${MOD_REQUIRES[*]-}"
-
-  unset -f mod_check mod_install mod_uninstall mod_status || true
-  unset MOD_ID MOD_NAME MOD_GROUP MOD_DESC MOD_TAGS MOD_DEPS_CMDS MOD_DEPS_PKGS MOD_REQUIRES || true
 }
+
 
 discover_modules() {
   shopt -s nullglob
@@ -118,12 +116,18 @@ main() {
   fi
 
   SEL=()
-  if [ -n "$RUN_IDS" ]; then IFS=',' read -r -a tmp <<<"$RUN_IDS"; SEL+=("${tmp[:]}"); fi
+if [ -n "$RUN_IDS" ]; then
+  IFS=',' read -r -a tmp <<<"$RUN_IDS"
+  SEL+=("${tmp[@]}")
+fi
+
   if [ -n "$TAGS" ]; then IFS=',' read -r -a ts <<<"$TAGS"
     for t in "${ts[@]}"; do while read -r id; do SEL+=("$id"); done < <(by_tag "$t"); done
   fi
   if [ -n "$GROUP" ]; then while read -r id; do SEL+=("$id"); done < <(by_group "$GROUP"); fi
-  [ ${#SEL[@]} -eq 0 ] && SEL=("${MODULE_IDS[@]}")
+  if (( ${#SEL[@]} == 0 )); then
+    SEL=("${MODULE_IDS[@]}")
+  fi
 
   for id in "${SEL[@]}"; do
     log_info "==> ${M_NAME[$id]} [${ACTION}]"
