@@ -4,6 +4,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 . "$SCRIPT_DIR/lib/log.sh"
 . "$SCRIPT_DIR/lib/cmd.sh"
 . "$SCRIPT_DIR/lib/gh.sh"
+. "$SCRIPT_DIR/lib/menu.sh"
 
 : "${DRY_RUN:=0}"
 
@@ -104,36 +105,93 @@ main() {
   fi
 
   if [ "$MENU" = 1 ]; then
-    PS3="请选择（数字，q退出）> "
     while true; do
-      # 1. Select Module
-      PS3="Select Module (q to Quit)> "
-      echo "=== SparkyLinux Setup Menu ==="
-      select choice in $(printf "%s\n" "${MODULE_IDS[@]}" "Quit"); do
-        [[ "$REPLY" == "q" || "$choice" == "Quit" ]] && exit 0
-        [ -n "$choice" ] && break
-      done
-      id="$choice"
+      draw_main_menu
+      
+      read -p "Enter option(s): " choice_str
+      # Convert input string to array (space separated)
+      read -ra choices <<< "$choice_str"
+      
+      [[ "$choice_str" == "0" || "$choice_str" == "q" ]] && exit 0
+      
+      # Prepare Global Arrays for Results
+      RES_NAME=()
+      RES_ACTION=()
+      RES_STATUS=()
+      count=0
 
-      # 2. Select Action
-      echo "Selected: ${M_NAME[$id]}"
-      PS3="Select Action for $id (b to Back)> "
-      select act in "Install/Update" "Uninstall"; do
-        case "$act" in
-          "Install/Update")
-            run_module "$id" "install"
-            break
-            ;;
-          "Uninstall")
-            run_module "$id" "uninstall"
-            break
-            ;;
-          *)
-            [ "$REPLY" == "b" ] && break
-            ;;
-        esac
+      # Handle Batch Actions (All)
+      if [[ "${choices[0]}" =~ ^[Aa]$ ]]; then
+          echo "Installing ALL modules..."
+          for id in "${MODULE_IDS[@]}"; do
+              log_info "==> ${M_NAME[$id]} [install]"
+              run_module "$id" "install"
+              st=$?
+              RES_NAME+=("${M_NAME[$id]}")
+              RES_ACTION+=("install")
+              RES_STATUS+=($st)
+              ((count++))
+          done
+          draw_summary $count
+          read -p "Press Enter to continue..."
+          continue
+      fi
+      
+      if [[ "${choices[0]}" =~ ^[Uu]$ ]]; then
+          echo "Uninstalling ALL modules..."
+          for id in "${MODULE_IDS[@]}"; do 
+              log_info "==> ${M_NAME[$id]} [uninstall]"
+              run_module "$id" "uninstall"
+              st=$?
+              RES_NAME+=("${M_NAME[$id]}")
+              RES_ACTION+=("uninstall")
+              RES_STATUS+=($st)
+              ((count++))
+          done
+          draw_summary $count
+          read -p "Press Enter to continue..."
+          continue
+      fi
+
+      # Handle Numeric Inputs Loop
+      for choice in "${choices[@]}"; do
+          if [[ "$choice" =~ ^[0-9]+$ ]]; then
+              action="install"
+              idx=$((10#$choice))
+              
+              if [ $idx -gt 100 ]; then
+                  action="uninstall"
+                  idx=$((idx - 100))
+              fi
+              
+              id="${MOD_INDEX_MAP[$idx]}"
+              
+              if [ -n "$id" ]; then
+                  echo ""
+                  log_info "Selected: ${M_NAME[$id]} ($id) [$action]"
+                  
+                  run_module "$id" "$action"
+                  st=$?
+                  
+                  # Record Result
+                  RES_NAME+=("${M_NAME[$id]}")
+                  RES_ACTION+=("$action")
+                  RES_STATUS+=($st)
+                  ((count++))
+              else
+                  log_warn "Invalid selection: $choice"
+              fi
+          else
+              log_warn "Ignored invalid input: $choice"
+          fi
       done
-      echo
+      
+      # Show Summary if any tasks ran
+      if [ $count -gt 0 ]; then
+          draw_summary $count
+      fi
+      
+      echo ""
       read -p "Press Enter to continue..."
     done
     exit 0
