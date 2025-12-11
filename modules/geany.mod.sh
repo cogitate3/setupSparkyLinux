@@ -11,4 +11,9 @@ mod_install() {
   ensure_pkg "geany" "geany-plugins" "geany-plugin-markdown"
 }
 
+mod_uninstall() {
+  log_info "Uninstalling Geany..."
+  log_cmd "Purging geany" sudo apt-get purge -y geany geany-plugins geany-plugin-markdown
+}
+
 register_module

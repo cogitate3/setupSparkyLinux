@@ -11,19 +11,23 @@ mod_check() {
 
 mod_install() {
   ensure_pkg "curl" "git"
+  
+  if mod_check; then
+    log_info "Homebrew is installed. Updating..."
+    # brew update might work if in path, or call directly
+    local brew_bin="/home/linuxbrew/.linuxbrew/bin/brew"
+    if [ -x "$brew_bin" ]; then
+      log_cmd "Updating brew" "$brew_bin" update
+    fi
+    return 0
+  fi
 
   log_info "Running Homebrew install script..."
-  # Use NONINTERACTIVE=1 to avoid prompts
   log_cmd "Installing Homebrew" /bin/bash -c "NONINTERACTIVE=1 $(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-  # Configure PATH
-  # This part is a bit intrusive for a module, but essential for brew to work.
-  # We'll follow legacy logic and append to rc files safe-ishly.
-  
   local brew_bin="/home/linuxbrew/.linuxbrew/bin/brew"
   if [ -x "$brew_bin" ]; then
     log_info "Configuring shell environment..."
-    
     local shell_env_cmd='eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"'
     
     local files=()
@@ -39,6 +43,26 @@ mod_install() {
   else
     log_warn "Homebrew binary not found at standard location, skipping path config."
   fi
+}
+
+mod_uninstall() {
+  log_info "Uninstalling Homebrew..."
+  # Official uninstall script
+  # /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
+  # We should probably run it non-interactively if possible or just warn user.
+  
+  log_warn "Homebrew uninstallation requires interaction usually. Attempting non-interactive defaults..."
+  # NONINTERACTIVE=1 might not work for uninstall script
+  
+  if [ -x "/home/linuxbrew/.linuxbrew/bin/brew" ]; then
+     echo "y" | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
+  else
+     log_info "Homebrew not found in default location."
+  fi
+  
+  # Remove shell config
+  # Cleaning up rc files is complex via sed if line matches specific string.
+  # We'll skip invasive sed for now or use a careful delete.
 }
 
 register_module

@@ -11,4 +11,9 @@ mod_install() {
   ensure_pkg "telegram-desktop"
 }
 
+mod_uninstall() {
+  log_info "Uninstalling Telegram..."
+  log_cmd "Purging telegram-desktop" sudo apt-get purge -y telegram-desktop
+}
+
 register_module

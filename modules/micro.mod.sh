@@ -9,8 +9,24 @@ mod_check() {
 
 mod_install() {
   local repo="zyedidia/micro"
-  log_info "Finding latest asset for $repo..."
   
+  # Version Check Logic
+  if mod_check; then
+    local v_local
+    v_local=$(micro --version | grep -oP 'Version: \K[0-9.]+' || echo "unknown")
+    
+    local v_remote_tag
+    v_remote_tag=$(gh_get_latest_tag "$repo")
+    local v_remote="${v_remote_tag#v}" # strip 'v' prefix if present
+    
+    if [ "$v_local" != "unknown" ] && [ "$v_local" = "$v_remote" ]; then
+      log_info "Micro is up to date ($v_local). Skipping."
+      return 0
+    fi
+    log_info "New version available: Local=$v_local, Remote=$v_remote. Updating..."
+  fi
+
+  log_info "Finding latest asset for $repo..."
   local url
   url=$(gh_latest_asset_url "$repo" "linux64\.tar\.gz$")
   
@@ -40,6 +56,17 @@ mod_install() {
   fi
   
   rm -rf "$tmp_dir"
+}
+
+mod_uninstall() {
+  log_info "Uninstalling Micro..."
+  if [ -f "/usr/local/bin/micro" ]; then
+    log_cmd "Removing binary" sudo rm -f "/usr/local/bin/micro"
+  fi
+  
+  # Clean config?
+  # log_info "Removing config..."
+  # rm -rf ~/.config/micro
 }
 
 register_module

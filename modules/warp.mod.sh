@@ -10,9 +10,13 @@ mod_check() {
 
 mod_install() {
   local url="https://app.warp.dev/download?package=deb"
-  # Legacy script scraped for link, but the direct link usually redirects to latest.
-  # Let's trust curl -L handles it or simple wget.
   
+  if mod_check; then
+    local v_local
+    v_local=$(dpkg -l | grep "^ii\s*warp" | awk '{print $3}')
+    log_info "Warp installed ($v_local). Re-installing to ensure latest..."
+  fi
+
   local tmp_deb="/tmp/warp_install.deb"
   ensure_pkg "curl"
   
@@ -20,8 +24,13 @@ mod_install() {
   
   log_info "Installing Warp..."
   ensure_pkg "$tmp_deb"
-  
   rm -f "$tmp_deb"
+}
+
+mod_uninstall() {
+  log_info "Uninstalling Warp..."
+  log_cmd "Purging warp-terminal" sudo apt-get purge -y warp-terminal
+  # Note package name might be warp-terminal or warp, assuming standard deb naming
 }
 
 register_module

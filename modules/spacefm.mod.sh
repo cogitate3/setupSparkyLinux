@@ -11,4 +11,9 @@ mod_install() {
   ensure_pkg "spacefm"
 }
 
+mod_uninstall() {
+  log_info "Uninstalling SpaceFM..."
+  log_cmd "Purging spacefm" sudo apt-get purge -y spacefm
+}
+
 register_module

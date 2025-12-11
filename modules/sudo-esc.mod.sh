@@ -5,18 +5,17 @@ MOD_GROUP="System"
 
 mod_check() {
   # Check if config exists in .bashrc or .zshrc
-  local shell_rc=""
-  if [ -n "$BASH_VERSION" ]; then shell_rc="$HOME/.bashrc"; fi
-  if [ -n "$ZSH_VERSION" ]; then shell_rc="$HOME/.zshrc"; fi
-  
-  # Fallback check both if we are running in a script not interactive
   if grep -q "# BEGIN DOUBLE-ESC-SUDO CONFIG" "$HOME/.bashrc" 2>/dev/null; then return 0; fi
   if grep -q "# BEGIN DOUBLE-ESC-SUDO CONFIG" "$HOME/.zshrc" 2>/dev/null; then return 0; fi
-  
   return 1
 }
 
 mod_install() {
+  if mod_check; then
+    log_info "Double-ESC Sudo already configured."
+    return 0
+  fi
+  
   local files=()
   [ -f "$HOME/.bashrc" ] && files+=("$HOME/.bashrc")
   [ -f "$HOME/.zshrc" ] && files+=("$HOME/.zshrc")
@@ -53,13 +52,20 @@ mod_uninstall() {
   [ -f "$HOME/.bashrc" ] && files+=("$HOME/.bashrc")
   [ -f "$HOME/.zshrc" ] && files+=("$HOME/.zshrc")
   
+  local removed=0
   for rc_file in "${files[@]}"; do
     if grep -q "# BEGIN DOUBLE-ESC-SUDO CONFIG" "$rc_file"; then
       log_info "Removing configuration from $rc_file..."
-      # Use sed to delete the block
       sed -i '/# BEGIN DOUBLE-ESC-SUDO CONFIG/,/# END DOUBLE-ESC-SUDO CONFIG/d' "$rc_file"
+      removed=1
     fi
   done
+  
+  if [ $removed -eq 1 ]; then
+    log_info "Please restart your shell for changes to take effect."
+  else
+    log_info "No configuration found to remove."
+  fi
 }
 
 register_module

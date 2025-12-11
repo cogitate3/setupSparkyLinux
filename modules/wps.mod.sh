@@ -8,9 +8,13 @@ mod_check() {
 }
 
 mod_install() {
-  # URL copied from legacy/901afterLinuxInstall.sh
-  # This uses a specific version. In a real scenario, we might want to check for updates, 
-  # but WPS download links are not easily crawlable via GitHub API.
+  # Fixed URL logic as before, version check strictly hard to automate without API.
+  # We will reinstall if user requests install.
+  
+  if mod_check; then
+     log_info "WPS Office is installed. Reinstalling/Updating..."
+  fi
+
   local url="https://wps-linux-365.wpscdn.cn/wps/download/ep/Linux365/19829/wps-office_12.8.2.19829.AK.preload.sw_amd64.deb"
   local tmp_deb="/tmp/wps_install.deb"
   
@@ -23,8 +27,15 @@ mod_install() {
   
   log_info "Preventing WPS auto-update (holding package)..."
   sudo apt-mark hold wps-office
-  
   rm -f "$tmp_deb"
+}
+
+mod_uninstall() {
+  log_info "Uninstalling WPS Office..."
+  sudo apt-mark unhold wps-office
+  log_cmd "Purging wps-office" sudo apt-get purge -y wps-office
+  
+  # Clean fonts or others? Legacy didn't specify.
 }
 
 register_module

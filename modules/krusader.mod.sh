@@ -9,9 +9,11 @@ mod_check() {
 
 mod_install() {
   ensure_pkg "krusader"
-  # Optional dependencies mentioned in legacy script
-  # ensure_pkg "krenamet" "kompare" 
-  # We'll stick to core for now unless requested.
+}
+
+mod_uninstall() {
+  log_info "Uninstalling Krusader..."
+  log_cmd "Purging krusader" sudo apt-get purge -y krusader
 }
 
 register_module

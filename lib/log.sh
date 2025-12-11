@@ -2,8 +2,16 @@
 # lib/log.sh - unified logging + command runner (color, timestamp, DRY_RUN, retry)
 : "${LOG_FILE:=/tmp/setupSparkyLinux.log}"
 : "${DRY_RUN:=0}"
+# : 是 shell 里的 “空命令”，啥也不干但返回成功（用来触发参数展开而不执行命令）
+# ${LOG_FILE:=默认值} 是参数扩展语法：如果LOG_FILE变量没设置或为空，就把它设为/tmp/setupSparkyLinux.log
+# 效果：如果用户没提前定义LOG_FILE变量，就自动把它初始化为日志文件路径 /tmp/setupSparkyLinux.log
 
 _ts() { date +"%F %T"; }
+# _ts() { date +"%F %T"; } 是一个函数定义，定义了一个名为 _ts 的函数，它返回当前日期和时间。
+# date +"%F %T" 是一个命令，用于获取当前日期和时间，格式为：
+# %F 表示年-月-日
+# %T 表示时:分:秒
+# 整体效果：_ts() 函数返回当前日期和时间，格式为：2025-12-10 23:46:28
 
 _log_core() {  # $1=level $2=message
   local lvl="$1" msg="$2" r="\033[0m" c1="\033[1;36m" c2="\033[1;33m" c3="\033[1;31m"

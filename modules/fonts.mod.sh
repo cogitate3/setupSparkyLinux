@@ -1,30 +1,46 @@
 MOD_ID="fonts"
 MOD_NAME="Fonts & Typography"
-MOD_DESC="Installs programming fonts (JetBrains Mono, FiraCode), CJK fonts, and font tools."
+MOD_DESC="Install popular fonts (Microsoft, Nerd Fonts, etc)."
 MOD_GROUP="Appearance"
 
 mod_check() {
-  # Check for a key font package or command. fnt is a good indicator.
-  if command -v fnt >/dev/null 2>&1; then
-      return 0
-  fi
+  if [ -d "$HOME/.local/share/fonts/NerdFonts" ]; then return 0; fi
   return 1
 }
 
 mod_install() {
-  local pkgs=(
-    fnt
-    fonts-jetbrains-mono
-    fonts-hack-otf fonts-hack-ttf
-    fonts-lxgw-wenkai fonts-wqy-microhei fonts-wqy-zenhei
-    fonts-noto-cjk-extra fonts-noto-mono fonts-firacode
-    fonts-noto-color-emoji fonts-symbola
-  )
+  local font_dir="$HOME/.local/share/fonts"
+  mkdir -p "$font_dir"
+  
+  ensure_pkg "curl" "unzip" "fontconfig"
 
-  for p in "${pkgs[@]}"; do
-    ensure_pkg "$p"
-  done
+  # 1. Nerd Fonts (e.g., JetBrainsMono)
+  local nerd_ver="v3.0.2"
+  local nerd_url="https://github.com/ryanoasis/nerd-fonts/releases/download/${nerd_ver}/JetBrainsMono.zip"
+  
+  log_info "Downloading JetBrainsMono Nerd Font..."
+  local tmp_zip="/tmp/jb_nerd.zip"
+  curl -L -o "$tmp_zip" "$nerd_url"
+  
+  unzip -o "$tmp_zip" -d "$font_dir/NerdFonts"
+  rm -f "$tmp_zip"
 
-  log_cmd "Updating font cache" fc-cache -f
+  # 2. MS Fonts (msttcorefonts)
+  ensure_pkg "ttf-mscorefonts-installer"
+
+  log_info "Rebuilding font cache..."
+  fc-cache -fv
 }
+
+mod_uninstall() {
+  log_info "Uninstalling Fonts..."
+  rm -rf "$HOME/.local/share/fonts/NerdFonts"
+  
+  # msttcorefonts removal
+  sudo apt-get purge -y ttf-mscorefonts-installer
+  
+  log_info "Rebuilding font cache..."
+  fc-cache -fv
+}
+
 register_module

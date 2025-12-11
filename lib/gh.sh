@@ -11,6 +11,21 @@ gh_latest_asset_url(){  # $1=owner/repo  $2=grep_pattern (regex for asset url)
   echo "$url"
 }
 
+# Get latest tag name (version) from GitHub
+gh_get_latest_tag() {
+  local repo="$1"
+  # Try API first
+  local tag
+  tag=$(curl -s "https://api.github.com/repos/$repo/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+  
+  if [ -z "$tag" ]; then
+    # Fallback: Scrape releases page (simple regex, fragile but works for many)
+    tag=$(curl -s "https://github.com/$repo/releases" | grep -oE 'href="/'"$repo"'/releases/tag/[^"]+"' | head -n 1 | sed -E 's/.*tag\/([^"]+)"/\1/')
+  fi
+  
+  echo "$tag"
+}
+
 gh_pick_asset(){  # $1=owner/repo  prefers: .deb > .AppImage > .tar.gz
   local repo="$1" url
   for re in 'deb$' 'AppImage$' 'tar\.gz$'; do

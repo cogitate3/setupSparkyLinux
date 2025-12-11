@@ -1,6 +1,6 @@
 MOD_ID="sshfs"
 MOD_NAME="SSHFS"
-MOD_DESC="Installs SSHFS for mounting remote filesystems over SSH."
+MOD_DESC="Filesystem client based on SSH File Transfer Protocol."
 MOD_GROUP="Network & Storage"
 
 mod_check() {
@@ -8,6 +8,18 @@ mod_check() {
 }
 
 mod_install() {
-  ensure_pkg sshfs
+  ensure_pkg "sshfs"
+  
+  local target_user="${SUDO_USER:-$USER}"
+  log_info "Adding $target_user to fuse group (if exists)..."
+  if getent group fuse >/dev/null; then
+    sudo usermod -aG fuse "$target_user"
+  fi
 }
+
+mod_uninstall() {
+  log_info "Uninstalling SSHFS..."
+  sudo apt-get purge -y sshfs
+}
+
 register_module

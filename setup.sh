@@ -52,7 +52,7 @@ run_module() {  # $1=id  $2=action
     check)     [ "${M_HAS_CHECK[$id]}"    = 1 ] && mod_check    || { log_warn "$id 无 check"; return 0; } ;;
     status)    [ "${M_HAS_STATUS[$id]}"   = 1 ] && mod_status   || { log_warn "$id 无 status"; return 0; } ;;
     install)   [ "${M_HAS_INSTALL[$id]}"  = 1 ] && mod_install  || { log_err  "$id 不支持安装"; return 2; } ;;
-    uninstall) [ "${M_HAS_UNINSTALL[$id]}"= 1 ] && mod_uninstall|| { log_err  "$id 不支持卸载"; return 2; } ;;
+    uninstall) [ "${M_HAS_UNINSTALL[$id]}" = 1 ] && mod_uninstall || { log_err  "$id 不支持卸载"; return 2; } ;;
     *) log_err "未知动作：$action"; return 2 ;;
   esac
 }
@@ -105,12 +105,36 @@ main() {
 
   if [ "$MENU" = 1 ]; then
     PS3="请选择（数字，q退出）> "
-    select choice in $(printf "%s\n" "${MODULE_IDS[@]}" "Quit"); do
-      [[ "$REPLY" == "q" || "$choice" == "Quit" ]] && exit 0
-      [ -n "$choice" ] || continue
+    while true; do
+      # 1. Select Module
+      PS3="Select Module (q to Quit)> "
+      echo "=== SparkyLinux Setup Menu ==="
+      select choice in $(printf "%s\n" "${MODULE_IDS[@]}" "Quit"); do
+        [[ "$REPLY" == "q" || "$choice" == "Quit" ]] && exit 0
+        [ -n "$choice" ] && break
+      done
       id="$choice"
-      echo "# ${M_NAME[$id]} — ${M_DESC[$id]}"
-      run_module "$id" "$ACTION"
+
+      # 2. Select Action
+      echo "Selected: ${M_NAME[$id]}"
+      PS3="Select Action for $id (b to Back)> "
+      select act in "Install/Update" "Uninstall"; do
+        case "$act" in
+          "Install/Update")
+            run_module "$id" "install"
+            break
+            ;;
+          "Uninstall")
+            run_module "$id" "uninstall"
+            break
+            ;;
+          *)
+            [ "$REPLY" == "b" ] && break
+            ;;
+        esac
+      done
+      echo
+      read -p "Press Enter to continue..."
     done
     exit 0
   fi
