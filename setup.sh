@@ -63,12 +63,40 @@ by_tag()   { local t="$1"; for id in "${MODULE_IDS[@]}"; do [[ ",${M_TAGS[$id]},
 
 usage() {
 cat <<'EOF'
-Usage:
-  ./setup.sh --list
-  ./setup.sh --menu
-  ./setup.sh --run fonts,zsh --action install
+SparkyLinux Modular Setup Script
+
+Usage: sudo ./setup.sh [OPTIONS]
+
+Common Actions:
+  ./setup.sh                    # Open the Interactive Menu (Default)
+  ./setup.sh --list             # List all available modules
+  ./setup.sh --help             # Show this help message
+
+Advanced Commands:
+  # Install specific modules (comma separated)
+  ./setup.sh --run zsh,fonts,rclone
+
+  # Check status of specific modules
+  ./setup.sh --run davfs2,pot --action check
+
+  # Uninstall modules by specific tag
   ./setup.sh --tags desktop --action uninstall
-  ./setup.sh --group "Storage & Mount" --dry-run 1
+
+  # Install a whole group of modules (Dry Run)
+  ./setup.sh --group "Dev Tools" --dry-run 1
+
+Options:
+  --run <ids>     Modules to run (e.g. "vim,git")
+  --group <name>  Run all modules in a group (e.g. "System")
+  --tags <tags>   Run all modules with specific tags
+  --action <act>  Action to perform: install (default), uninstall, check, status
+  --dry-run 1     Simulate actions without making changes
+  --menu          Force open the interactive menu
+  --list          List all modules organized by group
+
+Examples:
+  sudo ./setup.sh --run rclone
+  sudo ./setup.sh --run pot --action install
 EOF
 }
 
@@ -208,7 +236,10 @@ fi
   fi
   if [ -n "$GROUP" ]; then while read -r id; do SEL+=("$id"); done < <(by_group "$GROUP"); fi
   if (( ${#SEL[@]} == 0 )); then
-    SEL=("${MODULE_IDS[@]}")
+    # Default to MENU if no args provided, instead of installing everything
+    draw_main_menu
+    exit 0
+    # SEL=("${MODULE_IDS[@]}")
   fi
 
   for id in "${SEL[@]}"; do

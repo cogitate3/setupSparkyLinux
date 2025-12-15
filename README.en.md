@@ -56,14 +56,13 @@ The script contains extensive comments to aid my learning and serve as a resourc
 
 ## Next Steps:
 
-- [x] One-click installation and configuration of zsh with its plugins and interface customization
-- One-click configuration for mounting webdav remote folders
-- One-click installation of Chinese input method
-- Add auto-start configuration for plank
-- Add auto-start configuration for angrysearch
-- Add cloud storage
-- Add webdav
-- Add useful desktop screenshot translation software
+- [x] One-click installation and configuration of zsh
+- [x] One-click configuration for mounting webdav remote folders
+- [x] One-click installation of Chinese input method
+- [x] Add auto-start configuration for plank
+- [x] Add auto-start configuration for angrysearch
+- [x] Add cloud storage (Rclone)
+- [x] Add desktop screenshot translation software (Pot)
 - Test and optimize scripts for compatibility with MX Linux and Linux Mint distributions
 
 ## Future Plans

@@ -53,7 +53,9 @@
 2. 运行安装脚本：
 
    ```bash
-   sudo bash ./901afterLinuxInstall.sh
+   ```bash
+   sudo bash ./setup.sh
+   ```
    ```
 
 3. 按照屏幕上的说明完成安装。
@@ -92,12 +94,11 @@
 ## 下一步计划：
 
 - [x] 一键安装和配置 zsh 及其插件和界面定制
-- 一键配置挂载 webdav 远程文件夹
+- [x] 一键配置挂载 webdav 远程文件夹
 - [x] 一键安装中文输入法
-- 添加 plank 的自启动配置
-- 添加 angrysearch 的自启动配置
-- 添加云存储
-- 添加 webdav
-- 添加实用的桌面截图翻译软件
+- [x] 添加 plank 的自启动配置
+- [x] 添加 angrysearch 的自启动配置
+- [x] 添加云存储 (Rclone)
+- [x] 添加实用的桌面截图翻译软件 (Pot)
 - 测试和优化脚本在 MX Linux 和 Linux Mint 发行版上的兼容性
 - 筛选软件，优化菜单布置，使其更易于导航，

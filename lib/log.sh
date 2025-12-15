@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # lib/log.sh - unified logging + command runner (color, timestamp, DRY_RUN, retry)
-: "${LOG_FILE:=/tmp/setupSparkyLinux.log}"
+: "${LOG_FILE:=/tmp/setupSparkyLinux-${USER}.log}"
 : "${DRY_RUN:=0}"
 # : 是 shell 里的 “空命令”，啥也不干但返回成功（用来触发参数展开而不执行命令）
 # ${LOG_FILE:=默认值} 是参数扩展语法：如果LOG_FILE变量没设置或为空，就把它设为/tmp/setupSparkyLinux.log

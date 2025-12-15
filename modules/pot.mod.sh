@@ -8,8 +8,10 @@ mod_check() {
 }
 
 mod_install() {
-  ensure_pkg "xapp" "libxapp1" "libxapp-gtk3-module" "curl"
-
+  ensure_pkg "curl" "tesseract-ocr" "libtesseract-dev"
+  # Pot also needs these often
+  ensure_pkg "libxapp1" "libxapp-gtk3-module"
+  
   local repo="pot-app/pot-desktop"
   
   if check_pkg_installed "pot"; then    
@@ -43,11 +45,20 @@ mod_install() {
   ensure_pkg "$tmp_deb"
   
   rm -f "$tmp_deb"
+
+  echo ""
+  print_cyan "--- Pot Desktop Installed ---"
+  print_green "Recommended: Bind a Global Shortcut"
+  print_green "Go to your Desktop Environment's Keyboard Settings and add a shortcut:"
+  print_green "  Command: pot translate"
+  print_green "  Shortcut: Alt+D (or your preference)"
+  echo ""
 }
 
 mod_uninstall() {
   log_info "Uninstalling Pot Desktop..."
   log_cmd "Purging pot" sudo apt-get purge -y pot
+  # Optional: autoremove tesseract if not used elsewhere? simpler to keep it.
 }
 
 register_module

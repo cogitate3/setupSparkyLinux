@@ -32,3 +32,16 @@ ensure_cmd(){  # $1=cmd  $2=provider_pkg(optional)
     return 127
   fi
 }
+
+check_pkg_installed() {
+  local pkg="$1"
+  if command -v dpkg >/dev/null 2>&1; then
+    dpkg -s "$pkg" >/dev/null 2>&1
+  elif command -v rpm >/dev/null 2>&1; then
+    rpm -q "$pkg" >/dev/null 2>&1
+  elif command -v pacman >/dev/null; then
+    pacman -Q "$pkg" >/dev/null 2>&1
+  else
+    return 1
+  fi
+}

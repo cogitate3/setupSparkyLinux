@@ -9,11 +9,37 @@ mod_check() {
 
 mod_install() {
   ensure_pkg "plank"
+
+  local target_user="${SUDO_USER:-$USER}"
+  local target_home=$(getent passwd "$target_user" | cut -d: -f6)
+  local autostart_dir="$target_home/.config/autostart"
+  
+  if [ "${DRY_RUN:-0}" -ne 1 ]; then
+      mkdir -p "$autostart_dir"
+      cat > "$autostart_dir/plank.desktop" <<EOF
+[Desktop Entry]
+Name=Plank
+Comment=Stupidly simple.
+Exec=plank
+Icon=plank
+Terminal=false
+Type=Application
+Categories=Utility;
+StartupNotify=false
+X-GNOME-Autostart-Phase=Applications
+EOF
+      chown -R "$target_user:$target_user" "$autostart_dir"
+      log_info "Plank added to autostart."
+  fi
 }
 
 mod_uninstall() {
   log_info "Uninstalling Plank..."
   sudo apt-get purge -y plank
+  
+  local target_user="${SUDO_USER:-$USER}"
+  local target_home=$(getent passwd "$target_user" | cut -d: -f6)
+  rm -f "$target_home/.config/autostart/plank.desktop"
 }
 
 register_module

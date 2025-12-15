@@ -52,6 +52,28 @@ mod_install() {
   fi
   
   rm -rf "$tmp_dir"
+  
+  if [ "${DRY_RUN:-0}" -ne 1 ]; then
+      local target_user="${SUDO_USER:-$USER}"
+      local target_home=$(getent passwd "$target_user" | cut -d: -f6)
+      local autostart_dir="$target_home/.config/autostart"
+      
+      mkdir -p "$autostart_dir"
+      cat > "$autostart_dir/angrysearch.desktop" <<EOF
+[Desktop Entry]
+Name=AngrySearch
+Comment=Linux file search, instant results as you type.
+Exec=/usr/bin/angrysearch
+Icon=angrysearch
+Terminal=false
+Type=Application
+Categories=Utility;
+StartupNotify=false
+X-GNOME-Autostart-Phase=Applications
+EOF
+      chown -R "$target_user:$target_user" "$autostart_dir"
+      log_info "AngrySearch added to autostart."
+  fi
 }
 
 mod_uninstall() {
@@ -62,6 +84,10 @@ mod_uninstall() {
   sudo rm -rf /usr/share/angrysearch
   sudo rm -f /usr/bin/angrysearch
   sudo rm -f /usr/share/applications/angrysearch.desktop
+  
+  local target_user="${SUDO_USER:-$USER}"
+  local target_home=$(getent passwd "$target_user" | cut -d: -f6)
+  rm -f "$target_home/.config/autostart/angrysearch.desktop"
   
   log_info "Removed files manually."
 }
