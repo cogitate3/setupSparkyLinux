@@ -32,6 +32,27 @@ The script contains extensive comments to aid my learning and serve as a resourc
 - Designed for Sparky Linux but adaptable to other Debian Bookworm-based systems.
 - Commented extensively for learning purposes.
 
+## Major Refactoring (v0.x -> Modular)
+
+We have recently refactored the core architecture, transitioning from a monolithic script to a modular system. This major update addresses several critical issues:
+
+1.  **Solved Maintenance Nightmares**
+    *   **Modular Architecture**: Each feature (e.g., `rime`, `micro`, `plank`) is now an independent `.mod.sh` module. Modifying the Rime input method no longer risks breaking other global functionalities.
+    *   **Standardized Interface**: All modules follow a unified `mod_check`, `mod_install`, and `mod_uninstall` interface, making the code clean and easy to extend.
+
+2.  **Improved Installation Efficiency & Dependency Management**
+    *   **Batch Installation**: Refactored the underlying package management functions to support batch installation of dependencies in a single `sudo` call, significantly improving speed.
+    *   **Precise Dependencies**: Clearly categorized core packages, frontends, plugins, and fonts, eliminating dependency confusion.
+
+3.  **Fixed Configuration Gaps**
+    *   **Automated Configuration**: The script now handles not just installation but also environment variables (e.g., fixing Fcitx5 compatibility in GTK/Qt apps) and configuration files.
+    *   **Smart Detection**: Tools like `im-config` are now used to automatically set defaults, achieving true "zero-intervention" setup.
+
+4.  **Enhanced Robustness (Idempotency)**
+    *   **Smart Status Checks**: The `mod_check` function now verifies both package installation and configuration status. If already configured, the script intelligently skips the step to prevent overwriting user customizations.
+
+This refactoring transforms the project from a simple script into a **professional, scalable system configuration framework**.
+
 ## Requirements
 
 - A Debian Bookworm-based Linux distribution (e.g., Sparky Linux, MX Linux, or Linux Mint).
