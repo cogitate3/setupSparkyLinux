@@ -116,6 +116,11 @@ while [ $# -gt 0 ]; do
   shift
 done
 
+# Default to Interactive Menu if no targets specified
+if [ -z "$RUN_IDS" ] && [ -z "$TAGS" ] && [ -z "$GROUP" ] && [ "${LIST:-0}" != "1" ]; then
+  MENU=1
+fi
+
 main() {
   discover_modules
 
@@ -236,10 +241,9 @@ fi
   fi
   if [ -n "$GROUP" ]; then while read -r id; do SEL+=("$id"); done < <(by_group "$GROUP"); fi
   if (( ${#SEL[@]} == 0 )); then
-    # Default to MENU if no args provided, instead of installing everything
-    draw_main_menu
+    # Should not happen if MENU=1 handles the default case, but safety check:
+    log_warn "No modules selected to run."
     exit 0
-    # SEL=("${MODULE_IDS[@]}")
   fi
 
   for id in "${SEL[@]}"; do

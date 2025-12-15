@@ -50,57 +50,196 @@ EOF
   fi
 }
 
+
+_remove_conflicts() {
+  log_info "Removing conflicting input methods (ibus, fcitx4)..."
+  # We use apt-get remove to avoid removing deps we might want, but legacy used remove.
+  # Legacy: apt remove -y ibus ibus-* fcitx*
+  # We should be careful not to fail if they aren't installed.
+  sudo apt-get remove -y ibus "ibus-*" "fcitx*" >/dev/null 2>&1 || true
+  sudo apt-get autoremove -y >/dev/null 2>&1 || true
+}
+
 _configure_fcitx() {
   local target_user="${SUDO_USER:-$USER}"
   local target_home=$(getent passwd "$target_user" | cut -d: -f6)
   
-  local conf_dir="$target_home/.config/fcitx5"
-  mkdir -p "$conf_dir/conf"
+  # Ensure Fcitx5 is NOT running, otherwise it will overwrite our config on exit
+  if pgrep -u "$target_user" fcitx5 >/dev/null; then
+    log_info "Stopping running Fcitx5 process to apply configurations..."
+    killall -u "$target_user" fcitx5 >/dev/null 2>&1 || true
+    sleep 2
+  fi
   
-  # Global Config
-  cat > "$conf_dir/config" <<EOF
-[Hotkey]
-# Trigger Key
-0=Control+space
-[Hotkey/TriggerKeys]
-0=Control+space
-[Behavior]
-ActiveByDefault=True
-PreeditEnabledByDefault=True
-EOF
+  local conf_dir="$target_home/.config/fcitx5"
+  local data_dir="$target_home/.local/share/fcitx5"
 
-  # Profile (Enable Rime by default)
+  mkdir -p "$conf_dir/conf"
+  mkdir -p "$data_dir/themes"
+  
+  # Configure Profile
   cat > "$conf_dir/profile" <<EOF
 [Groups/0]
+# Group Name
 Name=Default
+# Layout
 Default Layout=us
+# Default Input Method
 DefaultIM=rime
+
 [Groups/0/Items/0]
+# Name
 Name=keyboard-us
+# Layout
 Layout=
+
 [Groups/0/Items/1]
+# Name
 Name=rime
+# Layout
 Layout=
+
 [GroupOrder]
 0=Default
 EOF
 
-  # Cloud Pinyin (Baidu)
+  # Configure Global Config
+  cat > "$conf_dir/config" <<EOF
+[Hotkey]
+# Enumerate when press trigger key repeatedly
+EnumerateWithTriggerKeys=True
+# Temporally switch between first and current Input Method
+AltTriggerKeys=
+# Enumerate Input Method Forward
+EnumerateForwardKeys=
+# Enumerate Input Method Backward
+EnumerateBackwardKeys=
+# Skip first input method while enumerating
+EnumerateSkipFirst=False
+
+[Hotkey/TriggerKeys]
+0=Control+space
+
+[Hotkey/EnumerateGroupForwardKeys]
+0=Super+space
+
+[Hotkey/EnumerateGroupBackwardKeys]
+0=Shift+Super+space
+
+[Hotkey/ActivateKeys]
+0=Hangul_Hanja
+
+[Hotkey/DeactivateKeys]
+0=Hangul_Romaja
+
+[Hotkey/PrevPage]
+0=Up
+
+[Hotkey/NextPage]
+0=Down
+
+[Hotkey/PrevCandidate]
+0=Shift+Tab
+
+[Hotkey/NextCandidate]
+0=Tab
+
+[Hotkey/TogglePreedit]
+0=Control+Alt+P
+
+[Behavior]
+# Active By Default
+ActiveByDefault=True
+# Share Input State
+ShareInputState=No
+# Show preedit in application
+PreeditEnabledByDefault=True
+# Show Input Method Information when switch input method
+ShowInputMethodInformation=True
+# Show Input Method Information when changing focus
+showInputMethodInformationWhenFocusIn=False
+# Show compact input method information
+CompactInputMethodInformation=True
+# Show first input method information
+ShowFirstInputMethodInformation=True
+# Default page size
+DefaultPageSize=7
+# Override Xkb Option
+OverrideXkbOption=False
+# Custom Xkb Option
+CustomXkbOption=
+# Force Enabled Addons
+EnabledAddons=
+# Force Disabled Addons
+DisabledAddons=
+# Preload input method to be used by default
+PreloadInputMethod=True
+EOF
+
+  # Configure Classic UI
+  cat > "$conf_dir/conf/classicui.conf" <<EOF
+# Vertical Candidate List
+Vertical Candidate List=False
+# Use mouse wheel to go to prev or next page
+WheelForPaging=True
+# Font
+Font="Noto Sans CJK SC 11"
+# Menu Font
+MenuFont="Sans 10"
+# Tray Font
+TrayFont="Sans Bold 10"
+# Tray Label Outline Color
+TrayOutlineColor=#000000
+# Tray Label Text Color
+TrayTextColor=#ffffff
+# Prefer Text Icon
+PreferTextIcon=False
+# Show Layout Name In Icon
+ShowLayoutNameInIcon=True
+# Use input method language to display text
+UseInputMethodLanguageToDisplayText=True
+# Theme
+Theme=Material-Color-orange
+# Dark Theme
+DarkTheme=Material-Color-deepPurple
+# Follow system light/dark color scheme
+UseDarkTheme=False
+# Follow system accent color if it is supported by theme and desktop
+UseAccentColor=True
+# Use Per Screen DPI on X11
+PerScreenDPI=True
+# Force font DPI on Wayland
+ForceWaylandDPI=0
+# Enable fractional scale under Wayland
+EnableFractionalScale=True
+EOF
+
+  # Configure Cloud Pinyin
   cat > "$conf_dir/conf/cloudpinyin.conf" <<EOF
+# 云拼音来源
 CloudPinyinBackend=Baidu
+# 最小拼音长度
 MinimumPinyinLength=2
 EOF
 
-  # Classic UI (Theme)
-  cat > "$conf_dir/conf/classicui.conf" <<EOF
-Vertical Candidate List=False
-WheelForPaging=True
-Font="Noto Sans CJK SC 11"
-Theme=Material-Color-orange
-DarkTheme=Material-Color-deepPurple
+  # Configure Punctuation
+  cat > "$conf_dir/conf/punctuation.conf" <<EOF
+# 半角/全角标点切换
+HalfWidthPuncAfterLetterOrNumber=True
+EOF
+
+  # Configure Rime
+  cat > "$conf_dir/conf/rime.conf" <<EOF
+# 同步设置
+PreeditInApplication=True
+# 在程序中显示预编辑文本
+PreeditInApplication=True
+# 是否允许扩展编辑器
+AllowExtensionEditor=False
 EOF
 
   chown -R "$target_user:$target_user" "$conf_dir"
+  chown -R "$target_user:$target_user" "$data_dir"
 }
 
 _install_rime_ice() {
@@ -111,19 +250,18 @@ _install_rime_ice() {
   log_info "Installing Rime-Ice (雾凇拼音)..."
   ensure_cmd git
   
-  if [ -d "$rime_dir" ]; then
-      log_info "Backing up existing Rime config..."
-      mv "$rime_dir" "${rime_dir}.bak.$(date +%s)"
-  fi
+  # Ensure destination exists
+  mkdir -p "$rime_dir"
   
   # Clone to tmp
   local tmp_dir="/tmp/rime-ice-install"
   rm -rf "$tmp_dir"
   git clone --depth 1 "https://github.com/cogitate3/rime-ice" "$tmp_dir"
   
-  # Move to destination
-  mkdir -p "$(dirname "$rime_dir")"
-  mv "$tmp_dir" "$rime_dir"
+  # Copy to destination (Overlay logic from 902rime_setup.sh)
+  log_info "Copying Rime-Ice configurations..."
+  cp -r "$tmp_dir"/* "$rime_dir/"
+  rm -rf "$tmp_dir"
   
   chown -R "$target_user:$target_user" "$(dirname "$rime_dir")"
 }
@@ -150,6 +288,8 @@ EOF
 }
 
 mod_install() {
+  _remove_conflicts
+
   log_info "Installing Fcitx5 packages..."
   ensure_pkg "fcitx5" "fcitx5-rime" "fcitx5-chinese-addons" \
              "fcitx5-frontend-gtk2" "fcitx5-frontend-gtk3" "fcitx5-frontend-qt5" \
