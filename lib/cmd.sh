@@ -7,15 +7,21 @@ detect_installer(){
 
 has_cmd(){ command -v "$1" >/dev/null 2>&1; }
 
-ensure_pkg(){  # $1=pkg
-  local pkg="$1" ins; ins="$(detect_installer)"
+ensure_pkg(){  # $@=pkgs
+  local ins; ins="$(detect_installer)"
+  local pkgs=("$@")
+  
+  if [ ${#pkgs[@]} -eq 0 ]; then
+    return 0
+  fi
+  
   case "$ins" in
     apt)    log_cmd "apt 更新索引" sudo apt-get update -y
-            log_cmd "apt 安装 $pkg" sudo apt-get install -y "$pkg" ;;
-    dnf)    log_cmd "dnf 安装 $pkg" sudo dnf install -y "$pkg" ;;
-    pacman) log_cmd "pacman 同步安装 $pkg" sudo pacman -Sy --noconfirm "$pkg" ;;
-    zypper) log_cmd "zypper 安装 $pkg" sudo zypper --non-interactive in "$pkg" ;;
-    *)      log_err "无法识别包管理器，安装失败：$pkg"; return 2 ;;
+            log_cmd "apt 安装 ${pkgs[*]}" sudo apt-get install -y --install-recommends "${pkgs[@]}" ;;
+    dnf)    log_cmd "dnf 安装 ${pkgs[*]}" sudo dnf install -y "${pkgs[@]}" ;;
+    pacman) log_cmd "pacman 同步安装 ${pkgs[*]}" sudo pacman -Sy --noconfirm "${pkgs[@]}" ;;
+    zypper) log_cmd "zypper 安装 ${pkgs[*]}" sudo zypper --non-interactive in "${pkgs[@]}" ;;
+    *)      log_err "无法识别包管理器，安装失败：${pkgs[*]}"; return 2 ;;
   esac
 }
 

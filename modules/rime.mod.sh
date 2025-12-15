@@ -4,7 +4,16 @@ MOD_DESC="Rime input method engine for Fcitx5 (with Rime Ice / 雾凇拼音)."
 MOD_GROUP="Input Method"
 
 mod_check() {
-  check_pkg_installed "fcitx5-rime"
+  # Check if package is installed AND configuration exists
+  if check_pkg_installed "fcitx5-rime"; then
+      # Also check if we have configured it (e.g. profile exists)
+      local target_user="${SUDO_USER:-$USER}"
+      local target_home=$(getent passwd "$target_user" | cut -d: -f6)
+      if [ -f "$target_home/.config/fcitx5/profile" ]; then
+          return 0
+      fi
+  fi
+  return 1
 }
 
 _configure_env() {
@@ -13,6 +22,13 @@ _configure_env() {
   
   log_info "Configuring Environment Variables..."
   
+  # 0. Use im-config if available (Debian standard)
+  if command -v im-config >/dev/null 2>&1; then
+      log_info "Using im-config to set fcitx5 as default..."
+      # -n sets the input method configuration non-interactively
+      sudo -u "$target_user" im-config -n fcitx5
+  fi
+
   # 1. ~/.config/environment.d/fcitx5.conf
   local env_dir="$target_home/.config/environment.d"
   mkdir -p "$env_dir"
@@ -291,11 +307,22 @@ mod_install() {
   _remove_conflicts
 
   log_info "Installing Fcitx5 packages..."
-  ensure_pkg "fcitx5" "fcitx5-rime" "fcitx5-chinese-addons" \
-             "fcitx5-frontend-gtk2" "fcitx5-frontend-gtk3" "fcitx5-frontend-qt5" \
-             "fcitx5-module-cloudpinyin" "qt5-style-plugins" "fcitx5-module-lua" \
-             "fcitx5-material-color" "fonts-noto-cjk" "fonts-noto-color-emoji" \
-             "zenity" "git" "curl"
+  ensure_pkg "fcitx5" \
+             "fcitx5-rime" \
+             "fcitx5-chinese-addons" \
+             "fcitx5-frontend-gtk2" \
+             "fcitx5-frontend-gtk3" \
+             "fcitx5-frontend-qt5" \
+             "fcitx5-module-cloudpinyin" \
+             "qt5-style-plugins" \
+             "zenity" \
+             "fcitx5-module-lua" \
+             "fcitx5-material-color" \
+             "fonts-noto-cjk" \
+             "fonts-noto-color-emoji" \
+             "git" \
+             "curl" \
+             "im-config"
 
   _configure_env
   _configure_fcitx
@@ -308,7 +335,16 @@ mod_install() {
 
 mod_uninstall() {
   log_info "Uninstalling Rime..."
-  sudo apt-get purge -y fcitx5 fcitx5-rime fcitx5-chinese-addons
+  sudo apt-get purge -y fcitx5 \
+                        fcitx5-rime \
+                        fcitx5-chinese-addons \
+                        fcitx5-frontend-gtk2 \
+                        fcitx5-frontend-gtk3 \
+                        fcitx5-frontend-qt5 \
+                        fcitx5-module-cloudpinyin \
+                        qt5-style-plugins \
+                        fcitx5-module-lua \
+                        fcitx5-material-color
   sudo apt-get autoremove -y
   
   local target_user="${SUDO_USER:-$USER}"
