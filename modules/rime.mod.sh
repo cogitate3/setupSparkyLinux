@@ -3,15 +3,20 @@ MOD_NAME="Rime Input Method (Fcitx5)"
 MOD_DESC="Rime input method engine for Fcitx5 (with Rime Ice / 雾凇拼音)."
 MOD_GROUP="Input Method"
 
+mod_status() {
+  local v_local=$(get_pkg_version "fcitx5-rime")
+  local v_remote=$(apt-cache policy "fcitx5-rime" | grep "Candidate:" | awk '{print $2}' | sed 's/^[0-9]*://')
+  echo "$v_local|$v_remote"
+  [ "$v_local" = "unknown" ] && return 2
+  version_ge "$v_local" "$v_remote" && return 0
+  return 1
+}
+
 mod_check() {
-  # Check if package is installed AND configuration exists
   if check_pkg_installed "fcitx5-rime"; then
-      # Also check if we have configured it (e.g. profile exists)
       local target_user="${SUDO_USER:-$USER}"
       local target_home=$(getent passwd "$target_user" | cut -d: -f6)
-      if [ -f "$target_home/.config/fcitx5/profile" ]; then
-          return 0
-      fi
+      if [ -f "$target_home/.config/fcitx5/profile" ]; then return 0; fi
   fi
   return 1
 }
@@ -272,12 +277,19 @@ _install_rime_ice() {
   # Clone to tmp
   local tmp_dir="/tmp/rime-ice-install"
   rm -rf "$tmp_dir"
-  git clone --depth 1 "https://github.com/cogitate3/rime-ice" "$tmp_dir"
+  git_clone "https://github.com/cogitate3/rime-ice" "$tmp_dir" "--depth 1"
   
   # Copy to destination (Overlay logic from 902rime_setup.sh)
   log_info "Copying Rime-Ice configurations..."
   cp -r "$tmp_dir"/* "$rime_dir/"
   rm -rf "$tmp_dir"
+
+  # Set default to English (ASCII mode)
+  log_info "Setting Rime-Ice to default to English (ASCII mode)..."
+  cat > "$rime_dir/rime_ice.custom.yaml" <<EOF
+patch:
+  "switches/@0/reset": 1
+EOF
   
   chown -R "$target_user:$target_user" "$(dirname "$rime_dir")"
 }
@@ -335,7 +347,7 @@ mod_install() {
 
 mod_uninstall() {
   log_info "Uninstalling Rime..."
-  sudo apt-get purge -y fcitx5 \
+  sudo apt-get purge -y fcitx5 \ < /dev/null
                         fcitx5-rime \
                         fcitx5-chinese-addons \
                         fcitx5-frontend-gtk2 \

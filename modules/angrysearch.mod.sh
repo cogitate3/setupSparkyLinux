@@ -8,46 +8,62 @@ mod_check() {
   return 1
 }
 
+mod_status() {
+  local repo="DoTheEvo/ANGRYsearch"
+  local v_local="unknown"
+  if [ -f "/usr/share/angrysearch/.version" ]; then
+    v_local=$(cat "/usr/share/angrysearch/.version")
+  fi
+  
+  local v_remote_tag=$(gh_get_latest_tag "$repo")
+  local v_remote="${v_remote_tag#v}"
+  
+  echo "$v_local|$v_remote"
+  
+  [ "$v_local" = "unknown" ] && return 2
+  version_ge "$v_local" "$v_remote" && return 0
+  return 1
+}
+
 mod_install() {
   ensure_pkg "python3-pyqt5" "xdg-utils" "wget"
 
   local repo="DoTheEvo/ANGRYsearch"
-  
-  # Version Check
-  if mod_check; then
-    # AngrySearch doesn't have a reliable --version CLI. 
-    # Legacy script checked `dpkg -l` but it's not a deb install, it's a manual install.
-    # We can check a file or just always update if user asks.
-    log_info "AngrySearch is installed. Re-installing to update..."
-  fi
+  local tag=$(gh_get_latest_tag "$repo")
+  local v_remote="${tag#v}"
 
   local url
-  url=$(gh_latest_asset_url "$repo" "\.tar\.gz$")
+  # Attempt to get binary asset first
+  url=$(gh_latest_asset_url "$repo" "\.tar\.gz$" 2>/dev/null || true)
   
   if [ -z "$url" ]; then
-    local tag
-    tag=$(gh_get_latest_tag "$repo")
+    log_info "No binary asset found, falling back to source tag..."
     url="https://github.com/$repo/archive/refs/tags/${tag}.tar.gz"
   fi
 
   local tmp_dir="/tmp/angrysearch_install"
+  rm -rf "$tmp_dir"
   mkdir -p "$tmp_dir"
   local dest="$tmp_dir/angrysearch.tar.gz"
   
-  log_cmd "Downloading AngrySearch" curl -L -o "$dest" "$url"
+  download_file "$url" "$dest"
   
   log_info "Extracting..."
   tar -xzf "$dest" -C "$tmp_dir"
   
   local extracted_dir
-  extracted_dir=$(find "$tmp_dir" -maxdepth 1 -type d -name "ANGRYsearch-*" | head -n 1)
+  # Find the directory (GitHub tag archives usually use RepoName-Version)
+  extracted_dir=$(find "$tmp_dir" -maxdepth 1 -type d ! -path "$tmp_dir" | head -n 1)
   
-  if [ -n "$extracted_dir" ]; then
+  if [ -n "$extracted_dir" ] && [ -d "$extracted_dir" ]; then
+    local start_dir="$PWD"
     cd "$extracted_dir"
-    log_info "Running install script..."
+    log_info "Running install script in $extracted_dir..."
     log_cmd "Installing AngrySearch" sudo ./install.sh
+    echo "$v_remote" | sudo tee /usr/share/angrysearch/.version > /dev/null
+    cd "$start_dir"
   else
-    log_err "Failed to find extracted directory."
+    log_err "Failed to find extracted directory in $tmp_dir"
     return 1
   fi
   

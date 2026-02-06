@@ -20,7 +20,7 @@ _log_core() {  # $1=level $2=message
     WARN) printf "${c2}[%s] [WARN] %s${r}\n" "$(_ts)" "$msg" ;;
     ERR)  printf "${c3}[%s] [ERR ] %s${r}\n" "$(_ts)" "$msg" ;;
     *)    printf "[%s] [%s] %s\n" "$(_ts)" "$lvl" "$msg" ;;
-  esac | tee -a "$LOG_FILE"
+  esac | tee -a "$LOG_FILE" >&2
 }
 
 log_info(){ _log_core INFO "$*"; }
@@ -53,5 +53,27 @@ log_cmd(){  # log_cmd "描述" cmd args...
     local rc=$?
     log_err  "FAIL(${rc}): ${desc}（详见 $LOG_FILE）"
     return $rc
+    return $rc
   fi
 }
+
+log_stream(){  # Same as log_cmd but pipes output to stdout
+  local desc="$1"; shift
+  if [ "$DRY_RUN" = "1" ]; then
+    log_info "DRY-RUN: ${desc} ⇒ $*"
+    return 0
+  fi
+  log_info "RUN(Stream): ${desc} ⇒ $*"
+  # Use pipefail to catch errors in the pipe
+  # We use a subshell to ensure local pipefail setting if needed, but setup.sh sets it globally
+  if "$@" 2>&1 | tee -a "$LOG_FILE"; then
+    log_info "OK : ${desc}"
+  else
+    local rc=$? # capture pipestatus logic from set -o pipefail
+    # Note: with set -o pipefail, if command fails, the pipe fails.
+    # Bash ${PIPESTATUS[0]} is robust but simplest is relying on exit code of pipeline.
+    log_err  "FAIL(${rc}): ${desc}"
+    return $rc
+  fi
+}
+export -f log_info log_warn log_err retry log_cmd log_stream _ts _log_core

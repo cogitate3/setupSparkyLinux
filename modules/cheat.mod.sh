@@ -10,6 +10,15 @@ mod_check() {
   return 1
 }
 
+mod_status() {
+  if mod_check; then
+    echo "installed|latest"
+    return 0
+  fi
+  echo "unknown|latest"
+  return 2
+}
+
 mod_install() {
   ensure_pkg "rlwrap" "curl"
   
@@ -20,16 +29,18 @@ mod_install() {
   mkdir -p "$HOME/.local/bin"
   
   log_info "Installing/Updating cht.sh..."
-  log_cmd "Downloading cht.sh" curl -Ls https://cht.sh/:cht.sh -o "$bin_path"
-  chmod +x "$bin_path"
+  log_stream "Downloading cht.sh" curl -Ls https://cht.sh/:cht.sh -o "$bin_path" < /dev/null
+  if [ -f "$bin_path" ]; then
+    chmod +x "$bin_path"
+  fi
   
   local bash_comp_dir="$HOME/.bash.d"
   local zsh_comp_dir="$HOME/.zsh.d"
   mkdir -p "$bash_comp_dir" "$zsh_comp_dir"
   
   log_info "Updating completions..."
-  curl -s https://cheat.sh/:bash_completion -o "$bash_comp_dir/cht.sh"
-  curl -s https://cheat.sh/:zsh -o "$zsh_comp_dir/_cht"
+  curl -s https://cheat.sh/:bash_completion -o "$bash_comp_dir/cht.sh" < /dev/null
+  curl -s https://cheat.sh/:zsh -o "$zsh_comp_dir/_cht" < /dev/null
   
   log_info "Installed cht.sh to $bin_path"
 }

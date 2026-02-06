@@ -8,6 +8,13 @@ mod_check() {
   command -v warp-terminal >/dev/null 2>&1
 }
 
+mod_status() {
+  local v_local=$(get_pkg_version "warp-terminal")
+  echo "$v_local|latest"
+  [ "$v_local" = "unknown" ] && return 2
+  return 0 # Always offer reinstall if installed? Or 0 if present.
+}
+
 mod_install() {
   local url="https://app.warp.dev/download?package=deb"
   
@@ -20,7 +27,7 @@ mod_install() {
   local tmp_deb="/tmp/warp_install.deb"
   ensure_pkg "curl"
   
-  log_cmd "Downloading Warp" curl -L -o "$tmp_deb" "$url"
+  log_stream "Downloading Warp" curl -L -o "$tmp_deb" "$url" < /dev/null
   
   log_info "Installing Warp..."
   ensure_pkg "$tmp_deb"
@@ -29,7 +36,7 @@ mod_install() {
 
 mod_uninstall() {
   log_info "Uninstalling Warp..."
-  log_cmd "Purging warp-terminal" sudo apt-get purge -y warp-terminal
+  log_cmd "Purging warp-terminal" sudo apt-get purge -y warp-terminal < /dev/null
   # Note package name might be warp-terminal or warp, assuming standard deb naming
 }
 

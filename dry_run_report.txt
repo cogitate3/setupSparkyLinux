@@ -1,0 +1,478 @@
+=== Starting Dry Run: Install All ===
+------------------------------------------------
+[1;36m[2025-12-20 16:37:26] [INFO] ==> AB Download Manager [install][0m
+[1;36m[2025-12-20 16:37:26] [INFO] Simulating Install: AB Download Manager[0m
+[1;36m[2025-12-20 16:37:26] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:37:26] [INFO] DRY-RUN: apt 安装 wget tar ⇒ sudo apt-get install -y --install-recommends wget tar[0m
+[1;36m[2025-12-20 16:37:27] [INFO] No .deb found, attempting .tar.gz installation...[0m
+[1;36m[2025-12-20 16:37:27] [INFO] 已存在命令：curl[0m
+[1;36m[2025-12-20 16:37:27] [INFO] 已存在命令：jq[0m
+[1;36m[2025-12-20 16:37:27] [INFO] DRY-RUN: Downloading AB Download Manager ⇒ curl -L -o /tmp/abdm_install.tar.gz https://github.com/amir1376/ab-download-manager/releases/download/v1.8.1/ABDownloadManager_1.8.1_linux_x64.tar.gz[0m
+[1;36m[2025-12-20 16:37:27] [INFO] Extracting to /opt/abdm...[0m
+tar (child): /tmp/abdm_install.tar.gz: Cannot open: No such file or directory
+tar (child): Error is not recoverable: exiting now
+tar: Child returned status 2
+tar: Error is not recoverable: exiting now
+DRY-RUN (sudo): mkdir -p /opt/abdm
+[1;31m[2025-12-20 16:37:27] [ERR ] Failed to find application structure in tarball[0m
+[1;31m[2025-12-20 16:37:27] [ERR ] Module failed with 1[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:37:27] [INFO] ==> AngrySearch [install][0m
+[1;36m[2025-12-20 16:37:27] [INFO] Simulating Install: AngrySearch[0m
+[1;36m[2025-12-20 16:37:27] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:37:27] [INFO] DRY-RUN: apt 安装 python3-pyqt5 xdg-utils wget ⇒ sudo apt-get install -y --install-recommends python3-pyqt5 xdg-utils wget[0m
+[1;36m[2025-12-20 16:37:28] [INFO] No binary asset found, falling back to source tag...[0m
+[1;36m[2025-12-20 16:37:28] [INFO] DRY-RUN: Downloading AngrySearch ⇒ curl -L -o /tmp/angrysearch_install/angrysearch.tar.gz https://github.com/DoTheEvo/ANGRYsearch/archive/refs/tags/v1.0.4.tar.gz[0m
+[1;36m[2025-12-20 16:37:28] [INFO] Extracting...[0m
+tar (child): /tmp/angrysearch_install/angrysearch.tar.gz: Cannot open: No such file or directory
+tar (child): Error is not recoverable: exiting now
+tar: Child returned status 2
+tar: Error is not recoverable: exiting now
+[1;31m[2025-12-20 16:37:28] [ERR ] Failed to find extracted directory in /tmp/angrysearch_install[0m
+[1;31m[2025-12-20 16:37:28] [ERR ] Module failed with 1[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:37:28] [INFO] ==> Autostart Configuration [install][0m
+[1;36m[2025-12-20 16:37:28] [INFO] Simulating Install: Autostart Configuration[0m
+[1;36m[2025-12-20 16:37:28] [INFO] Autostart configuration checked.[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:37:28] [INFO] ==> Brave Browser [install][0m
+[1;36m[2025-12-20 16:37:28] [INFO] Simulating Install: Brave Browser[0m
+[1;36m[2025-12-20 16:37:28] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:37:28] [INFO] DRY-RUN: apt 安装 curl ⇒ sudo apt-get install -y --install-recommends curl[0m
+[1;36m[2025-12-20 16:37:28] [INFO] Adding Brave GPG key...[0m
+[1;36m[2025-12-20 16:37:28] [INFO] DRY-RUN: Saving GPG key ⇒ sudo tee /usr/share/keyrings/brave-browser-archive-keyring.gpg[0m
+[1;36m[2025-12-20 16:37:28] [INFO] Adding Brave repository...[0m
+[1;36m[2025-12-20 16:37:28] [INFO] DRY-RUN: Writing sources list ⇒ sudo tee /etc/apt/sources.list.d/brave-browser-release.list[0m
+[1;36m[2025-12-20 16:37:28] [INFO] DRY-RUN: Updating apt ⇒ sudo apt-get update[0m
+[1;36m[2025-12-20 16:37:28] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:37:28] [INFO] DRY-RUN: apt 安装 brave-browser ⇒ sudo apt-get install -y --install-recommends brave-browser[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:37:28] [INFO] ==> Cheat.sh [install][0m
+[1;36m[2025-12-20 16:37:28] [INFO] Simulating Install: Cheat.sh[0m
+[1;36m[2025-12-20 16:37:28] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:37:28] [INFO] DRY-RUN: apt 安装 rlwrap curl ⇒ sudo apt-get install -y --install-recommends rlwrap curl[0m
+[1;36m[2025-12-20 16:37:28] [INFO] Installing/Updating cht.sh...[0m
+[1;36m[2025-12-20 16:37:28] [INFO] DRY-RUN: Downloading cht.sh ⇒ curl -Ls https://cht.sh/:cht.sh -o /home/Andyyu/.local/bin/cht.sh[0m
+chmod: cannot access '/home/Andyyu/.local/bin/cht.sh': No such file or directory
+[1;36m[2025-12-20 16:37:28] [INFO] Updating completions...[0m
+[1;36m[2025-12-20 16:37:30] [INFO] Installed cht.sh to /home/Andyyu/.local/bin/cht.sh[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:37:30] [INFO] ==> WebDAV (davfs2) [install][0m
+[1;36m[2025-12-20 16:37:30] [INFO] Simulating Install: WebDAV (davfs2)[0m
+[1;36m[2025-12-20 16:37:30] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:37:30] [INFO] DRY-RUN: apt 安装 davfs2 ⇒ sudo apt-get install -y --install-recommends davfs2[0m
+[1;36m[2025-12-20 16:37:30] [INFO] Adding Andyyu to davfs2 group...[0m
+DRY-RUN (sudo): usermod -aG davfs2 Andyyu
+DRY-RUN (sudo): chmod u+s /usr/sbin/mount.davfs
+------------------------------------------------
+[1;36m[2025-12-20 16:37:30] [INFO] ==> Docker [install][0m
+[1;36m[2025-12-20 16:37:30] [INFO] Simulating Install: Docker[0m
+[1;36m[2025-12-20 16:37:30] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:37:30] [INFO] DRY-RUN: apt 安装 apt-transport-https ca-certificates curl gnupg lsb-release ⇒ sudo apt-get install -y --install-recommends apt-transport-https ca-certificates curl gnupg lsb-release[0m
+[1;36m[2025-12-20 16:37:30] [INFO] DRY-RUN: Creating keyring dir ⇒ sudo install -m 0755 -d /etc/apt/keyrings[0m
+[1;36m[2025-12-20 16:37:30] [INFO] Adding Docker GPG key...[0m
+[1;36m[2025-12-20 16:37:30] [INFO] DRY-RUN: Saving keys ⇒ sudo tee /etc/apt/keyrings/docker.asc[0m
+DRY-RUN (sudo): chmod a+r /etc/apt/keyrings/docker.asc
+[1;36m[2025-12-20 16:37:30] [INFO] Adding Docker repository...[0m
+[1;36m[2025-12-20 16:37:30] [INFO] DRY-RUN: Writing sources list ⇒ sudo tee /etc/apt/sources.list.d/docker.list[0m
+[1;36m[2025-12-20 16:37:30] [INFO] DRY-RUN: Updating apt ⇒ sudo apt-get update[0m
+[1;36m[2025-12-20 16:37:30] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:37:30] [INFO] DRY-RUN: apt 安装 docker-ce docker-ce-cli containerd.io docker-compose-plugin ⇒ sudo apt-get install -y --install-recommends docker-ce docker-ce-cli containerd.io docker-compose-plugin[0m
+[1;36m[2025-12-20 16:37:30] [INFO] Adding user Andyyu to docker group...[0m
+[1;36m[2025-12-20 16:37:30] [INFO] DRY-RUN: Usermod docker ⇒ sudo usermod -aG docker Andyyu[0m
+[1;36m[2025-12-20 16:37:30] [INFO] DRY-RUN: Enabling service ⇒ sudo systemctl enable --now docker[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:37:30] [INFO] ==> Penguins' Eggs [install][0m
+[1;36m[2025-12-20 16:37:30] [INFO] Simulating Install: Penguins' Eggs[0m
+[1;36m[2025-12-20 16:37:30] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:37:30] [INFO] DRY-RUN: apt 安装 squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools ⇒ sudo apt-get install -y --install-recommends squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools[0m
+[1;36m[2025-12-20 16:37:30] [INFO] Cloning get-eggs repository...[0m
+Cloning into '/home/Andyyu/Downloads/eggs_install'...
+[1;36m[2025-12-20 16:37:33] [INFO] Patching ppa.sh for SparkyLinux support...[0m
+sed: can't read ppa.sh: No such file or directory
+[1;36m[2025-12-20 16:37:33] [INFO] Running get-eggs.sh...[0m
+[1;36m[2025-12-20 16:37:33] [INFO] DRY-RUN: Installing eggs ⇒ sudo ./get-eggs.sh[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:37:33] [INFO] ==> Eg (TLDR Client) [install][0m
+simulate_install_all.sh: line 49: modules/eg.mod.sh: No such file or directory
+[1;36m[2025-12-20 16:37:33] [INFO] Simulating Install: Eg (TLDR Client)[0m
+[1;36m[2025-12-20 16:37:33] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:37:33] [INFO] DRY-RUN: apt 安装 squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools ⇒ sudo apt-get install -y --install-recommends squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools[0m
+[1;36m[2025-12-20 16:37:33] [INFO] Cloning get-eggs repository...[0m
+Cloning into '/home/Andyyu/Downloads/eggs_install'...
+fatal: Unable to read current working directory: No such file or directory
+fatal: remote helper 'https' aborted session
+[1;31m[2025-12-20 16:37:34] [ERR ] Failed to clone repository[0m
+[1;31m[2025-12-20 16:37:34] [ERR ] Module failed with 1[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:37:34] [INFO] ==> Flatpak Package Manager [install][0m
+simulate_install_all.sh: line 49: modules/flatpak.mod.sh: No such file or directory
+[1;36m[2025-12-20 16:37:34] [INFO] Simulating Install: Flatpak Package Manager[0m
+[1;36m[2025-12-20 16:37:34] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:37:34] [INFO] DRY-RUN: apt 安装 squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools ⇒ sudo apt-get install -y --install-recommends squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools[0m
+[1;36m[2025-12-20 16:37:34] [INFO] Cloning get-eggs repository...[0m
+Cloning into '/home/Andyyu/Downloads/eggs_install'...
+fatal: Unable to read current working directory: No such file or directory
+fatal: remote helper 'https' aborted session
+[1;31m[2025-12-20 16:37:34] [ERR ] Failed to clone repository[0m
+[1;31m[2025-12-20 16:37:34] [ERR ] Module failed with 1[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:37:34] [INFO] ==> Fonts & Typography [install][0m
+simulate_install_all.sh: line 49: modules/fonts.mod.sh: No such file or directory
+[1;36m[2025-12-20 16:37:34] [INFO] Simulating Install: Fonts & Typography[0m
+[1;36m[2025-12-20 16:37:34] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:37:34] [INFO] DRY-RUN: apt 安装 squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools ⇒ sudo apt-get install -y --install-recommends squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools[0m
+[1;36m[2025-12-20 16:37:34] [INFO] Cloning get-eggs repository...[0m
+Cloning into '/home/Andyyu/Downloads/eggs_install'...
+fatal: Unable to read current working directory: No such file or directory
+fatal: remote helper 'https' aborted session
+[1;31m[2025-12-20 16:37:34] [ERR ] Failed to clone repository[0m
+[1;31m[2025-12-20 16:37:34] [ERR ] Module failed with 1[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:37:34] [INFO] ==> FSearch [install][0m
+simulate_install_all.sh: line 49: modules/fsearch.mod.sh: No such file or directory
+[1;36m[2025-12-20 16:37:34] [INFO] Simulating Install: FSearch[0m
+[1;36m[2025-12-20 16:37:34] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:37:34] [INFO] DRY-RUN: apt 安装 squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools ⇒ sudo apt-get install -y --install-recommends squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools[0m
+[1;36m[2025-12-20 16:37:34] [INFO] Cloning get-eggs repository...[0m
+Cloning into '/home/Andyyu/Downloads/eggs_install'...
+fatal: Unable to read current working directory: No such file or directory
+fatal: remote helper 'https' aborted session
+[1;31m[2025-12-20 16:37:34] [ERR ] Failed to clone repository[0m
+[1;31m[2025-12-20 16:37:34] [ERR ] Module failed with 1[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:37:34] [INFO] ==> Geany [install][0m
+simulate_install_all.sh: line 49: modules/geany.mod.sh: No such file or directory
+[1;36m[2025-12-20 16:37:34] [INFO] Simulating Install: Geany[0m
+[1;36m[2025-12-20 16:37:34] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:37:34] [INFO] DRY-RUN: apt 安装 squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools ⇒ sudo apt-get install -y --install-recommends squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools[0m
+[1;36m[2025-12-20 16:37:34] [INFO] Cloning get-eggs repository...[0m
+Cloning into '/home/Andyyu/Downloads/eggs_install'...
+fatal: Unable to read current working directory: No such file or directory
+fatal: remote helper 'https' aborted session
+[1;31m[2025-12-20 16:37:34] [ERR ] Failed to clone repository[0m
+[1;31m[2025-12-20 16:37:34] [ERR ] Module failed with 1[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:37:34] [INFO] ==> Homebrew [install][0m
+simulate_install_all.sh: line 49: modules/homebrew.mod.sh: No such file or directory
+[1;36m[2025-12-20 16:37:34] [INFO] Simulating Install: Homebrew[0m
+[1;36m[2025-12-20 16:37:34] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:37:34] [INFO] DRY-RUN: apt 安装 squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools ⇒ sudo apt-get install -y --install-recommends squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools[0m
+[1;36m[2025-12-20 16:37:34] [INFO] Cloning get-eggs repository...[0m
+Cloning into '/home/Andyyu/Downloads/eggs_install'...
+fatal: Unable to read current working directory: No such file or directory
+fatal: remote helper 'https' aborted session
+[1;31m[2025-12-20 16:37:34] [ERR ] Failed to clone repository[0m
+[1;31m[2025-12-20 16:37:34] [ERR ] Module failed with 1[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:37:34] [INFO] ==> Konsole [install][0m
+simulate_install_all.sh: line 49: modules/konsole.mod.sh: No such file or directory
+[1;36m[2025-12-20 16:37:34] [INFO] Simulating Install: Konsole[0m
+[1;36m[2025-12-20 16:37:34] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:37:34] [INFO] DRY-RUN: apt 安装 squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools ⇒ sudo apt-get install -y --install-recommends squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools[0m
+[1;36m[2025-12-20 16:37:34] [INFO] Cloning get-eggs repository...[0m
+Cloning into '/home/Andyyu/Downloads/eggs_install'...
+fatal: Unable to read current working directory: No such file or directory
+fatal: remote helper 'https' aborted session
+[1;31m[2025-12-20 16:37:34] [ERR ] Failed to clone repository[0m
+[1;31m[2025-12-20 16:37:34] [ERR ] Module failed with 1[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:37:34] [INFO] ==> Krusader [install][0m
+simulate_install_all.sh: line 49: modules/krusader.mod.sh: No such file or directory
+[1;36m[2025-12-20 16:37:34] [INFO] Simulating Install: Krusader[0m
+[1;36m[2025-12-20 16:37:34] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:37:34] [INFO] DRY-RUN: apt 安装 squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools ⇒ sudo apt-get install -y --install-recommends squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools[0m
+[1;36m[2025-12-20 16:37:34] [INFO] Cloning get-eggs repository...[0m
+Cloning into '/home/Andyyu/Downloads/eggs_install'...
+fatal: Unable to read current working directory: No such file or directory
+fatal: remote helper 'https' aborted session
+[1;31m[2025-12-20 16:37:34] [ERR ] Failed to clone repository[0m
+[1;31m[2025-12-20 16:37:34] [ERR ] Module failed with 1[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:37:34] [INFO] ==> LocalSend [install][0m
+simulate_install_all.sh: line 49: modules/localsend.mod.sh: No such file or directory
+[1;36m[2025-12-20 16:37:34] [INFO] Simulating Install: LocalSend[0m
+[1;36m[2025-12-20 16:37:34] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:37:34] [INFO] DRY-RUN: apt 安装 squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools ⇒ sudo apt-get install -y --install-recommends squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools[0m
+[1;36m[2025-12-20 16:37:34] [INFO] Cloning get-eggs repository...[0m
+Cloning into '/home/Andyyu/Downloads/eggs_install'...
+fatal: Unable to read current working directory: No such file or directory
+fatal: remote helper 'https' aborted session
+[1;31m[2025-12-20 16:37:34] [ERR ] Failed to clone repository[0m
+[1;31m[2025-12-20 16:37:34] [ERR ] Module failed with 1[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:37:34] [INFO] ==> Micro Editor [install][0m
+simulate_install_all.sh: line 49: modules/micro.mod.sh: No such file or directory
+[1;36m[2025-12-20 16:37:34] [INFO] Simulating Install: Micro Editor[0m
+[1;36m[2025-12-20 16:37:34] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:37:35] [INFO] DRY-RUN: apt 安装 squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools ⇒ sudo apt-get install -y --install-recommends squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools[0m
+[1;36m[2025-12-20 16:37:35] [INFO] Cloning get-eggs repository...[0m
+Cloning into '/home/Andyyu/Downloads/eggs_install'...
+fatal: Unable to read current working directory: No such file or directory
+fatal: remote helper 'https' aborted session
+[1;31m[2025-12-20 16:37:35] [ERR ] Failed to clone repository[0m
+[1;31m[2025-12-20 16:37:35] [ERR ] Module failed with 1[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:37:35] [INFO] ==> Neofetch [install][0m
+simulate_install_all.sh: line 49: modules/neofetch.mod.sh: No such file or directory
+[1;36m[2025-12-20 16:37:35] [INFO] Simulating Install: Neofetch[0m
+[1;36m[2025-12-20 16:37:35] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:37:35] [INFO] DRY-RUN: apt 安装 squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools ⇒ sudo apt-get install -y --install-recommends squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools[0m
+[1;36m[2025-12-20 16:37:35] [INFO] Cloning get-eggs repository...[0m
+Cloning into '/home/Andyyu/Downloads/eggs_install'...
+fatal: Unable to read current working directory: No such file or directory
+fatal: remote helper 'https' aborted session
+[1;31m[2025-12-20 16:37:35] [ERR ] Failed to clone repository[0m
+[1;31m[2025-12-20 16:37:35] [ERR ] Module failed with 1[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:37:35] [INFO] ==> PDF Arranger [install][0m
+simulate_install_all.sh: line 49: modules/pdfarranger.mod.sh: No such file or directory
+[1;36m[2025-12-20 16:37:35] [INFO] Simulating Install: PDF Arranger[0m
+[1;36m[2025-12-20 16:37:35] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:37:35] [INFO] DRY-RUN: apt 安装 squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools ⇒ sudo apt-get install -y --install-recommends squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools[0m
+[1;36m[2025-12-20 16:37:35] [INFO] Cloning get-eggs repository...[0m
+Cloning into '/home/Andyyu/Downloads/eggs_install'...
+fatal: Unable to read current working directory: No such file or directory
+fatal: remote helper 'https' aborted session
+[1;31m[2025-12-20 16:37:35] [ERR ] Failed to clone repository[0m
+[1;31m[2025-12-20 16:37:35] [ERR ] Module failed with 1[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:37:35] [INFO] ==> Plank Dock [install][0m
+simulate_install_all.sh: line 49: modules/plank.mod.sh: No such file or directory
+[1;36m[2025-12-20 16:37:35] [INFO] Simulating Install: Plank Dock[0m
+[1;36m[2025-12-20 16:37:35] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:37:35] [INFO] DRY-RUN: apt 安装 squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools ⇒ sudo apt-get install -y --install-recommends squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools[0m
+[1;36m[2025-12-20 16:37:35] [INFO] Cloning get-eggs repository...[0m
+Cloning into '/home/Andyyu/Downloads/eggs_install'...
+fatal: Unable to read current working directory: No such file or directory
+fatal: remote helper 'https' aborted session
+[1;31m[2025-12-20 16:37:35] [ERR ] Failed to clone repository[0m
+[1;31m[2025-12-20 16:37:35] [ERR ] Module failed with 1[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:37:35] [INFO] ==> Pot Desktop [install][0m
+simulate_install_all.sh: line 49: modules/pot.mod.sh: No such file or directory
+[1;36m[2025-12-20 16:37:35] [INFO] Simulating Install: Pot Desktop[0m
+[1;36m[2025-12-20 16:37:35] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:37:35] [INFO] DRY-RUN: apt 安装 squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools ⇒ sudo apt-get install -y --install-recommends squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools[0m
+[1;36m[2025-12-20 16:37:35] [INFO] Cloning get-eggs repository...[0m
+Cloning into '/home/Andyyu/Downloads/eggs_install'...
+fatal: Unable to read current working directory: No such file or directory
+fatal: remote helper 'https' aborted session
+[1;31m[2025-12-20 16:37:35] [ERR ] Failed to clone repository[0m
+[1;31m[2025-12-20 16:37:35] [ERR ] Module failed with 1[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:37:35] [INFO] ==> Cloud Storage (rclone) [install][0m
+simulate_install_all.sh: line 49: modules/rclone.mod.sh: No such file or directory
+[1;36m[2025-12-20 16:37:35] [INFO] Simulating Install: Cloud Storage (rclone)[0m
+[1;36m[2025-12-20 16:37:35] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:37:35] [INFO] DRY-RUN: apt 安装 squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools ⇒ sudo apt-get install -y --install-recommends squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools[0m
+[1;36m[2025-12-20 16:37:35] [INFO] Cloning get-eggs repository...[0m
+Cloning into '/home/Andyyu/Downloads/eggs_install'...
+fatal: Unable to read current working directory: No such file or directory
+fatal: remote helper 'https' aborted session
+[1;31m[2025-12-20 16:37:35] [ERR ] Failed to clone repository[0m
+[1;31m[2025-12-20 16:37:35] [ERR ] Module failed with 1[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:37:35] [INFO] ==> Rime Input Method (Fcitx5) [install][0m
+simulate_install_all.sh: line 49: modules/rime.mod.sh: No such file or directory
+[1;36m[2025-12-20 16:37:35] [INFO] Simulating Install: Rime Input Method (Fcitx5)[0m
+[1;36m[2025-12-20 16:37:35] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:37:35] [INFO] DRY-RUN: apt 安装 squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools ⇒ sudo apt-get install -y --install-recommends squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools[0m
+[1;36m[2025-12-20 16:37:35] [INFO] Cloning get-eggs repository...[0m
+Cloning into '/home/Andyyu/Downloads/eggs_install'...
+fatal: Unable to read current working directory: No such file or directory
+fatal: remote helper 'https' aborted session
+[1;31m[2025-12-20 16:37:35] [ERR ] Failed to clone repository[0m
+[1;31m[2025-12-20 16:37:35] [ERR ] Module failed with 1[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:37:35] [INFO] ==> Snap Package Manager [install][0m
+simulate_install_all.sh: line 49: modules/snap.mod.sh: No such file or directory
+[1;36m[2025-12-20 16:37:35] [INFO] Simulating Install: Snap Package Manager[0m
+[1;36m[2025-12-20 16:37:35] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:37:35] [INFO] DRY-RUN: apt 安装 squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools ⇒ sudo apt-get install -y --install-recommends squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools[0m
+[1;36m[2025-12-20 16:37:35] [INFO] Cloning get-eggs repository...[0m
+Cloning into '/home/Andyyu/Downloads/eggs_install'...
+fatal: Unable to read current working directory: No such file or directory
+fatal: remote helper 'https' aborted session
+[1;31m[2025-12-20 16:37:35] [ERR ] Failed to clone repository[0m
+[1;31m[2025-12-20 16:37:35] [ERR ] Module failed with 1[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:37:35] [INFO] ==> SpaceFM [install][0m
+simulate_install_all.sh: line 49: modules/spacefm.mod.sh: No such file or directory
+[1;36m[2025-12-20 16:37:35] [INFO] Simulating Install: SpaceFM[0m
+[1;36m[2025-12-20 16:37:35] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:37:35] [INFO] DRY-RUN: apt 安装 squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools ⇒ sudo apt-get install -y --install-recommends squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools[0m
+[1;36m[2025-12-20 16:37:35] [INFO] Cloning get-eggs repository...[0m
+Cloning into '/home/Andyyu/Downloads/eggs_install'...
+fatal: Unable to read current working directory: No such file or directory
+fatal: remote helper 'https' aborted session
+[1;31m[2025-12-20 16:37:36] [ERR ] Failed to clone repository[0m
+[1;31m[2025-12-20 16:37:36] [ERR ] Module failed with 1[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:37:36] [INFO] ==> SSHFS [install][0m
+simulate_install_all.sh: line 49: modules/sshfs.mod.sh: No such file or directory
+[1;36m[2025-12-20 16:37:36] [INFO] Simulating Install: SSHFS[0m
+[1;36m[2025-12-20 16:37:36] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:37:36] [INFO] DRY-RUN: apt 安装 squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools ⇒ sudo apt-get install -y --install-recommends squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools[0m
+[1;36m[2025-12-20 16:37:36] [INFO] Cloning get-eggs repository...[0m
+Cloning into '/home/Andyyu/Downloads/eggs_install'...
+fatal: Unable to read current working directory: No such file or directory
+fatal: remote helper 'https' aborted session
+[1;31m[2025-12-20 16:37:36] [ERR ] Failed to clone repository[0m
+[1;31m[2025-12-20 16:37:36] [ERR ] Module failed with 1[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:37:36] [INFO] ==> Stretchly [install][0m
+simulate_install_all.sh: line 49: modules/stretchly.mod.sh: No such file or directory
+[1;36m[2025-12-20 16:37:36] [INFO] Simulating Install: Stretchly[0m
+[1;36m[2025-12-20 16:37:36] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:37:36] [INFO] DRY-RUN: apt 安装 squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools ⇒ sudo apt-get install -y --install-recommends squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools[0m
+[1;36m[2025-12-20 16:37:36] [INFO] Cloning get-eggs repository...[0m
+Cloning into '/home/Andyyu/Downloads/eggs_install'...
+fatal: Unable to read current working directory: No such file or directory
+fatal: remote helper 'https' aborted session
+[1;31m[2025-12-20 16:37:36] [ERR ] Failed to clone repository[0m
+[1;31m[2025-12-20 16:37:36] [ERR ] Module failed with 1[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:37:36] [INFO] ==> Double-ESC Sudo [install][0m
+simulate_install_all.sh: line 49: modules/sudo-esc.mod.sh: No such file or directory
+[1;36m[2025-12-20 16:37:36] [INFO] Simulating Install: Double-ESC Sudo[0m
+[1;36m[2025-12-20 16:37:36] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:37:36] [INFO] DRY-RUN: apt 安装 squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools ⇒ sudo apt-get install -y --install-recommends squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools[0m
+[1;36m[2025-12-20 16:37:36] [INFO] Cloning get-eggs repository...[0m
+Cloning into '/home/Andyyu/Downloads/eggs_install'...
+fatal: Unable to read current working directory: No such file or directory
+fatal: remote helper 'https' aborted session
+[1;31m[2025-12-20 16:37:36] [ERR ] Failed to clone repository[0m
+[1;31m[2025-12-20 16:37:36] [ERR ] Module failed with 1[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:37:36] [INFO] ==> Tabby Terminal [install][0m
+simulate_install_all.sh: line 49: modules/tabby.mod.sh: No such file or directory
+[1;36m[2025-12-20 16:37:36] [INFO] Simulating Install: Tabby Terminal[0m
+[1;36m[2025-12-20 16:37:36] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:37:36] [INFO] DRY-RUN: apt 安装 squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools ⇒ sudo apt-get install -y --install-recommends squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools[0m
+[1;36m[2025-12-20 16:37:36] [INFO] Cloning get-eggs repository...[0m
+Cloning into '/home/Andyyu/Downloads/eggs_install'...
+fatal: Unable to read current working directory: No such file or directory
+fatal: remote helper 'https' aborted session
+[1;31m[2025-12-20 16:37:36] [ERR ] Failed to clone repository[0m
+[1;31m[2025-12-20 16:37:36] [ERR ] Module failed with 1[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:37:36] [INFO] ==> Telegram [install][0m
+simulate_install_all.sh: line 49: modules/telegram.mod.sh: No such file or directory
+[1;36m[2025-12-20 16:37:36] [INFO] Simulating Install: Telegram[0m
+[1;36m[2025-12-20 16:37:36] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:37:36] [INFO] DRY-RUN: apt 安装 squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools ⇒ sudo apt-get install -y --install-recommends squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools[0m
+[1;36m[2025-12-20 16:37:36] [INFO] Cloning get-eggs repository...[0m
+Cloning into '/home/Andyyu/Downloads/eggs_install'...
+fatal: Unable to read current working directory: No such file or directory
+fatal: remote helper 'https' aborted session
+[1;31m[2025-12-20 16:37:36] [ERR ] Failed to clone repository[0m
+[1;31m[2025-12-20 16:37:36] [ERR ] Module failed with 1[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:37:36] [INFO] ==> VLC Media Player [install][0m
+simulate_install_all.sh: line 49: modules/vlc.mod.sh: No such file or directory
+[1;36m[2025-12-20 16:37:36] [INFO] Simulating Install: VLC Media Player[0m
+[1;36m[2025-12-20 16:37:36] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:37:36] [INFO] DRY-RUN: apt 安装 squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools ⇒ sudo apt-get install -y --install-recommends squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools[0m
+[1;36m[2025-12-20 16:37:36] [INFO] Cloning get-eggs repository...[0m
+Cloning into '/home/Andyyu/Downloads/eggs_install'...
+fatal: Unable to read current working directory: No such file or directory
+fatal: remote helper 'https' aborted session
+[1;31m[2025-12-20 16:37:36] [ERR ] Failed to clone repository[0m
+[1;31m[2025-12-20 16:37:36] [ERR ] Module failed with 1[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:37:36] [INFO] ==> Warp Terminal [install][0m
+simulate_install_all.sh: line 49: modules/warp.mod.sh: No such file or directory
+[1;36m[2025-12-20 16:37:36] [INFO] Simulating Install: Warp Terminal[0m
+[1;36m[2025-12-20 16:37:36] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:37:36] [INFO] DRY-RUN: apt 安装 squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools ⇒ sudo apt-get install -y --install-recommends squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools[0m
+[1;36m[2025-12-20 16:37:36] [INFO] Cloning get-eggs repository...[0m
+Cloning into '/home/Andyyu/Downloads/eggs_install'...
+fatal: Unable to read current working directory: No such file or directory
+fatal: remote helper 'https' aborted session
+[1;31m[2025-12-20 16:37:36] [ERR ] Failed to clone repository[0m
+[1;31m[2025-12-20 16:37:36] [ERR ] Module failed with 1[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:37:36] [INFO] ==> Windsurf IDE [install][0m
+simulate_install_all.sh: line 49: modules/windsurf.mod.sh: No such file or directory
+[1;36m[2025-12-20 16:37:36] [INFO] Simulating Install: Windsurf IDE[0m
+[1;36m[2025-12-20 16:37:36] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:37:36] [INFO] DRY-RUN: apt 安装 squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools ⇒ sudo apt-get install -y --install-recommends squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools[0m
+[1;36m[2025-12-20 16:37:37] [INFO] Cloning get-eggs repository...[0m
+Cloning into '/home/Andyyu/Downloads/eggs_install'...
+fatal: Unable to read current working directory: No such file or directory
+fatal: remote helper 'https' aborted session
+[1;31m[2025-12-20 16:37:37] [ERR ] Failed to clone repository[0m
+[1;31m[2025-12-20 16:37:37] [ERR ] Module failed with 1[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:37:37] [INFO] ==> WPS Office [install][0m
+simulate_install_all.sh: line 49: modules/wps.mod.sh: No such file or directory
+[1;36m[2025-12-20 16:37:37] [INFO] Simulating Install: WPS Office[0m
+[1;36m[2025-12-20 16:37:37] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:37:37] [INFO] DRY-RUN: apt 安装 squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools ⇒ sudo apt-get install -y --install-recommends squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools[0m
+[1;36m[2025-12-20 16:37:37] [INFO] Cloning get-eggs repository...[0m
+Cloning into '/home/Andyyu/Downloads/eggs_install'...
+fatal: Unable to read current working directory: No such file or directory
+fatal: remote helper 'https' aborted session
+[1;31m[2025-12-20 16:37:37] [ERR ] Failed to clone repository[0m
+[1;31m[2025-12-20 16:37:37] [ERR ] Module failed with 1[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:37:37] [INFO] ==> Zsh Integration [install][0m
+simulate_install_all.sh: line 49: modules/zsh.mod.sh: No such file or directory
+[1;36m[2025-12-20 16:37:37] [INFO] Simulating Install: Zsh Integration[0m
+[1;36m[2025-12-20 16:37:37] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:37:37] [INFO] DRY-RUN: apt 安装 squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools ⇒ sudo apt-get install -y --install-recommends squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools[0m
+[1;36m[2025-12-20 16:37:37] [INFO] Cloning get-eggs repository...[0m
+Cloning into '/home/Andyyu/Downloads/eggs_install'...
+fatal: Unable to read current working directory: No such file or directory
+fatal: remote helper 'https' aborted session
+[1;31m[2025-12-20 16:37:37] [ERR ] Failed to clone repository[0m
+[1;31m[2025-12-20 16:37:37] [ERR ] Module failed with 1[0m
+------------------------------------------------
+=== Summary Generation check ===
+
+[36m==================================================[0m
+[36m               Processing Summary                 [0m
+[36m==================================================[0m
+[90mNo.  [0m| Module                    | Action     | Result
+[90m-----+---------------------------+------------+-------[0m
+1    | AB Download Manager       | install    | [31mFailed (1)[0m
+2    | AngrySearch               | install    | [31mFailed (1)[0m
+3    | Autostart Configuration   | install    | [32mSuccess[0m
+4    | Brave Browser             | install    | [32mSuccess[0m
+5    | Cheat.sh                  | install    | [32mSuccess[0m
+6    | WebDAV (davfs2)           | install    | [32mSuccess[0m
+7    | Docker                    | install    | [32mSuccess[0m
+8    | Penguins' Eggs            | install    | [32mSuccess[0m
+9    | Eg (TLDR Client)          | install    | [31mFailed (1)[0m
+10   | Flatpak Package Manager   | install    | [31mFailed (1)[0m
+11   | Fonts & Typography        | install    | [31mFailed (1)[0m
+12   | FSearch                   | install    | [31mFailed (1)[0m
+13   | Geany                     | install    | [31mFailed (1)[0m
+14   | Homebrew                  | install    | [31mFailed (1)[0m
+15   | Konsole                   | install    | [31mFailed (1)[0m
+16   | Krusader                  | install    | [31mFailed (1)[0m
+17   | LocalSend                 | install    | [31mFailed (1)[0m
+18   | Micro Editor              | install    | [31mFailed (1)[0m
+19   | Neofetch                  | install    | [31mFailed (1)[0m
+20   | PDF Arranger              | install    | [31mFailed (1)[0m
+21   | Plank Dock                | install    | [31mFailed (1)[0m
+22   | Pot Desktop               | install    | [31mFailed (1)[0m
+23   | Cloud Storage (rclone)    | install    | [31mFailed (1)[0m
+24   | Rime Input Method (Fcitx5) | install    | [31mFailed (1)[0m
+25   | Snap Package Manager      | install    | [31mFailed (1)[0m
+26   | SpaceFM                   | install    | [31mFailed (1)[0m
+27   | SSHFS                     | install    | [31mFailed (1)[0m
+28   | Stretchly                 | install    | [31mFailed (1)[0m
+29   | Double-ESC Sudo           | install    | [31mFailed (1)[0m
+30   | Tabby Terminal            | install    | [31mFailed (1)[0m
+31   | Telegram                  | install    | [31mFailed (1)[0m
+32   | VLC Media Player          | install    | [31mFailed (1)[0m
+33   | Warp Terminal             | install    | [31mFailed (1)[0m
+34   | Windsurf IDE              | install    | [31mFailed (1)[0m
+35   | WPS Office                | install    | [31mFailed (1)[0m
+36   | Zsh Integration           | install    | [31mFailed (1)[0m
+[90m--------------------------------------------------[0m
+[31m30 tasks failed.[0m
+
+Done in 11 seconds.

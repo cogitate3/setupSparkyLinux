@@ -62,7 +62,7 @@ draw_main_menu() {
     echo ""
 
     # Group Order preference
-    local groups=("Desktop Apps" "Browsers" "Multimedia" "Dev Tools" "CLI Tools" "System" "Appearance" "Input Method" "Network & Storage" "Misc")
+    local groups=("Desktop Apps" "Browsers" "Multimedia" "Dev Tools" "CLI Tools" "System" "Appearance" "Shell" "Input Method" "Network & Storage" "Misc")
     
     # Track assigned indices
     local current_idx=1
@@ -156,6 +156,7 @@ print_summary_table() {
 # Redefine for simpler usage with arrays passed by reference (Bash 4.3+) is tricky if not careful.
 # Let's iterate over keys provided by a separate count or just use integer indices.
 draw_summary() {
+    set +eu # Disable strict mode to prevent crash on missing array/index
     local count=$1
     # Arrays are global/env or passed by name ref
     # Let's use global arrays RES_NAME, RES_ACTION, RES_STATUS
@@ -197,4 +198,5 @@ draw_summary() {
 }
 
 print_gray()   { printf "${C_GRAY}%s${C_RESET}\n" "$@"; }
+export -f print_green print_yellow print_cyan print_red print_gray display_items draw_main_menu draw_summary
 

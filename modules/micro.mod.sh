@@ -7,28 +7,25 @@ mod_check() {
   command -v micro >/dev/null 2>&1
 }
 
+mod_status() {
+  local repo="zyedidia/micro"
+  local v_local=$(micro --version | grep -oP 'Version: \K[0-9.]+' || echo "unknown")
+  local v_remote_tag=$(gh_get_latest_tag "$repo")
+  local v_remote="${v_remote_tag#v}"
+  
+  echo "$v_local|$v_remote"
+  
+  [ "$v_local" = "unknown" ] && return 2
+  version_ge "$v_local" "$v_remote" && return 0
+  return 1
+}
+
 mod_install() {
   local repo="zyedidia/micro"
-  
-  # Version Check Logic
-  if mod_check; then
-    local v_local
-    v_local=$(micro --version | grep -oP 'Version: \K[0-9.]+' || echo "unknown")
-    
-    local v_remote_tag
-    v_remote_tag=$(gh_get_latest_tag "$repo")
-    local v_remote="${v_remote_tag#v}" # strip 'v' prefix if present
-    
-    if [ "$v_local" != "unknown" ] && [ "$v_local" = "$v_remote" ]; then
-      log_info "Micro is up to date ($v_local). Skipping."
-      return 0
-    fi
-    log_info "New version available: Local=$v_local, Remote=$v_remote. Updating..."
-  fi
 
   log_info "Finding latest asset for $repo..."
   local url
-  url=$(gh_latest_asset_url "$repo" "linux64\.tar\.gz$")
+  url=$(gh_latest_asset_url "$repo" ".*linux64\.tar\.gz$")
   
   if [ -z "$url" ]; then
     log_err "Could not find asset for $repo"
@@ -39,7 +36,7 @@ mod_install() {
   mkdir -p "$tmp_dir"
   local dest="$tmp_dir/micro.tar.gz"
   
-  log_cmd "Downloading Micro" curl -L -o "$dest" "$url"
+  log_stream "Downloading Micro" curl -L -o "$dest" "$url" < /dev/null
   
   log_info "Extracting..."
   tar -xzf "$dest" -C "$tmp_dir"

@@ -4,14 +4,25 @@ MOD_DESC="Rsync for cloud storage (Supports Google Drive, Dropbox, OneDrive, etc
 MOD_GROUP="Network & Storage"
 
 mod_check() {
-  check_pkg_installed "rclone"
+  command -v rclone >/dev/null 2>&1
+}
+
+mod_status() {
+  local v_local=$(rclone version 2>/dev/null | head -n1 | awk '{print $2}' | sed 's/^v//')
+  [ -z "$v_local" ] && v_local="unknown"
+  
+  local v_remote_tag=$(gh_get_latest_tag "rclone/rclone")
+  local v_remote="${v_remote_tag#v}"
+  echo "$v_local|$v_remote"
+  [ "$v_local" = "unknown" ] && return 2
+  version_ge "$v_local" "$v_remote" && return 0
+  return 1
 }
 
 mod_install() {
-  # rclone in Debian repos can be old.
-  # But for stability/simplicity in this script context, let's prefer apt unless user wants latest.
-  # Start with apt.
-  ensure_pkg "rclone"
+  # Legacy script prefers rclone.org install script for the latest version.
+  log_info "Installing latest rclone from official script..."
+  curl -fsSL https://rclone.org/install.sh < /dev/null | sudo bash
 
   if [ "${DRY_RUN:-0}" -ne 1 ]; then
     echo ""
@@ -29,7 +40,7 @@ mod_install() {
 
 mod_uninstall() {
   log_info "Uninstalling rclone..."
-  sudo apt-get purge -y rclone
+  sudo apt-get purge -y rclone < /dev/null
   log_warn "Rclone config (~/.config/rclone/rclone.conf) is preserved."
 }
 

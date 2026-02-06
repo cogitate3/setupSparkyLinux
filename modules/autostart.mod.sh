@@ -1,7 +1,7 @@
 MOD_ID="autostart"
 MOD_NAME="Autostart Configuration"
 MOD_DESC="Manage application autostart entries."
-MOD_GROUP="System"
+MOD_GROUP="Hidden"
 
 mod_check() {
   # Logic to check if our custom autostarts are present?
@@ -9,6 +9,15 @@ mod_check() {
   # Or check for a marker file.
   if [ -f "$HOME/.config/autostart/.setup_sparky_marker" ]; then return 0; fi
   return 1
+}
+
+mod_status() {
+  if mod_check; then
+    echo "active|current"
+    return 0
+  fi
+  echo "none|current"
+  return 2
 }
 
 mod_install() {

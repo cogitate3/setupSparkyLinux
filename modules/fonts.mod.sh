@@ -8,6 +8,15 @@ mod_check() {
   return 1
 }
 
+mod_status() {
+  local v_local="unknown"
+  if mod_check; then v_local="installed"; fi
+  local v_remote="v3.0.2"
+  echo "$v_local|$v_remote"
+  [ "$v_local" = "unknown" ] && return 2
+  return 0
+}
+
 mod_install() {
   local font_dir="$HOME/.local/share/fonts"
   mkdir -p "$font_dir"
@@ -17,10 +26,9 @@ mod_install() {
   # 1. Nerd Fonts (e.g., JetBrainsMono)
   local nerd_ver="v3.0.2"
   local nerd_url="https://github.com/ryanoasis/nerd-fonts/releases/download/${nerd_ver}/JetBrainsMono.zip"
+  local tmp_zip="/tmp/JetBrainsMono.zip"
   
-  log_info "Downloading JetBrainsMono Nerd Font..."
-  local tmp_zip="/tmp/jb_nerd.zip"
-  curl -L -o "$tmp_zip" "$nerd_url"
+  download_file "$nerd_url" "$tmp_zip"
   
   unzip -o "$tmp_zip" -d "$font_dir/NerdFonts"
   rm -f "$tmp_zip"
@@ -37,7 +45,7 @@ mod_uninstall() {
   rm -rf "$HOME/.local/share/fonts/NerdFonts"
   
   # msttcorefonts removal
-  sudo apt-get purge -y ttf-mscorefonts-installer
+  sudo apt-get purge -y ttf-mscorefonts-installer < /dev/null
   
   log_info "Rebuilding font cache..."
   fc-cache -fv

@@ -14,8 +14,16 @@ declare -A M_HAS_CHECK M_HAS_INSTALL M_HAS_UNINSTALL M_HAS_STATUS
 declare -A M_DEPS_CMDS M_DEPS_PKGS M_REQUIRES
 MODULE_IDS=()
 
+declare -a RES_NAME RES_ACTION RES_STATUS
+
 register_module() {
   local id="${MOD_ID:?MOD_ID required}"
+  
+  # Prevent duplicates if module is re-sourced
+  if [ -n "${M_FILE[$id]-}" ]; then
+     return 0
+  fi
+
   MODULE_IDS+=("$id")
   M_NAME["$id"]="${MOD_NAME:-$id}"
   M_GROUP["$id"]="${MOD_GROUP:-Misc}"
@@ -47,15 +55,24 @@ ensure_deps_for() {
 
 run_module() {  # $1=id  $2=action
   local id="$1" action="${2:-install}"
-  . "${M_FILE[$id]}"
-  ensure_deps_for "$id"
-  case "$action" in
-    check)     [ "${M_HAS_CHECK[$id]}"    = 1 ] && mod_check    || { log_warn "$id 无 check"; return 0; } ;;
-    status)    [ "${M_HAS_STATUS[$id]}"   = 1 ] && mod_status   || { log_warn "$id 无 status"; return 0; } ;;
-    install)   [ "${M_HAS_INSTALL[$id]}"  = 1 ] && mod_install  || { log_err  "$id 不支持安装"; return 2; } ;;
-    uninstall) [ "${M_HAS_UNINSTALL[$id]}" = 1 ] && mod_uninstall || { log_err  "$id 不支持卸载"; return 2; } ;;
-    *) log_err "未知动作：$action"; return 2 ;;
-  esac
+  # Run in subshell with Strict Error Checking enabled
+  # This ensures any failed command inside the module triggers a failure status
+  (
+    set -e
+    . "${M_FILE[$id]}"
+    ensure_deps_for "$id"
+    case "$action" in
+      check)
+        if [ "${M_HAS_CHECK[$id]}" = "1" ]; then mod_check; else log_warn "$id 无 check"; fi ;;
+      status)
+        if [ "${M_HAS_STATUS[$id]}" = "1" ]; then mod_status; else log_warn "$id 无 status"; fi ;;
+      install)
+        if [ "${M_HAS_INSTALL[$id]}" = "1" ]; then mod_install; else log_err "$id 不支持安装"; return 2; fi ;;
+      uninstall)
+        if [ "${M_HAS_UNINSTALL[$id]}" = "1" ]; then mod_uninstall; else log_err "$id 不支持卸载"; return 2; fi ;;
+      *) log_err "未知动作：$action"; return 2 ;;
+    esac
+  )
 }
 
 by_group() { local g="$1"; for id in "${MODULE_IDS[@]}"; do [[ "${M_GROUP[$id]}" == "$g" ]] && echo "$id"; done; }
@@ -138,6 +155,8 @@ main() {
   fi
 
   if [ "$MENU" = 1 ]; then
+    # Disable strict error checking for the interactive loop to prevent crashes
+    set +eu
     while true; do
       draw_main_menu
       
@@ -147,7 +166,7 @@ main() {
       
       [[ "$choice_str" == "0" || "$choice_str" == "q" ]] && exit 0
       
-      # Prepare Global Arrays for Results
+      # Reset Global Arrays for Results
       RES_NAME=()
       RES_ACTION=()
       RES_STATUS=()
@@ -203,14 +222,61 @@ main() {
                   echo ""
                   log_info "Selected: ${M_NAME[$id]} ($id) [$action]"
                   
+                  # Legacy Logic: Check if already installed
+                  if [ "$action" = "install" ] && [ "${M_HAS_CHECK[$id]}" = "1" ]; then
+                      if run_module "$id" "check" >/dev/null 2>&1; then
+                          # Already installed. Check for update?
+                          local needs_prompt=1
+                          local v_msg=""
+                          if [ "${M_HAS_STATUS[$id]}" = "1" ]; then
+                              # mod_status return codes: 0=latest, 1=update avail, 2=not inst
+                              # It should now echo "local|remote"
+                              set +e
+                              local v_info; v_info=$(run_module "$id" "status")
+                              local status_ret=$?
+                              set -e
+                              
+                              local v_l="${v_info%|*}"
+                              local v_r="${v_info#*|}"
+
+                              if [ $status_ret -eq 1 ]; then
+                                  printf "\033[1;36m[%s] [INFO] %s 发现新版本！[当前: %s, 最新: %s]。是否执行更新？[Y/n]: \033[0m" "$(date +'%F %T')" "${M_NAME[$id]}" "${v_l:-未知}" "${v_r:-未知}"
+                                  read -r confirm
+                                  if [[ "$confirm" =~ ^[Nn]$ ]]; then
+                                      log_info "跳过 ${M_NAME[$id]} 的更新。"
+                                      continue
+                                  fi
+                                  needs_prompt=0
+                              elif [ $status_ret -eq 0 ]; then
+                                  v_msg=" [本地版本: ${v_l:-未知}, 最新版本: ${v_r:-未知}]"
+                              fi
+                          fi
+
+                          if [ $needs_prompt -eq 1 ]; then
+                              printf "\033[1;33m[%s] [WARN] %s%s 已经安装最新版本，是否重新安装？[y/N]: \033[0m" "$(date +'%F %T')" "${M_NAME[$id]}" "$v_msg"
+                              read -r confirm
+                              if [[ ! "$confirm" =~ ^[Yy]$ ]]; then
+                                  log_info "用户取消重新安装 ${M_NAME[$id]}，返回主菜单。"
+                                  continue
+                              fi
+                              log_info "确认重新安装 ${M_NAME[$id]}..."
+                              export FORCE_REINSTALL=1
+                          fi
+                      fi
+                  fi
+
+                  # log debug removed
                   run_module "$id" "$action"
                   st=$?
+                  # Reset force flag
+                  unset FORCE_REINSTALL
                   
                   # Record Result
                   RES_NAME+=("${M_NAME[$id]}")
                   RES_ACTION+=("$action")
                   RES_STATUS+=($st)
-                  ((count++))
+                  
+                  count=$((count + 1))
               else
                   log_warn "Invalid selection: $choice"
               fi
@@ -225,7 +291,7 @@ main() {
       fi
       
       echo ""
-      read -p "Press Enter to continue..."
+      read -p "Press Enter to continue..." || true
     done
     exit 0
   fi

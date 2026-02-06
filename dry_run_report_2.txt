@@ -1,0 +1,2359 @@
+=== Starting Dry Run: Install All ===
+------------------------------------------------
+[1;36m[2025-12-20 16:38:55] [INFO] ==> AB Download Manager [install][0m
+[1;36m[2025-12-20 16:38:55] [INFO] Simulating Install: AB Download Manager[0m
+[1;36m[2025-12-20 16:38:55] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:38:55] [INFO] DRY-RUN: apt 安装 wget tar ⇒ sudo apt-get install -y --install-recommends wget tar[0m
+[1;36m[2025-12-20 16:38:56] [INFO] No .deb found, attempting .tar.gz installation...[0m
+[1;36m[2025-12-20 16:38:56] [INFO] 已存在命令：curl[0m
+[1;36m[2025-12-20 16:38:56] [INFO] 已存在命令：jq[0m
+[1;36m[2025-12-20 16:38:56] [INFO] DRY-RUN: Downloading AB Download Manager ⇒ curl -L -o /tmp/abdm_install.tar.gz https://github.com/amir1376/ab-download-manager/releases/download/v1.8.1/ABDownloadManager_1.8.1_linux_x64.tar.gz[0m
+[1;36m[2025-12-20 16:38:56] [INFO] Extracting to /opt/abdm...[0m
+tar (child): /tmp/abdm_install.tar.gz: Cannot open: No such file or directory
+tar (child): Error is not recoverable: exiting now
+tar: Child returned status 2
+tar: Error is not recoverable: exiting now
+DRY-RUN (sudo): mkdir -p /opt/abdm
+[1;31m[2025-12-20 16:38:56] [ERR ] Failed to find application structure in tarball[0m
+[1;31m[2025-12-20 16:38:56] [ERR ] Module failed with 1[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:38:56] [INFO] ==> AngrySearch [install][0m
+[1;36m[2025-12-20 16:38:56] [INFO] Simulating Install: AngrySearch[0m
+[1;36m[2025-12-20 16:38:56] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:38:56] [INFO] DRY-RUN: apt 安装 python3-pyqt5 xdg-utils wget ⇒ sudo apt-get install -y --install-recommends python3-pyqt5 xdg-utils wget[0m
+[1;36m[2025-12-20 16:38:57] [INFO] No binary asset found, falling back to source tag...[0m
+[1;36m[2025-12-20 16:38:57] [INFO] DRY-RUN: Downloading AngrySearch ⇒ curl -L -o /tmp/angrysearch_install/angrysearch.tar.gz https://github.com/DoTheEvo/ANGRYsearch/archive/refs/tags/v1.0.4.tar.gz[0m
+[1;36m[2025-12-20 16:38:57] [INFO] Extracting...[0m
+tar (child): /tmp/angrysearch_install/angrysearch.tar.gz: Cannot open: No such file or directory
+tar (child): Error is not recoverable: exiting now
+tar: Child returned status 2
+tar: Error is not recoverable: exiting now
+[1;31m[2025-12-20 16:38:57] [ERR ] Failed to find extracted directory in /tmp/angrysearch_install[0m
+[1;31m[2025-12-20 16:38:57] [ERR ] Module failed with 1[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:38:57] [INFO] ==> Autostart Configuration [install][0m
+[1;36m[2025-12-20 16:38:57] [INFO] Simulating Install: Autostart Configuration[0m
+[1;36m[2025-12-20 16:38:57] [INFO] Autostart configuration checked.[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:38:57] [INFO] ==> Brave Browser [install][0m
+[1;36m[2025-12-20 16:38:57] [INFO] Simulating Install: Brave Browser[0m
+[1;36m[2025-12-20 16:38:57] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:38:57] [INFO] DRY-RUN: apt 安装 curl ⇒ sudo apt-get install -y --install-recommends curl[0m
+[1;36m[2025-12-20 16:38:57] [INFO] Adding Brave GPG key...[0m
+[1;36m[2025-12-20 16:38:57] [INFO] DRY-RUN: Saving GPG key ⇒ sudo tee /usr/share/keyrings/brave-browser-archive-keyring.gpg[0m
+[1;36m[2025-12-20 16:38:57] [INFO] Adding Brave repository...[0m
+[1;36m[2025-12-20 16:38:57] [INFO] DRY-RUN: Writing sources list ⇒ sudo tee /etc/apt/sources.list.d/brave-browser-release.list[0m
+[1;36m[2025-12-20 16:38:57] [INFO] DRY-RUN: Updating apt ⇒ sudo apt-get update[0m
+[1;36m[2025-12-20 16:38:57] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:38:57] [INFO] DRY-RUN: apt 安装 brave-browser ⇒ sudo apt-get install -y --install-recommends brave-browser[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:38:57] [INFO] ==> Cheat.sh [install][0m
+[1;36m[2025-12-20 16:38:57] [INFO] Simulating Install: Cheat.sh[0m
+[1;36m[2025-12-20 16:38:57] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:38:57] [INFO] DRY-RUN: apt 安装 rlwrap curl ⇒ sudo apt-get install -y --install-recommends rlwrap curl[0m
+[1;36m[2025-12-20 16:38:57] [INFO] Installing/Updating cht.sh...[0m
+[1;36m[2025-12-20 16:38:57] [INFO] DRY-RUN: Downloading cht.sh ⇒ curl -Ls https://cht.sh/:cht.sh -o /home/Andyyu/.local/bin/cht.sh[0m
+chmod: cannot access '/home/Andyyu/.local/bin/cht.sh': No such file or directory
+[1;36m[2025-12-20 16:38:57] [INFO] Updating completions...[0m
+[1;36m[2025-12-20 16:38:59] [INFO] Installed cht.sh to /home/Andyyu/.local/bin/cht.sh[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:38:59] [INFO] ==> WebDAV (davfs2) [install][0m
+[1;36m[2025-12-20 16:38:59] [INFO] Simulating Install: WebDAV (davfs2)[0m
+[1;36m[2025-12-20 16:38:59] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:38:59] [INFO] DRY-RUN: apt 安装 davfs2 ⇒ sudo apt-get install -y --install-recommends davfs2[0m
+[1;36m[2025-12-20 16:38:59] [INFO] Adding Andyyu to davfs2 group...[0m
+DRY-RUN (sudo): usermod -aG davfs2 Andyyu
+DRY-RUN (sudo): chmod u+s /usr/sbin/mount.davfs
+------------------------------------------------
+[1;36m[2025-12-20 16:38:59] [INFO] ==> Docker [install][0m
+[1;36m[2025-12-20 16:38:59] [INFO] Simulating Install: Docker[0m
+[1;36m[2025-12-20 16:38:59] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:38:59] [INFO] DRY-RUN: apt 安装 apt-transport-https ca-certificates curl gnupg lsb-release ⇒ sudo apt-get install -y --install-recommends apt-transport-https ca-certificates curl gnupg lsb-release[0m
+[1;36m[2025-12-20 16:38:59] [INFO] DRY-RUN: Creating keyring dir ⇒ sudo install -m 0755 -d /etc/apt/keyrings[0m
+[1;36m[2025-12-20 16:38:59] [INFO] Adding Docker GPG key...[0m
+[1;36m[2025-12-20 16:38:59] [INFO] DRY-RUN: Saving keys ⇒ sudo tee /etc/apt/keyrings/docker.asc[0m
+DRY-RUN (sudo): chmod a+r /etc/apt/keyrings/docker.asc
+[1;36m[2025-12-20 16:38:59] [INFO] Adding Docker repository...[0m
+[1;36m[2025-12-20 16:38:59] [INFO] DRY-RUN: Writing sources list ⇒ sudo tee /etc/apt/sources.list.d/docker.list[0m
+[1;36m[2025-12-20 16:38:59] [INFO] DRY-RUN: Updating apt ⇒ sudo apt-get update[0m
+[1;36m[2025-12-20 16:38:59] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:38:59] [INFO] DRY-RUN: apt 安装 docker-ce docker-ce-cli containerd.io docker-compose-plugin ⇒ sudo apt-get install -y --install-recommends docker-ce docker-ce-cli containerd.io docker-compose-plugin[0m
+[1;36m[2025-12-20 16:38:59] [INFO] Adding user Andyyu to docker group...[0m
+[1;36m[2025-12-20 16:38:59] [INFO] DRY-RUN: Usermod docker ⇒ sudo usermod -aG docker Andyyu[0m
+[1;36m[2025-12-20 16:38:59] [INFO] DRY-RUN: Enabling service ⇒ sudo systemctl enable --now docker[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:38:59] [INFO] ==> Penguins' Eggs [install][0m
+[1;36m[2025-12-20 16:38:59] [INFO] Simulating Install: Penguins' Eggs[0m
+[1;36m[2025-12-20 16:38:59] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:38:59] [INFO] DRY-RUN: apt 安装 squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools ⇒ sudo apt-get install -y --install-recommends squashfs-tools xorriso grub-pc-bin grub-efi-amd64-bin mtools[0m
+[1;36m[2025-12-20 16:38:59] [INFO] Cloning get-eggs repository...[0m
+Cloning into '/home/Andyyu/Downloads/eggs_install'...
+[1;36m[2025-12-20 16:39:02] [INFO] Patching ppa.sh for SparkyLinux support...[0m
+sed: can't read ppa.sh: No such file or directory
+[1;36m[2025-12-20 16:39:02] [INFO] Running get-eggs.sh...[0m
+[1;36m[2025-12-20 16:39:02] [INFO] DRY-RUN: Installing eggs ⇒ sudo ./get-eggs.sh[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:39:02] [INFO] ==> Eg (TLDR Client) [install][0m
+[1;36m[2025-12-20 16:39:02] [INFO] Simulating Install: Eg (TLDR Client)[0m
+[1;36m[2025-12-20 16:39:02] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:39:02] [INFO] DRY-RUN: apt 安装 python3-full python3-pip pipx ⇒ sudo apt-get install -y --install-recommends python3-full python3-pip pipx[0m
+[1;36m[2025-12-20 16:39:02] [INFO] Installing 'eg' via pipx for user Andyyu...[0m
+DRY-RUN (sudo): -u Andyyu pipx install eg
+------------------------------------------------
+[1;36m[2025-12-20 16:39:02] [INFO] ==> Flatpak Package Manager [install][0m
+[1;36m[2025-12-20 16:39:02] [INFO] Simulating Install: Flatpak Package Manager[0m
+[1;36m[2025-12-20 16:39:02] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:39:02] [INFO] DRY-RUN: apt 安装 flatpak gnome-software-plugin-flatpak ⇒ sudo apt-get install -y --install-recommends flatpak gnome-software-plugin-flatpak[0m
+[1;36m[2025-12-20 16:39:02] [INFO] Adding Flathub repository...[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:39:03] [INFO] ==> Fonts & Typography [install][0m
+[1;36m[2025-12-20 16:39:03] [INFO] Simulating Install: Fonts & Typography[0m
+[1;36m[2025-12-20 16:39:03] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:39:03] [INFO] DRY-RUN: apt 安装 curl unzip fontconfig ⇒ sudo apt-get install -y --install-recommends curl unzip fontconfig[0m
+[1;36m[2025-12-20 16:39:03] [INFO] Downloading JetBrainsMono Nerd Font...[0m
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+ 23 99.1M   23 23.0M    0     0  17.6M      0  0:00:05  0:00:01  0:00:04 17.6M 74 99.1M   74 74.3M    0     0  32.2M      0  0:00:03  0:00:02  0:00:01 51.0M100 99.1M  100 99.1M    0     0  37.7M      0  0:00:02  0:00:02 --:--:-- 57.3M
+Archive:  /tmp/jb_nerd.zip
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFont-ExtraBoldItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFontPropo-ExtraBoldItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFontMono-ExtraBoldItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFontPropo-Regular.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFont-Regular.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFontMono-Regular.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFontMono-ExtraBold.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFont-ExtraBold.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFontPropo-ExtraBold.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFont-Thin.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFontMono-Thin.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFontPropo-Thin.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFontMono-MediumItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFontPropo-MediumItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFont-MediumItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFontPropo-Light.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFont-Light.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFontMono-Light.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFontMono-ExtraLight.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFontPropo-ExtraLight.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFont-ExtraLight.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFont-BoldItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFontMono-BoldItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFontPropo-BoldItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFont-SemiBoldItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFontMono-SemiBoldItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFontPropo-SemiBoldItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFontMono-Bold.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFont-Bold.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFontPropo-Bold.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFontPropo-Italic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFontMono-Italic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFont-Italic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFontPropo-ThinItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFont-ThinItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFontMono-ThinItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFont-LightItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFontMono-LightItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFontPropo-LightItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFontPropo-ExtraLightItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFont-ExtraLightItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFontMono-ExtraLightItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFontPropo-SemiBold.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFontMono-SemiBold.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFont-SemiBold.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFontPropo-Medium.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFont-Medium.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNerdFontMono-Medium.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFontMono-ExtraBoldItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFont-ExtraBoldItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFontPropo-ExtraBoldItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFontPropo-Regular.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFont-Regular.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFontMono-Regular.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFont-ExtraBold.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFontPropo-ExtraBold.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFontMono-ExtraBold.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFontPropo-Thin.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFont-Thin.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFontMono-Thin.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFontPropo-MediumItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFont-MediumItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFontMono-MediumItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFontMono-Light.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFont-Light.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFontPropo-Light.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFontMono-ExtraLight.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFontPropo-ExtraLight.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFont-ExtraLight.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFontPropo-BoldItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFontMono-BoldItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFont-BoldItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFontPropo-SemiBoldItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFontMono-SemiBoldItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFont-SemiBoldItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFont-Bold.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFontMono-Bold.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFontPropo-Bold.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFont-Italic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFontMono-Italic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFontPropo-Italic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFont-ThinItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFontMono-ThinItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFontPropo-ThinItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFont-LightItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFontMono-LightItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFontPropo-LightItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFontMono-ExtraLightItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFont-ExtraLightItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFontPropo-ExtraLightItalic.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFontMono-SemiBold.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFontPropo-SemiBold.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFont-SemiBold.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFontPropo-Medium.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFont-Medium.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/JetBrainsMonoNLNerdFontMono-Medium.ttf  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/OFL.txt  
+  inflating: /home/Andyyu/.local/share/fonts/NerdFonts/readme.md  
+[1;36m[2025-12-20 16:39:10] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:39:10] [INFO] DRY-RUN: apt 安装 ttf-mscorefonts-installer ⇒ sudo apt-get install -y --install-recommends ttf-mscorefonts-installer[0m
+[1;36m[2025-12-20 16:39:10] [INFO] Rebuilding font cache...[0m
+Font directories:
+	/home/Andyyu/.local/share/fonts
+	/usr/share/xfce4/fonts
+	/home/Andyyu/.local/share/flatpak/exports/share/fonts
+	/var/lib/flatpak/exports/share/fonts
+	/usr/local/share/fonts
+	/usr/share/fonts
+	/home/Andyyu/.fonts
+	/home/Andyyu/.local/share/fonts/NerdFonts
+	/usr/share/fonts/X11
+	/usr/share/fonts/cMap
+	/usr/share/fonts/cmap
+	/usr/share/fonts/extra
+	/usr/share/fonts/opentype
+	/usr/share/fonts/truetype
+	/usr/share/fonts/type1
+	/usr/share/fonts/X11/100dpi
+	/usr/share/fonts/X11/75dpi
+	/usr/share/fonts/X11/Type1
+	/usr/share/fonts/X11/encodings
+	/usr/share/fonts/X11/misc
+	/usr/share/fonts/X11/util
+	/usr/share/fonts/cmap/adobe-cns1
+	/usr/share/fonts/cmap/adobe-gb1
+	/usr/share/fonts/cmap/adobe-japan1
+	/usr/share/fonts/cmap/adobe-japan2
+	/usr/share/fonts/cmap/adobe-korea1
+	/usr/share/fonts/opentype/cantarell
+	/usr/share/fonts/opentype/noto
+	/usr/share/fonts/opentype/urw-base35
+	/usr/share/fonts/truetype/crosextra
+	/usr/share/fonts/truetype/dejavu
+	/usr/share/fonts/truetype/droid
+	/usr/share/fonts/truetype/freefont
+	/usr/share/fonts/truetype/liberation
+	/usr/share/fonts/truetype/libreoffice
+	/usr/share/fonts/truetype/lyx
+	/usr/share/fonts/truetype/noto
+	/usr/share/fonts/truetype/ttf-bitstream-vera
+	/usr/share/fonts/truetype/uralic
+	/usr/share/fonts/truetype/vlgothic
+	/usr/share/fonts/truetype/wqy
+	/usr/share/fonts/type1/urw-base35
+	/usr/share/fonts/X11/encodings/large
+/home/Andyyu/.local/share/fonts: caching, new cache contents: 0 fonts, 1 dirs
+/home/Andyyu/.local/share/fonts/NerdFonts: caching, new cache contents: 96 fonts, 0 dirs
+/usr/share/xfce4/fonts: skipping, no such directory
+/home/Andyyu/.local/share/flatpak/exports/share/fonts: skipping, no such directory
+/var/lib/flatpak/exports/share/fonts: skipping, no such directory
+/usr/local/share/fonts: caching, new cache contents: 0 fonts, 0 dirs
+/usr/share/fonts: caching, new cache contents: 0 fonts, 7 dirs
+/usr/share/fonts/X11: caching, new cache contents: 0 fonts, 6 dirs
+/usr/share/fonts/X11/100dpi: caching, new cache contents: 358 fonts, 0 dirs
+/usr/share/fonts/X11/75dpi: caching, new cache contents: 358 fonts, 0 dirs
+/usr/share/fonts/X11/Type1: caching, new cache contents: 43 fonts, 0 dirs
+/usr/share/fonts/X11/encodings: caching, new cache contents: 0 fonts, 1 dirs
+/usr/share/fonts/X11/encodings/large: caching, new cache contents: 0 fonts, 0 dirs
+/usr/share/fonts/X11/misc: caching, new cache contents: 89 fonts, 0 dirs
+/usr/share/fonts/X11/util: caching, new cache contents: 0 fonts, 0 dirs
+/usr/share/fonts/cMap: caching, new cache contents: 0 fonts, 0 dirs
+/usr/share/fonts/cmap: caching, new cache contents: 0 fonts, 5 dirs
+/usr/share/fonts/cmap/adobe-cns1: caching, new cache contents: 0 fonts, 0 dirs
+/usr/share/fonts/cmap/adobe-gb1: caching, new cache contents: 0 fonts, 0 dirs
+/usr/share/fonts/cmap/adobe-japan1: caching, new cache contents: 0 fonts, 0 dirs
+/usr/share/fonts/cmap/adobe-japan2: caching, new cache contents: 0 fonts, 0 dirs
+/usr/share/fonts/cmap/adobe-korea1: caching, new cache contents: 0 fonts, 0 dirs
+/usr/share/fonts/extra: caching, new cache contents: 14 fonts, 0 dirs
+/usr/share/fonts/opentype: caching, new cache contents: 0 fonts, 3 dirs
+/usr/share/fonts/opentype/cantarell: caching, new cache contents: 6 fonts, 0 dirs
+/usr/share/fonts/opentype/noto: caching, new cache contents: 30 fonts, 0 dirs
+/usr/share/fonts/opentype/urw-base35: caching, new cache contents: 35 fonts, 0 dirs
+/usr/share/fonts/truetype: caching, new cache contents: 1 fonts, 12 dirs
+/usr/share/fonts/truetype/crosextra: caching, new cache contents: 8 fonts, 0 dirs
+/usr/share/fonts/truetype/dejavu: caching, new cache contents: 22 fonts, 0 dirs
+/usr/share/fonts/truetype/droid: caching, new cache contents: 1 fonts, 0 dirs
+/usr/share/fonts/truetype/freefont: caching, new cache contents: 12 fonts, 0 dirs
+/usr/share/fonts/truetype/liberation: caching, new cache contents: 12 fonts, 0 dirs
+/usr/share/fonts/truetype/libreoffice: caching, new cache contents: 1 fonts, 0 dirs
+/usr/share/fonts/truetype/lyx: caching, new cache contents: 12 fonts, 0 dirs
+/usr/share/fonts/truetype/noto: caching, new cache contents: 272 fonts, 0 dirs
+/usr/share/fonts/truetype/ttf-bitstream-vera: caching, new cache contents: 10 fonts, 0 dirs
+/usr/share/fonts/truetype/uralic: caching, new cache contents: 22 fonts, 0 dirs
+/usr/share/fonts/truetype/vlgothic: caching, new cache contents: 2 fonts, 0 dirs
+/usr/share/fonts/truetype/wqy: caching, new cache contents: 2 fonts, 0 dirs
+/usr/share/fonts/type1: caching, new cache contents: 0 fonts, 1 dirs
+/usr/share/fonts/type1/urw-base35: caching, new cache contents: 35 fonts, 0 dirs
+/home/Andyyu/.fonts: skipping, no such directory
+/home/Andyyu/.local/share/fonts/NerdFonts: skipping, looped directory detected
+/usr/share/fonts/X11: skipping, looped directory detected
+/usr/share/fonts/cMap: skipping, looped directory detected
+/usr/share/fonts/cmap: skipping, looped directory detected
+/usr/share/fonts/extra: skipping, looped directory detected
+/usr/share/fonts/opentype: skipping, looped directory detected
+/usr/share/fonts/truetype: skipping, looped directory detected
+/usr/share/fonts/type1: skipping, looped directory detected
+/usr/share/fonts/X11/100dpi: skipping, looped directory detected
+/usr/share/fonts/X11/75dpi: skipping, looped directory detected
+/usr/share/fonts/X11/Type1: skipping, looped directory detected
+/usr/share/fonts/X11/encodings: skipping, looped directory detected
+/usr/share/fonts/X11/misc: skipping, looped directory detected
+/usr/share/fonts/X11/util: skipping, looped directory detected
+/usr/share/fonts/cmap/adobe-cns1: skipping, looped directory detected
+/usr/share/fonts/cmap/adobe-gb1: skipping, looped directory detected
+/usr/share/fonts/cmap/adobe-japan1: skipping, looped directory detected
+/usr/share/fonts/cmap/adobe-japan2: skipping, looped directory detected
+/usr/share/fonts/cmap/adobe-korea1: skipping, looped directory detected
+/usr/share/fonts/opentype/cantarell: skipping, looped directory detected
+/usr/share/fonts/opentype/noto: skipping, looped directory detected
+/usr/share/fonts/opentype/urw-base35: skipping, looped directory detected
+/usr/share/fonts/truetype/crosextra: skipping, looped directory detected
+/usr/share/fonts/truetype/dejavu: skipping, looped directory detected
+/usr/share/fonts/truetype/droid: skipping, looped directory detected
+/usr/share/fonts/truetype/freefont: skipping, looped directory detected
+/usr/share/fonts/truetype/liberation: skipping, looped directory detected
+/usr/share/fonts/truetype/libreoffice: skipping, looped directory detected
+/usr/share/fonts/truetype/lyx: skipping, looped directory detected
+/usr/share/fonts/truetype/noto: skipping, looped directory detected
+/usr/share/fonts/truetype/ttf-bitstream-vera: skipping, looped directory detected
+/usr/share/fonts/truetype/uralic: skipping, looped directory detected
+/usr/share/fonts/truetype/vlgothic: skipping, looped directory detected
+/usr/share/fonts/truetype/wqy: skipping, looped directory detected
+/usr/share/fonts/type1/urw-base35: skipping, looped directory detected
+/usr/share/fonts/X11/encodings/large: skipping, looped directory detected
+/var/cache/fontconfig: not cleaning unwritable cache directory
+/home/Andyyu/.cache/fontconfig: cleaning cache directory
+/home/Andyyu/.fontconfig: not cleaning non-existent cache directory
+fc-cache: succeeded
+------------------------------------------------
+[1;36m[2025-12-20 16:39:17] [INFO] ==> FSearch [install][0m
+[1;36m[2025-12-20 16:39:17] [INFO] Simulating Install: FSearch[0m
+[1;36m[2025-12-20 16:39:17] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:39:17] [INFO] DRY-RUN: apt 安装 curl gpg ⇒ sudo apt-get install -y --install-recommends curl gpg[0m
+[1;36m[2025-12-20 16:39:17] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:39:17] [INFO] DRY-RUN: apt 安装 fsearch ⇒ sudo apt-get install -y --install-recommends fsearch[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:39:18] [INFO] ==> Geany [install][0m
+[1;36m[2025-12-20 16:39:18] [INFO] Simulating Install: Geany[0m
+[1;36m[2025-12-20 16:39:18] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:39:18] [INFO] DRY-RUN: apt 安装 geany geany-plugins geany-plugin-markdown ⇒ sudo apt-get install -y --install-recommends geany geany-plugins geany-plugin-markdown[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:39:18] [INFO] ==> Homebrew [install][0m
+[1;36m[2025-12-20 16:39:18] [INFO] Simulating Install: Homebrew[0m
+[1;36m[2025-12-20 16:39:18] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:39:18] [INFO] DRY-RUN: apt 安装 curl git ⇒ sudo apt-get install -y --install-recommends curl git[0m
+[1;36m[2025-12-20 16:39:18] [INFO] Running Homebrew install script...[0m
+[1;36m[2025-12-20 16:39:18] [INFO] DRY-RUN: Installing Homebrew ⇒ /bin/bash -c NONINTERACTIVE=1 #!/bin/bash
+
+# We don't need return codes for "$(command)", only stdout is needed.
+# Allow `[[ -n "$(command)" ]]`, `func "$(command)"`, pipes, etc.
+# shellcheck disable=SC2312
+
+set -u
+
+abort() {
+  printf "%s\n" "$@" >&2
+  exit 1
+}
+
+# Fail fast with a concise message when not using bash
+# Single brackets are needed here for POSIX compatibility
+# shellcheck disable=SC2292
+if [ -z "${BASH_VERSION:-}" ]
+then
+  abort "Bash is required to interpret this script."
+fi
+
+# Check if script is run with force-interactive mode in CI
+if [[ -n "${CI-}" && -n "${INTERACTIVE-}" ]]
+then
+  abort "Cannot run force-interactive mode in CI."
+fi
+
+# Check if both `INTERACTIVE` and `NONINTERACTIVE` are set
+# Always use single-quoted strings with `exp` expressions
+# shellcheck disable=SC2016
+if [[ -n "${INTERACTIVE-}" && -n "${NONINTERACTIVE-}" ]]
+then
+  abort 'Both `$INTERACTIVE` and `$NONINTERACTIVE` are set. Please unset at least one variable and try again.'
+fi
+
+# Check if script is run in POSIX mode
+if [[ -n "${POSIXLY_CORRECT+1}" ]]
+then
+  abort 'Bash must not run in POSIX mode. Please unset POSIXLY_CORRECT and try again.'
+fi
+
+# Check for file that prevents Homebrew installation
+if [[ -f "/etc/homebrew/brew.no_install" ]]
+then
+  BREW_NO_INSTALL="$(cat "/etc/homebrew/brew.no_install" 2>/dev/null)"
+  if [[ -n "${BREW_NO_INSTALL}" ]]
+  then
+    abort "Homebrew cannot be installed because ${BREW_NO_INSTALL}."
+  else
+    abort "Homebrew cannot be installed because /etc/homebrew/brew.no_install exists!"
+  fi
+fi
+
+# string formatters
+if [[ -t 1 ]]
+then
+  tty_escape() { printf "\033[%sm" "$1"; }
+else
+  tty_escape() { :; }
+fi
+tty_mkbold() { tty_escape "1;$1"; }
+tty_underline="$(tty_escape "4;39")"
+tty_blue="$(tty_mkbold 34)"
+tty_red="$(tty_mkbold 31)"
+tty_bold="$(tty_mkbold 39)"
+tty_reset="$(tty_escape 0)"
+
+shell_join() {
+  local arg
+  printf "%s" "$1"
+  shift
+  for arg in "$@"
+  do
+    printf " "
+    printf "%s" "${arg// /\ }"
+  done
+}
+
+chomp() {
+  printf "%s" "${1/"$'\n'"/}"
+}
+
+ohai() {
+  printf "${tty_blue}==>${tty_bold} %s${tty_reset}\n" "$(shell_join "$@")"
+}
+
+warn() {
+  printf "${tty_red}Warning${tty_reset}: %s\n" "$(chomp "$1")" >&2
+}
+
+usage() {
+  cat <<EOS
+Homebrew Installer
+Usage: [NONINTERACTIVE=1] [CI=1] install.sh [options]
+    -h, --help       Display this message.
+    NONINTERACTIVE   Install without prompting for user input
+    CI               Install in CI mode (e.g. do not prompt for user input)
+EOS
+  exit "${1:-0}"
+}
+
+while [[ $# -gt 0 ]]
+do
+  case "$1" in
+    -h | --help) usage ;;
+    *)
+      warn "Unrecognized option: '$1'"
+      usage 1
+      ;;
+  esac
+done
+
+# Check if script is run non-interactively (e.g. CI)
+# If it is run non-interactively we should not prompt for passwords.
+# Always use single-quoted strings with `exp` expressions
+# shellcheck disable=SC2016
+if [[ -z "${NONINTERACTIVE-}" ]]
+then
+  if [[ -n "${CI-}" ]]
+  then
+    warn 'Running in non-interactive mode because `$CI` is set.'
+    NONINTERACTIVE=1
+  elif [[ ! -t 0 ]]
+  then
+    if [[ -z "${INTERACTIVE-}" ]]
+    then
+      warn 'Running in non-interactive mode because `stdin` is not a TTY.'
+      NONINTERACTIVE=1
+    else
+      warn 'Running in interactive mode despite `stdin` not being a TTY because `$INTERACTIVE` is set.'
+    fi
+  fi
+else
+  ohai 'Running in non-interactive mode because `$NONINTERACTIVE` is set.'
+fi
+
+# USER isn't always set so provide a fall back for the installer and subprocesses.
+if [[ -z "${USER-}" ]]
+then
+  USER="$(chomp "$(id -un)")"
+  export USER
+fi
+
+# First check OS.
+OS="$(uname)"
+if [[ "${OS}" == "Linux" ]]
+then
+  HOMEBREW_ON_LINUX=1
+elif [[ "${OS}" == "Darwin" ]]
+then
+  HOMEBREW_ON_MACOS=1
+else
+  abort "Homebrew is only supported on macOS and Linux."
+fi
+
+# Required installation paths. To install elsewhere (which is unsupported)
+# you can untar https://github.com/Homebrew/brew/tarball/main
+# anywhere you like.
+if [[ -n "${HOMEBREW_ON_MACOS-}" ]]
+then
+  UNAME_MACHINE="$(/usr/bin/uname -m)"
+
+  if [[ "${UNAME_MACHINE}" == "arm64" ]]
+  then
+    # On ARM macOS, this script installs to /opt/homebrew only
+    HOMEBREW_PREFIX="/opt/homebrew"
+    HOMEBREW_REPOSITORY="${HOMEBREW_PREFIX}"
+  else
+    # On Intel macOS, this script installs to /usr/local only
+    HOMEBREW_PREFIX="/usr/local"
+    HOMEBREW_REPOSITORY="${HOMEBREW_PREFIX}/Homebrew"
+  fi
+  HOMEBREW_CACHE="${HOME}/Library/Caches/Homebrew"
+
+  STAT_PRINTF=("/usr/bin/stat" "-f")
+  PERMISSION_FORMAT="%A"
+  CHOWN=("/usr/sbin/chown")
+  CHGRP=("/usr/bin/chgrp")
+  GROUP="admin"
+  TOUCH=("/usr/bin/touch")
+  INSTALL=("/usr/bin/install" -d -o "root" -g "wheel" -m "0755")
+else
+  UNAME_MACHINE="$(uname -m)"
+
+  # On Linux, this script installs to /home/linuxbrew/.linuxbrew only
+  HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
+  HOMEBREW_REPOSITORY="${HOMEBREW_PREFIX}/Homebrew"
+  HOMEBREW_CACHE="${HOME}/.cache/Homebrew"
+
+  STAT_PRINTF=("/usr/bin/stat" "-c")
+  PERMISSION_FORMAT="%a"
+  CHOWN=("/bin/chown")
+  CHGRP=("/bin/chgrp")
+  GROUP="$(id -gn)"
+  TOUCH=("/bin/touch")
+  INSTALL=("/usr/bin/install" -d -o "${USER}" -g "${GROUP}" -m "0755")
+fi
+CHMOD=("/bin/chmod")
+MKDIR=("/bin/mkdir" "-p")
+HOMEBREW_BREW_DEFAULT_GIT_REMOTE="https://github.com/Homebrew/brew"
+HOMEBREW_CORE_DEFAULT_GIT_REMOTE="https://github.com/Homebrew/homebrew-core"
+
+# Use remote URLs of Homebrew repositories from environment if set.
+HOMEBREW_BREW_GIT_REMOTE="${HOMEBREW_BREW_GIT_REMOTE:-"${HOMEBREW_BREW_DEFAULT_GIT_REMOTE}"}"
+HOMEBREW_CORE_GIT_REMOTE="${HOMEBREW_CORE_GIT_REMOTE:-"${HOMEBREW_CORE_DEFAULT_GIT_REMOTE}"}"
+# The URLs with and without the '.git' suffix are the same Git remote. Do not prompt.
+if [[ "${HOMEBREW_BREW_GIT_REMOTE}" == "${HOMEBREW_BREW_DEFAULT_GIT_REMOTE}.git" ]]
+then
+  HOMEBREW_BREW_GIT_REMOTE="${HOMEBREW_BREW_DEFAULT_GIT_REMOTE}"
+fi
+if [[ "${HOMEBREW_CORE_GIT_REMOTE}" == "${HOMEBREW_CORE_DEFAULT_GIT_REMOTE}.git" ]]
+then
+  HOMEBREW_CORE_GIT_REMOTE="${HOMEBREW_CORE_DEFAULT_GIT_REMOTE}"
+fi
+export HOMEBREW_{BREW,CORE}_GIT_REMOTE
+
+# TODO: bump version when new macOS is released or announced
+MACOS_NEWEST_UNSUPPORTED="27.0"
+# TODO: bump version when new macOS is released
+MACOS_OLDEST_SUPPORTED="14.0"
+
+# For Homebrew on Linux
+REQUIRED_RUBY_VERSION=3.4    # https://github.com/Homebrew/brew/pull/19779
+REQUIRED_GLIBC_VERSION=2.13  # https://docs.brew.sh/Homebrew-on-Linux#requirements
+REQUIRED_CURL_VERSION=7.41.0 # HOMEBREW_MINIMUM_CURL_VERSION in brew.sh in Homebrew/brew
+REQUIRED_GIT_VERSION=2.7.0   # HOMEBREW_MINIMUM_GIT_VERSION in brew.sh in Homebrew/brew
+
+# no analytics during installation
+export HOMEBREW_NO_ANALYTICS_THIS_RUN=1
+export HOMEBREW_NO_ANALYTICS_MESSAGE_OUTPUT=1
+
+unset HAVE_SUDO_ACCESS # unset this from the environment
+
+# create paths.d file for /opt/homebrew installs
+# (/usr/local/bin is already in the PATH)
+if [[ -d "/etc/paths.d" && "${HOMEBREW_PREFIX}" != "/usr/local" && -x "$(command -v tee)" ]]
+then
+  ADD_PATHS_D=1
+fi
+
+have_sudo_access() {
+  if [[ ! -x "/usr/bin/sudo" ]]
+  then
+    return 1
+  fi
+
+  local -a SUDO=("/usr/bin/sudo")
+  if [[ -n "${SUDO_ASKPASS-}" ]]
+  then
+    SUDO+=("-A")
+  elif [[ -n "${NONINTERACTIVE-}" ]]
+  then
+    SUDO+=("-n")
+  fi
+
+  if [[ -z "${HAVE_SUDO_ACCESS-}" ]]
+  then
+    if [[ -n "${NONINTERACTIVE-}" ]]
+    then
+      "${SUDO[@]}" -l mkdir &>/dev/null
+    else
+      "${SUDO[@]}" -v && "${SUDO[@]}" -l mkdir &>/dev/null
+    fi
+    HAVE_SUDO_ACCESS="$?"
+  fi
+
+  if [[ -n "${HOMEBREW_ON_MACOS-}" ]] && [[ "${HAVE_SUDO_ACCESS}" -ne 0 ]]
+  then
+    abort "Need sudo access on macOS (e.g. the user ${USER} needs to be an Administrator)!"
+  fi
+
+  return "${HAVE_SUDO_ACCESS}"
+}
+
+execute() {
+  if ! "$@"
+  then
+    abort "$(printf "Failed during: %s" "$(shell_join "$@")")"
+  fi
+}
+
+retry() {
+  local tries="$1" n="$1" pause=2
+  shift
+  if ! "$@"
+  then
+    while [[ $((--n)) -gt 0 ]]
+    do
+      warn "$(printf "Trying again in %d seconds: %s" "${pause}" "$(shell_join "$@")")"
+      sleep "${pause}"
+      ((pause *= 2))
+      if "$@"
+      then
+        return
+      fi
+    done
+    abort "$(printf "Failed %d times doing: %s" "${tries}" "$(shell_join "$@")")"
+  fi
+}
+
+execute_sudo() {
+  local -a args=("$@")
+  if [[ "${EUID:-${UID}}" != "0" ]] && have_sudo_access
+  then
+    if [[ -n "${SUDO_ASKPASS-}" ]]
+    then
+      args=("-A" "${args[@]}")
+    fi
+    ohai "/usr/bin/sudo" "${args[@]}"
+    execute "/usr/bin/sudo" "${args[@]}"
+  else
+    ohai "${args[@]}"
+    execute "${args[@]}"
+  fi
+}
+
+getc() {
+  local save_state
+  save_state="$(/bin/stty -g)"
+  /bin/stty raw -echo
+  IFS='' read -r -n 1 -d '' "$@"
+  /bin/stty "${save_state}"
+}
+
+ring_bell() {
+  # Use the shell's audible bell.
+  if [[ -t 1 ]]
+  then
+    printf "\a"
+  fi
+}
+
+wait_for_user() {
+  local c
+  echo
+  echo "Press ${tty_bold}RETURN${tty_reset}/${tty_bold}ENTER${tty_reset} to continue or any other key to abort:"
+  getc c
+  # we test for \r and \n because some stuff does \r instead
+  if ! [[ "${c}" == $'\r' || "${c}" == $'\n' ]]
+  then
+    exit 1
+  fi
+}
+
+major_minor() {
+  echo "${1%%.*}.$(
+    x="${1#*.}"
+    echo "${x%%.*}"
+  )"
+}
+
+version_gt() {
+  [[ "${1%.*}" -gt "${2%.*}" ]] || [[ "${1%.*}" -eq "${2%.*}" && "${1#*.}" -gt "${2#*.}" ]]
+}
+version_ge() {
+  [[ "${1%.*}" -gt "${2%.*}" ]] || [[ "${1%.*}" -eq "${2%.*}" && "${1#*.}" -ge "${2#*.}" ]]
+}
+version_lt() {
+  [[ "${1%.*}" -lt "${2%.*}" ]] || [[ "${1%.*}" -eq "${2%.*}" && "${1#*.}" -lt "${2#*.}" ]]
+}
+
+check_run_command_as_root() {
+  [[ "${EUID:-${UID}}" == "0" ]] || return
+
+  # Allow Azure Pipelines/GitHub Actions/Docker/Concourse/Kubernetes to do everything as root (as it's normal there)
+  [[ -f /.dockerenv ]] && return
+  [[ -f /run/.containerenv ]] && return
+  [[ -f /proc/1/cgroup ]] && grep -E "azpl_job|actions_job|docker|garden|kubepods" -q /proc/1/cgroup && return
+
+  abort "Don't run this as root!"
+}
+
+should_install_command_line_tools() {
+  if [[ -n "${HOMEBREW_ON_LINUX-}" ]]
+  then
+    return 1
+  fi
+
+  if version_gt "${macos_version}" "10.13"
+  then
+    ! [[ -e "/Library/Developer/CommandLineTools/usr/bin/git" ]]
+  else
+    ! [[ -e "/Library/Developer/CommandLineTools/usr/bin/git" ]] ||
+      ! [[ -e "/usr/include/iconv.h" ]]
+  fi
+}
+
+get_permission() {
+  "${STAT_PRINTF[@]}" "${PERMISSION_FORMAT}" "$1"
+}
+
+user_only_chmod() {
+  [[ -d "$1" ]] && [[ "$(get_permission "$1")" != 75[0145] ]]
+}
+
+exists_but_not_writable() {
+  [[ -e "$1" ]] && ! [[ -r "$1" && -w "$1" && -x "$1" ]]
+}
+
+get_owner() {
+  "${STAT_PRINTF[@]}" "%u" "$1"
+}
+
+file_not_owned() {
+  [[ "$(get_owner "$1")" != "$(id -u)" ]]
+}
+
+get_group() {
+  "${STAT_PRINTF[@]}" "%g" "$1"
+}
+
+file_not_grpowned() {
+  [[ " $(id -G "${USER}") " != *" $(get_group "$1") "* ]]
+}
+
+# Please sync with 'test_ruby()' in 'Library/Homebrew/utils/ruby.sh' from the Homebrew/brew repository.
+test_ruby() {
+  if [[ ! -x "$1" ]]
+  then
+    return 1
+  fi
+
+  "$1" --enable-frozen-string-literal --disable=gems,did_you_mean,rubyopt -rrubygems -e \
+    "abort if Gem::Version.new(RUBY_VERSION) < \
+              Gem::Version.new('${REQUIRED_RUBY_VERSION}')" 2>/dev/null
+}
+
+test_curl() {
+  if [[ ! -x "$1" ]]
+  then
+    return 1
+  fi
+
+  if [[ "$1" == "/snap/bin/curl" ]]
+  then
+    warn "Ignoring $1 (curl snap is too restricted)"
+    return 1
+  fi
+
+  local curl_version_output curl_name_and_version
+  curl_version_output="$("$1" --version 2>/dev/null)"
+  curl_name_and_version="${curl_version_output%% (*}"
+  version_ge "$(major_minor "${curl_name_and_version##* }")" "$(major_minor "${REQUIRED_CURL_VERSION}")"
+}
+
+test_git() {
+  if [[ ! -x "$1" ]]
+  then
+    return 1
+  fi
+
+  local git_version_output
+  git_version_output="$("$1" --version 2>/dev/null)"
+  if [[ "${git_version_output}" =~ "git version "([^ ]*).* ]]
+  then
+    version_ge "$(major_minor "${BASH_REMATCH[1]}")" "$(major_minor "${REQUIRED_GIT_VERSION}")"
+  else
+    abort "Unexpected Git version: '${git_version_output}'!"
+  fi
+}
+
+# Search for the given executable in PATH (avoids a dependency on the `which` command)
+which() {
+  # Alias to Bash built-in command `type -P`
+  type -P "$@"
+}
+
+# Search PATH for the specified program that satisfies Homebrew requirements
+# function which is set above
+# shellcheck disable=SC2230
+find_tool() {
+  if [[ $# -ne 1 ]]
+  then
+    return 1
+  fi
+
+  local executable
+  while read -r executable
+  do
+    if [[ "${executable}" != /* ]]
+    then
+      warn "Ignoring ${executable} (relative paths don't work)"
+    elif "test_$1" "${executable}"
+    then
+      echo "${executable}"
+      break
+    fi
+  done < <(which -a "$1")
+}
+
+no_usable_ruby() {
+  [[ -z "$(find_tool ruby)" ]] || ! ruby -e "require 'erb'"
+}
+
+outdated_glibc() {
+  local glibc_version
+  glibc_version="$(ldd --version | head -n1 | grep -o '[0-9.]*$' | grep -o '^[0-9]\+\.[0-9]\+')"
+  version_lt "${glibc_version}" "${REQUIRED_GLIBC_VERSION}"
+}
+
+if [[ -n "${HOMEBREW_ON_LINUX-}" ]] && no_usable_ruby
+then
+  if outdated_glibc
+  then
+    abort "$(
+      cat <<EOABORT
+Homebrew requires Ruby ${REQUIRED_RUBY_VERSION} which was not found on your system.
+Homebrew portable Ruby requires Glibc version ${REQUIRED_GLIBC_VERSION} or newer,
+and your Glibc version is too old. See:
+  ${tty_underline}https://docs.brew.sh/Homebrew-on-Linux#requirements${tty_reset}
+Please install Ruby ${REQUIRED_RUBY_VERSION} and add its location to your PATH.
+EOABORT
+    )"
+  else
+    export HOMEBREW_FORCE_VENDOR_RUBY=1
+  fi
+fi
+
+# Invalidate sudo timestamp before exiting (if it wasn't active before).
+if [[ -x /usr/bin/sudo ]] && ! /usr/bin/sudo -n -v 2>/dev/null
+then
+  trap '/usr/bin/sudo -k' EXIT
+fi
+
+# Things can fail later if `pwd` doesn't exist.
+# Also sudo prints a warning message for no good reason
+cd "/usr" || exit 1
+
+####################################################################### script
+
+# shellcheck disable=SC2016
+ohai 'Checking for `sudo` access (which may request your password)...'
+
+if [[ -n "${HOMEBREW_ON_MACOS-}" ]]
+then
+  [[ "${EUID:-${UID}}" == "0" ]] || have_sudo_access
+elif ! [[ -w "${HOMEBREW_PREFIX}" ]] &&
+     ! [[ -w "/home/linuxbrew" ]] &&
+     ! [[ -w "/home" ]] &&
+     ! have_sudo_access
+then
+  abort "$(
+    cat <<EOABORT
+Insufficient permissions to install Homebrew to "${HOMEBREW_PREFIX}" (the default prefix).
+
+Alternative (unsupported) installation methods are available at:
+https://docs.brew.sh/Installation#alternative-installs
+
+Please note this will require most formula to build from source, a buggy, slow and energy-inefficient experience.
+We will close any issues without response for these unsupported configurations.
+EOABORT
+  )"
+fi
+HOMEBREW_CORE="${HOMEBREW_REPOSITORY}/Library/Taps/homebrew/homebrew-core"
+
+check_run_command_as_root
+
+if [[ -d "${HOMEBREW_PREFIX}" && ! -x "${HOMEBREW_PREFIX}" ]]
+then
+  abort "$(
+    cat <<EOABORT
+The Homebrew prefix ${tty_underline}${HOMEBREW_PREFIX}${tty_reset} exists but is not searchable.
+If this is not intentional, please restore the default permissions and
+try running the installer again:
+    sudo chmod 775 ${HOMEBREW_PREFIX}
+EOABORT
+  )"
+fi
+
+if [[ -n "${HOMEBREW_ON_MACOS-}" ]]
+then
+  # On macOS, support 64-bit Intel and ARM
+  if [[ "${UNAME_MACHINE}" != "arm64" ]] && [[ "${UNAME_MACHINE}" != "x86_64" ]]
+  then
+    abort "Homebrew is only supported on Intel and ARM processors!"
+  fi
+else
+  if [[ "${UNAME_MACHINE}" != "x86_64" ]] && [[ "${UNAME_MACHINE}" != "aarch64" ]]
+  then
+    abort "Homebrew on Linux is only supported on Intel x86_64 and ARM64 processors!"
+  fi
+fi
+
+if [[ -n "${HOMEBREW_ON_MACOS-}" ]]
+then
+  macos_version="$(major_minor "$(/usr/bin/sw_vers -productVersion)")"
+  if version_lt "${macos_version}" "10.7"
+  then
+    abort "$(
+      cat <<EOABORT
+Your Mac OS X version is too old. See:
+  ${tty_underline}https://github.com/mistydemeo/tigerbrew${tty_reset}
+EOABORT
+    )"
+  elif version_lt "${macos_version}" "10.11"
+  then
+    abort "Your OS X version is too old."
+  elif version_ge "${macos_version}" "${MACOS_NEWEST_UNSUPPORTED}" ||
+       version_lt "${macos_version}" "${MACOS_OLDEST_SUPPORTED}"
+  then
+    who="We"
+    what=""
+    if version_ge "${macos_version}" "${MACOS_NEWEST_UNSUPPORTED}"
+    then
+      what="pre-release version"
+    else
+      who+=" (and Apple)"
+      what="old version"
+    fi
+    ohai "You are using macOS ${macos_version}."
+    ohai "${who} do not provide support for this ${what}."
+
+    echo "$(
+      cat <<EOS
+This installation may not succeed.
+After installation, you will encounter build failures with some formulae.
+Please create pull requests instead of asking for help on Homebrew\'s GitHub,
+Twitter or any other official channels. You are responsible for resolving any
+issues you experience while you are running this ${what}.
+EOS
+    )
+" | tr -d "\\"
+  fi
+fi
+
+ohai "This script will install:"
+echo "${HOMEBREW_PREFIX}/bin/brew"
+echo "${HOMEBREW_PREFIX}/share/doc/homebrew"
+echo "${HOMEBREW_PREFIX}/share/man/man1/brew.1"
+echo "${HOMEBREW_PREFIX}/share/zsh/site-functions/_brew"
+echo "${HOMEBREW_PREFIX}/etc/bash_completion.d/brew"
+echo "${HOMEBREW_REPOSITORY}"
+if [[ -n "${ADD_PATHS_D-}" ]]
+then
+  echo "/etc/paths.d/homebrew"
+fi
+
+# Keep relatively in sync with
+# https://github.com/Homebrew/brew/blob/HEAD/Library/Homebrew/keg.rb
+directories=(
+  bin etc include lib sbin share opt var
+  Frameworks
+  etc/bash_completion.d lib/pkgconfig
+  share/aclocal share/doc share/info share/locale share/man
+  share/man/man1 share/man/man2 share/man/man3 share/man/man4
+  share/man/man5 share/man/man6 share/man/man7 share/man/man8
+  var/log var/homebrew var/homebrew/linked
+  bin/brew
+)
+group_chmods=()
+for dir in "${directories[@]}"
+do
+  if exists_but_not_writable "${HOMEBREW_PREFIX}/${dir}"
+  then
+    group_chmods+=("${HOMEBREW_PREFIX}/${dir}")
+  fi
+done
+
+# zsh refuses to read from these directories if group writable
+directories=(share/zsh share/zsh/site-functions)
+zsh_dirs=()
+for dir in "${directories[@]}"
+do
+  zsh_dirs+=("${HOMEBREW_PREFIX}/${dir}")
+done
+
+directories=(
+  bin etc include lib sbin share var opt
+  share/zsh share/zsh/site-functions
+  var/homebrew var/homebrew/linked
+  Cellar Caskroom Frameworks
+)
+mkdirs=()
+for dir in "${directories[@]}"
+do
+  if ! [[ -d "${HOMEBREW_PREFIX}/${dir}" ]]
+  then
+    mkdirs+=("${HOMEBREW_PREFIX}/${dir}")
+  fi
+done
+
+user_chmods=()
+mkdirs_user_only=()
+if [[ "${#zsh_dirs[@]}" -gt 0 ]]
+then
+  for dir in "${zsh_dirs[@]}"
+  do
+    if [[ ! -d "${dir}" ]]
+    then
+      mkdirs_user_only+=("${dir}")
+    elif user_only_chmod "${dir}"
+    then
+      user_chmods+=("${dir}")
+    fi
+  done
+fi
+
+chmods=()
+if [[ "${#group_chmods[@]}" -gt 0 ]]
+then
+  chmods+=("${group_chmods[@]}")
+fi
+if [[ "${#user_chmods[@]}" -gt 0 ]]
+then
+  chmods+=("${user_chmods[@]}")
+fi
+
+chowns=()
+chgrps=()
+if [[ "${#chmods[@]}" -gt 0 ]]
+then
+  for dir in "${chmods[@]}"
+  do
+    if file_not_owned "${dir}"
+    then
+      chowns+=("${dir}")
+    fi
+    if file_not_grpowned "${dir}"
+    then
+      chgrps+=("${dir}")
+    fi
+  done
+fi
+
+if [[ "${#group_chmods[@]}" -gt 0 ]]
+then
+  ohai "The following existing directories will be made group writable:"
+  printf "%s\n" "${group_chmods[@]}"
+fi
+if [[ "${#user_chmods[@]}" -gt 0 ]]
+then
+  ohai "The following existing directories will be made writable by user only:"
+  printf "%s\n" "${user_chmods[@]}"
+fi
+if [[ "${#chowns[@]}" -gt 0 ]]
+then
+  ohai "The following existing directories will have their owner set to ${tty_underline}${USER}${tty_reset}:"
+  printf "%s\n" "${chowns[@]}"
+fi
+if [[ "${#chgrps[@]}" -gt 0 ]]
+then
+  ohai "The following existing directories will have their group set to ${tty_underline}${GROUP}${tty_reset}:"
+  printf "%s\n" "${chgrps[@]}"
+fi
+if [[ "${#mkdirs[@]}" -gt 0 ]]
+then
+  ohai "The following new directories will be created:"
+  printf "%s\n" "${mkdirs[@]}"
+fi
+
+if should_install_command_line_tools
+then
+  ohai "The Xcode Command Line Tools will be installed."
+fi
+
+non_default_repos=""
+additional_shellenv_commands=()
+if [[ "${HOMEBREW_BREW_DEFAULT_GIT_REMOTE}" != "${HOMEBREW_BREW_GIT_REMOTE}" ]]
+then
+  ohai "HOMEBREW_BREW_GIT_REMOTE is set to a non-default URL:"
+  echo "${tty_underline}${HOMEBREW_BREW_GIT_REMOTE}${tty_reset} will be used as the Homebrew/brew Git remote."
+  non_default_repos="Homebrew/brew"
+  additional_shellenv_commands+=("export HOMEBREW_BREW_GIT_REMOTE=\"${HOMEBREW_BREW_GIT_REMOTE}\"")
+fi
+
+if [[ "${HOMEBREW_CORE_DEFAULT_GIT_REMOTE}" != "${HOMEBREW_CORE_GIT_REMOTE}" ]]
+then
+  ohai "HOMEBREW_CORE_GIT_REMOTE is set to a non-default URL:"
+  echo "${tty_underline}${HOMEBREW_CORE_GIT_REMOTE}${tty_reset} will be used as the Homebrew/homebrew-core Git remote."
+  non_default_repos="${non_default_repos:-}${non_default_repos:+ and }Homebrew/homebrew-core"
+  additional_shellenv_commands+=("export HOMEBREW_CORE_GIT_REMOTE=\"${HOMEBREW_CORE_GIT_REMOTE}\"")
+fi
+
+if [[ -n "${HOMEBREW_NO_INSTALL_FROM_API-}" ]]
+then
+  ohai "HOMEBREW_NO_INSTALL_FROM_API is set."
+  echo "Homebrew/homebrew-core will be tapped during this ${tty_bold}install${tty_reset} run."
+fi
+
+if [[ -z "${NONINTERACTIVE-}" ]]
+then
+  ring_bell
+  wait_for_user
+fi
+
+if [[ -d "${HOMEBREW_PREFIX}" ]]
+then
+  if [[ "${#chmods[@]}" -gt 0 ]]
+  then
+    execute_sudo "${CHMOD[@]}" "u+rwx" "${chmods[@]}"
+  fi
+  if [[ "${#group_chmods[@]}" -gt 0 ]]
+  then
+    execute_sudo "${CHMOD[@]}" "g+rwx" "${group_chmods[@]}"
+  fi
+  if [[ "${#user_chmods[@]}" -gt 0 ]]
+  then
+    execute_sudo "${CHMOD[@]}" "go-w" "${user_chmods[@]}"
+  fi
+  if [[ "${#chowns[@]}" -gt 0 ]]
+  then
+    execute_sudo "${CHOWN[@]}" "${USER}" "${chowns[@]}"
+  fi
+  if [[ "${#chgrps[@]}" -gt 0 ]]
+  then
+    execute_sudo "${CHGRP[@]}" "${GROUP}" "${chgrps[@]}"
+  fi
+else
+  execute_sudo "${INSTALL[@]}" "${HOMEBREW_PREFIX}"
+fi
+
+if [[ "${#mkdirs[@]}" -gt 0 ]]
+then
+  execute_sudo "${MKDIR[@]}" "${mkdirs[@]}"
+  execute_sudo "${CHMOD[@]}" "ug=rwx" "${mkdirs[@]}"
+  if [[ "${#mkdirs_user_only[@]}" -gt 0 ]]
+  then
+    execute_sudo "${CHMOD[@]}" "go-w" "${mkdirs_user_only[@]}"
+  fi
+  execute_sudo "${CHOWN[@]}" "${USER}" "${mkdirs[@]}"
+  execute_sudo "${CHGRP[@]}" "${GROUP}" "${mkdirs[@]}"
+fi
+
+if ! [[ -d "${HOMEBREW_REPOSITORY}" ]]
+then
+  execute_sudo "${MKDIR[@]}" "${HOMEBREW_REPOSITORY}"
+fi
+execute_sudo "${CHOWN[@]}" "-R" "${USER}:${GROUP}" "${HOMEBREW_REPOSITORY}"
+
+if ! [[ -d "${HOMEBREW_CACHE}" ]]
+then
+  execute "${MKDIR[@]}" "${HOMEBREW_CACHE}"
+fi
+if exists_but_not_writable "${HOMEBREW_CACHE}"
+then
+  execute_sudo "${CHMOD[@]}" "g+rwx" "${HOMEBREW_CACHE}"
+fi
+if file_not_owned "${HOMEBREW_CACHE}"
+then
+  execute_sudo "${CHOWN[@]}" "-R" "${USER}" "${HOMEBREW_CACHE}"
+fi
+if file_not_grpowned "${HOMEBREW_CACHE}"
+then
+  execute_sudo "${CHGRP[@]}" "-R" "${GROUP}" "${HOMEBREW_CACHE}"
+fi
+if [[ -d "${HOMEBREW_CACHE}" ]]
+then
+  execute "${TOUCH[@]}" "${HOMEBREW_CACHE}/.cleaned"
+fi
+
+if should_install_command_line_tools && version_ge "${macos_version}" "10.13"
+then
+  ohai "Searching online for the Command Line Tools"
+  # This temporary file prompts the 'softwareupdate' utility to list the Command Line Tools
+  clt_placeholder="/tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress"
+  execute_sudo "${TOUCH[@]}" "${clt_placeholder}"
+
+  clt_label_command="/usr/sbin/softwareupdate -l |
+                      grep -B 1 -E 'Command Line Tools' |
+                      awk -F'*' '/^ *\\*/ {print \$2}' |
+                      sed -e 's/^ *Label: //' -e 's/^ *//' |
+                      sort -V |
+                      tail -n1"
+  clt_label="$(chomp "$(/bin/bash -c "${clt_label_command}")")"
+
+  if [[ -n "${clt_label}" ]]
+  then
+    ohai "Installing ${clt_label}"
+    execute_sudo "/usr/sbin/softwareupdate" "-i" "${clt_label}"
+    execute_sudo "/usr/bin/xcode-select" "--switch" "/Library/Developer/CommandLineTools"
+  fi
+  execute_sudo "/bin/rm" "-f" "${clt_placeholder}"
+fi
+
+# Headless install may have failed, so fallback to original 'xcode-select' method
+if should_install_command_line_tools && test -t 0
+then
+  ohai "Installing the Command Line Tools (expect a GUI popup):"
+  execute "/usr/bin/xcode-select" "--install"
+  echo "Press any key when the installation has completed."
+  getc
+  execute_sudo "/usr/bin/xcode-select" "--switch" "/Library/Developer/CommandLineTools"
+fi
+
+if [[ -n "${HOMEBREW_ON_MACOS-}" ]] && ! output="$(/usr/bin/xcrun clang 2>&1)" && [[ "${output}" == *"license"* ]]
+then
+  abort "$(
+    cat <<EOABORT
+You have not agreed to the Xcode license.
+Before running the installer again please agree to the license by opening
+Xcode.app or running:
+    sudo xcodebuild -license
+EOABORT
+  )"
+fi
+
+USABLE_GIT=/usr/bin/git
+if [[ -n "${HOMEBREW_ON_LINUX-}" ]]
+then
+  USABLE_GIT="$(find_tool git)"
+  if [[ -z "$(command -v git)" ]]
+  then
+    abort "$(
+      cat <<EOABORT
+  You must install Git before installing Homebrew. See:
+    ${tty_underline}https://docs.brew.sh/Installation${tty_reset}
+EOABORT
+    )"
+  fi
+  if [[ -z "${USABLE_GIT}" ]]
+  then
+    abort "$(
+      cat <<EOABORT
+  The version of Git that was found does not satisfy requirements for Homebrew.
+  Please install Git ${REQUIRED_GIT_VERSION} or newer and add it to your PATH.
+EOABORT
+    )"
+  fi
+  if [[ "${USABLE_GIT}" != /usr/bin/git ]]
+  then
+    export HOMEBREW_GIT_PATH="${USABLE_GIT}"
+    ohai "Found Git: ${HOMEBREW_GIT_PATH}"
+  fi
+fi
+
+if ! command -v curl >/dev/null
+then
+  abort "$(
+    cat <<EOABORT
+You must install cURL before installing Homebrew. See:
+  ${tty_underline}https://docs.brew.sh/Installation${tty_reset}
+EOABORT
+  )"
+elif [[ -n "${HOMEBREW_ON_LINUX-}" ]]
+then
+  USABLE_CURL="$(find_tool curl)"
+  if [[ -z "${USABLE_CURL}" ]]
+  then
+    abort "$(
+      cat <<EOABORT
+The version of cURL that was found does not satisfy requirements for Homebrew.
+Please install cURL ${REQUIRED_CURL_VERSION} or newer and add it to your PATH.
+EOABORT
+    )"
+  elif [[ "${USABLE_CURL}" != /usr/bin/curl ]]
+  then
+    export HOMEBREW_CURL_PATH="${USABLE_CURL}"
+    ohai "Found cURL: ${HOMEBREW_CURL_PATH}"
+  fi
+fi
+
+ohai "Downloading and installing Homebrew..."
+(
+  cd "${HOMEBREW_REPOSITORY}" >/dev/null || return
+
+  # we do it in four steps to avoid merge errors when reinstalling
+  execute "${USABLE_GIT}" "-c" "init.defaultBranch=main" "init" "--quiet"
+
+  # "git remote add" will fail if the remote is defined in the global config
+  execute "${USABLE_GIT}" "config" "remote.origin.url" "${HOMEBREW_BREW_GIT_REMOTE}"
+  execute "${USABLE_GIT}" "config" "remote.origin.fetch" "+refs/heads/*:refs/remotes/origin/*"
+  execute "${USABLE_GIT}" "config" "--bool" "fetch.prune" "true"
+
+  # ensure we don't munge line endings on checkout
+  execute "${USABLE_GIT}" "config" "--bool" "core.autocrlf" "false"
+
+  # make sure symlinks are saved as-is
+  execute "${USABLE_GIT}" "config" "--bool" "core.symlinks" "true"
+
+  if [[ -z "${NONINTERACTIVE-}" ]]
+  then
+    quiet_progress=("--quiet" "--progress")
+  else
+    quiet_progress=("--quiet")
+  fi
+  retry 5 "${USABLE_GIT}" "fetch" "${quiet_progress[@]}" "--force" "origin"
+  retry 5 "${USABLE_GIT}" "fetch" "${quiet_progress[@]}" "--force" "--tags" "origin"
+
+  execute "${USABLE_GIT}" "remote" "set-head" "origin" "--auto" >/dev/null
+
+  LATEST_GIT_TAG="$("${USABLE_GIT}" -c "column.ui=never" tag --list --sort="-version:refname" | head -n1)"
+  if [[ -z "${LATEST_GIT_TAG}" ]]
+  then
+    abort "Failed to query latest Homebrew/brew Git tag."
+  fi
+  execute "${USABLE_GIT}" "checkout" "--quiet" "--force" "-B" "stable" "${LATEST_GIT_TAG}"
+
+  if [[ "${HOMEBREW_REPOSITORY}" != "${HOMEBREW_PREFIX}" ]]
+  then
+    if [[ "${HOMEBREW_REPOSITORY}" == "${HOMEBREW_PREFIX}/Homebrew" ]]
+    then
+      execute "ln" "-sf" "../Homebrew/bin/brew" "${HOMEBREW_PREFIX}/bin/brew"
+    else
+      abort "The Homebrew/brew repository should be placed in the Homebrew prefix directory."
+    fi
+  fi
+
+  if [[ -n "${HOMEBREW_NO_INSTALL_FROM_API-}" && ! -d "${HOMEBREW_CORE}" ]]
+  then
+    # Always use single-quoted strings with `exp` expressions
+    # shellcheck disable=SC2016
+    ohai 'Tapping homebrew/core because `$HOMEBREW_NO_INSTALL_FROM_API` is set.'
+    (
+      execute "${MKDIR[@]}" "${HOMEBREW_CORE}"
+      cd "${HOMEBREW_CORE}" >/dev/null || return
+
+      execute "${USABLE_GIT}" "-c" "init.defaultBranch=main" "init" "--quiet"
+      execute "${USABLE_GIT}" "config" "remote.origin.url" "${HOMEBREW_CORE_GIT_REMOTE}"
+      execute "${USABLE_GIT}" "config" "remote.origin.fetch" "+refs/heads/*:refs/remotes/origin/*"
+      execute "${USABLE_GIT}" "config" "--bool" "fetch.prune" "true"
+      execute "${USABLE_GIT}" "config" "--bool" "core.autocrlf" "false"
+      execute "${USABLE_GIT}" "config" "--bool" "core.symlinks" "true"
+      retry 5 "${USABLE_GIT}" "fetch" "--force" "${quiet_progress[@]}" \
+        "origin" "refs/heads/main:refs/remotes/origin/main"
+      execute "${USABLE_GIT}" "remote" "set-head" "origin" "--auto" >/dev/null
+      execute "${USABLE_GIT}" "reset" "--hard" "origin/main"
+
+      cd "${HOMEBREW_REPOSITORY}" >/dev/null || return
+    ) || exit 1
+  fi
+
+  if [[ -n "${ADD_PATHS_D-}" ]]
+  then
+    execute_sudo "${MKDIR[@]}" /etc/paths.d
+    echo "${HOMEBREW_PREFIX}/bin" | execute_sudo tee /etc/paths.d/homebrew
+    execute_sudo "${CHOWN[@]}" root:wheel /etc/paths.d/homebrew
+    execute_sudo "${CHMOD[@]}" "a+r" /etc/paths.d/homebrew
+  elif [[ ":${PATH}:" != *":${HOMEBREW_PREFIX}/bin:"* ]]
+  then
+    PATH_WARN=1
+  fi
+
+  execute "${HOMEBREW_PREFIX}/bin/brew" "update" "--force" "--quiet"
+
+  if [[ -n "${PATH_WARN-}" ]]
+  then
+    warn "${HOMEBREW_PREFIX}/bin is not in your PATH.
+  Instructions on how to configure your shell for Homebrew
+  can be found in the 'Next steps' section below."
+  fi
+) || exit 1
+
+ohai "Installation successful!"
+echo
+
+ring_bell
+
+# Use an extra newline and bold to avoid this being missed.
+ohai "Homebrew has enabled anonymous aggregate formulae and cask analytics."
+echo "$(
+  cat <<EOS
+${tty_bold}Read the analytics documentation (and how to opt-out) here:
+  ${tty_underline}https://docs.brew.sh/Analytics${tty_reset}
+No analytics data has been sent yet (nor will any be during this ${tty_bold}install${tty_reset} run).
+EOS
+)
+"
+
+ohai "Homebrew is run entirely by unpaid volunteers. Please consider donating:"
+echo "$(
+  cat <<EOS
+  ${tty_underline}https://github.com/Homebrew/brew#donations${tty_reset}
+EOS
+)
+"
+
+(
+  cd "${HOMEBREW_REPOSITORY}" >/dev/null || return
+  execute "${USABLE_GIT}" "config" "--replace-all" "homebrew.analyticsmessage" "true"
+  execute "${USABLE_GIT}" "config" "--replace-all" "homebrew.caskanalyticsmessage" "true"
+) || exit 1
+
+ohai "Next steps:"
+case "${SHELL}" in
+  */bash*)
+    if [[ -n "${HOMEBREW_ON_LINUX-}" ]]
+    then
+      shell_rcfile="${HOME}/.bashrc"
+    else
+      shell_rcfile="${HOME}/.bash_profile"
+    fi
+    ;;
+  */zsh*)
+    if [[ -n "${HOMEBREW_ON_LINUX-}" ]]
+    then
+      shell_rcfile="${ZDOTDIR:-"${HOME}"}/.zshrc"
+    else
+      shell_rcfile="${ZDOTDIR:-"${HOME}"}/.zprofile"
+    fi
+    ;;
+  */fish*)
+    shell_rcfile="${HOME}/.config/fish/config.fish"
+    ;;
+  *)
+    shell_rcfile="${ENV:-"${HOME}/.profile"}"
+    ;;
+esac
+
+if grep -qs "eval \"\$(${HOMEBREW_PREFIX}/bin/brew shellenv)\"" "${shell_rcfile}"
+then
+  if ! [[ -x "$(command -v brew)" ]]
+  then
+    cat <<EOS
+- Run this command in your terminal to add Homebrew to your ${tty_bold}PATH${tty_reset}:
+    eval "\$(${HOMEBREW_PREFIX}/bin/brew shellenv)"
+EOS
+  fi
+else
+  cat <<EOS
+- Run these commands in your terminal to add Homebrew to your ${tty_bold}PATH${tty_reset}:
+    echo >> ${shell_rcfile}
+    echo 'eval "\$(${HOMEBREW_PREFIX}/bin/brew shellenv)"' >> ${shell_rcfile}
+    eval "\$(${HOMEBREW_PREFIX}/bin/brew shellenv)"
+EOS
+fi
+
+if [[ -n "${non_default_repos}" ]]
+then
+  plural=""
+  if [[ "${#additional_shellenv_commands[@]}" -gt 1 ]]
+  then
+    plural="s"
+  fi
+  printf -- "- Run these commands in your terminal to add the non-default Git remote%s for %s:\n" "${plural}" "${non_default_repos}"
+  printf "    echo '# Set non-default Git remote%s for %s.' >> %s\n" "${plural}" "${non_default_repos}" "${shell_rcfile}"
+  printf "    echo '%s' >> ${shell_rcfile}\n" "${additional_shellenv_commands[@]}"
+  printf "    %s\n" "${additional_shellenv_commands[@]}"
+fi
+
+if [[ -n "${HOMEBREW_ON_LINUX-}" ]]
+then
+  echo "- Install Homebrew's dependencies if you have sudo access:"
+
+  if [[ -x "$(command -v apt-get)" ]]
+  then
+    echo "    sudo apt-get install build-essential"
+  elif [[ -x "$(command -v dnf)" ]]
+  then
+    echo "    sudo dnf group install development-tools"
+  elif [[ -x "$(command -v yum)" ]]
+  then
+    echo "    sudo yum groupinstall 'Development Tools'"
+  elif [[ -x "$(command -v pacman)" ]]
+  then
+    echo "    sudo pacman -S base-devel"
+  elif [[ -x "$(command -v apk)" ]]
+  then
+    echo "    sudo apk add build-base"
+  fi
+
+  cat <<EOS
+  For more information, see:
+    ${tty_underline}https://docs.brew.sh/Homebrew-on-Linux${tty_reset}
+- We recommend that you install GCC:
+    brew install gcc
+EOS
+fi
+
+cat <<EOS
+- Run ${tty_bold}brew help${tty_reset} to get started
+- Further documentation:
+    ${tty_underline}https://docs.brew.sh${tty_reset}
+
+EOS[0m
+[1;33m[2025-12-20 16:39:18] [WARN] Homebrew binary not found at standard location, skipping path config.[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:39:18] [INFO] ==> Konsole [install][0m
+[1;36m[2025-12-20 16:39:18] [INFO] Simulating Install: Konsole[0m
+[1;36m[2025-12-20 16:39:18] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:39:18] [INFO] DRY-RUN: apt 安装 konsole ⇒ sudo apt-get install -y --install-recommends konsole[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:39:18] [INFO] ==> Krusader [install][0m
+[1;36m[2025-12-20 16:39:18] [INFO] Simulating Install: Krusader[0m
+[1;36m[2025-12-20 16:39:18] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:39:18] [INFO] DRY-RUN: apt 安装 krusader ⇒ sudo apt-get install -y --install-recommends krusader[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:39:18] [INFO] ==> LocalSend [install][0m
+[1;36m[2025-12-20 16:39:18] [INFO] Simulating Install: LocalSend[0m
+[1;36m[2025-12-20 16:39:18] [INFO] 已存在命令：curl[0m
+[1;36m[2025-12-20 16:39:18] [INFO] 已存在命令：jq[0m
+[1;36m[2025-12-20 16:39:19] [INFO] DRY-RUN: Downloading LocalSend ⇒ curl -L -o /tmp/localsend_install.deb https://github.com/localsend/localsend/releases/download/v1.17.0/LocalSend-1.17.0-linux-x86-64.deb[0m
+[1;36m[2025-12-20 16:39:19] [INFO] Installing package...[0m
+[1;36m[2025-12-20 16:39:19] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:39:19] [INFO] DRY-RUN: apt 安装 /tmp/localsend_install.deb ⇒ sudo apt-get install -y --install-recommends /tmp/localsend_install.deb[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:39:19] [INFO] ==> Micro Editor [install][0m
+[1;36m[2025-12-20 16:39:19] [INFO] Simulating Install: Micro Editor[0m
+[1;36m[2025-12-20 16:39:19] [INFO] Finding latest asset for zyedidia/micro...[0m
+[1;36m[2025-12-20 16:39:19] [INFO] 已存在命令：curl[0m
+[1;36m[2025-12-20 16:39:19] [INFO] 已存在命令：jq[0m
+[1;36m[2025-12-20 16:39:19] [INFO] DRY-RUN: Downloading Micro ⇒ curl -L -o /tmp/micro_install/micro.tar.gz https://github.com/zyedidia/micro/releases/download/v2.0.14/micro-2.0.14-linux64.tar.gz[0m
+[1;36m[2025-12-20 16:39:19] [INFO] Extracting...[0m
+tar (child): /tmp/micro_install/micro.tar.gz: Cannot open: No such file or directory
+tar (child): Error is not recoverable: exiting now
+tar: Child returned status 2
+tar: Error is not recoverable: exiting now
+[1;31m[2025-12-20 16:39:19] [ERR ] Could not find micro binary in extracted files.[0m
+[1;31m[2025-12-20 16:39:19] [ERR ] Module failed with 1[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:39:19] [INFO] ==> Neofetch [install][0m
+[1;36m[2025-12-20 16:39:19] [INFO] Simulating Install: Neofetch[0m
+[1;36m[2025-12-20 16:39:19] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:39:19] [INFO] DRY-RUN: apt 安装 fastfetch ⇒ sudo apt-get install -y --install-recommends fastfetch[0m
+[1;36m[2025-12-20 16:39:19] [INFO] DRY-RUN: Creating neofetch alias ⇒ sudo ln -sf /usr/bin/fastfetch /usr/bin/neofetch[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:39:19] [INFO] ==> PDF Arranger [install][0m
+[1;36m[2025-12-20 16:39:19] [INFO] Simulating Install: PDF Arranger[0m
+[1;36m[2025-12-20 16:39:19] [INFO] Installing system dependencies...[0m
+[1;36m[2025-12-20 16:39:19] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:39:19] [INFO] DRY-RUN: apt 安装 python3-pip python3-wheel python3-gi python3-gi-cairo gir1.2-gtk-3.0 gir1.2-poppler-0.18 gir1.2-handy-1 python3-setuptools gir1.2-gdkpixbuf-2.0 pkg-config libcairo2-dev libgirepository1.0-dev libgirepository-2.0-dev gettext ⇒ sudo apt-get install -y --install-recommends python3-pip python3-wheel python3-gi python3-gi-cairo gir1.2-gtk-3.0 gir1.2-poppler-0.18 gir1.2-handy-1 python3-setuptools gir1.2-gdkpixbuf-2.0 pkg-config libcairo2-dev libgirepository1.0-dev libgirepository-2.0-dev gettext[0m
+[1;36m[2025-12-20 16:39:20] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:39:20] [INFO] DRY-RUN: apt 安装 pipx ⇒ sudo apt-get install -y --install-recommends pipx[0m
+[1;36m[2025-12-20 16:39:20] [INFO] DRY-RUN: Ensuring pipx path for Andyyu ⇒ sudo -u Andyyu pipx ensurepath[0m
+[1;36m[2025-12-20 16:39:20] [INFO] Installing pdfarranger via pipx as user Andyyu...[0m
+DRY-RUN (sudo): -u Andyyu pipx install https://github.com/pdfarranger/pdfarranger/zipball/main --force
+DRY-RUN (sudo): -u Andyyu pipx inject pdfarranger pygobject --force
+------------------------------------------------
+[1;36m[2025-12-20 16:39:20] [INFO] ==> Plank Dock [install][0m
+[1;36m[2025-12-20 16:39:20] [INFO] Simulating Install: Plank Dock[0m
+[1;36m[2025-12-20 16:39:20] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:39:20] [INFO] DRY-RUN: apt 安装 plank ⇒ sudo apt-get install -y --install-recommends plank[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:39:20] [INFO] ==> Pot Desktop [install][0m
+[1;36m[2025-12-20 16:39:20] [INFO] Simulating Install: Pot Desktop[0m
+[1;36m[2025-12-20 16:39:20] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:39:20] [INFO] DRY-RUN: apt 安装 curl libfuse2 ⇒ sudo apt-get install -y --install-recommends curl libfuse2[0m
+[1;36m[2025-12-20 16:39:20] [INFO] 已存在命令：curl[0m
+[1;36m[2025-12-20 16:39:20] [INFO] 已存在命令：jq[0m
+DRY-RUN (sudo): mkdir -p /opt/pot
+[1;36m[2025-12-20 16:39:20] [INFO] DRY-RUN: Downloading Pot AppImage ⇒ sudo curl -L -o /opt/pot/pot.AppImage https://github.com/pot-app/pot-desktop/releases/download/3.0.7/pot_3.0.7_amd64.AppImage[0m
+DRY-RUN (sudo): chmod +x /opt/pot/pot.AppImage
+[1;36m[2025-12-20 16:39:20] [INFO] DRY-RUN: Creating symlink ⇒ sudo ln -sf /opt/pot/pot.AppImage /usr/bin/pot[0m
+DRY-RUN (sudo): curl -fsSL https://raw.githubusercontent.com/pot-app/pot-desktop/master/public/icon.png -o /opt/pot/pot.png
+
+[36m--- Pot Desktop Installed (AppImage) ---[0m
+[32mLocation: /opt/pot/pot.AppImage[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:39:21] [INFO] ==> Cloud Storage (rclone) [install][0m
+[1;36m[2025-12-20 16:39:21] [INFO] Simulating Install: Cloud Storage (rclone)[0m
+[1;36m[2025-12-20 16:39:21] [INFO] Installing latest rclone from official script...[0m
+DRY-RUN (sudo): bash
+curl: (23) Failure writing output to destination, passed 4734 returned 0
+------------------------------------------------
+[1;36m[2025-12-20 16:39:21] [INFO] ==> Rime Input Method (Fcitx5) [install][0m
+[1;36m[2025-12-20 16:39:21] [INFO] Simulating Install: Rime Input Method (Fcitx5)[0m
+[1;36m[2025-12-20 16:39:21] [INFO] Removing conflicting input methods (ibus, fcitx4)...[0m
+[1;36m[2025-12-20 16:39:21] [INFO] Installing Fcitx5 packages...[0m
+[1;36m[2025-12-20 16:39:21] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:39:21] [INFO] DRY-RUN: apt 安装 fcitx5 fcitx5-rime fcitx5-chinese-addons fcitx5-frontend-gtk2 fcitx5-frontend-gtk3 fcitx5-frontend-qt5 fcitx5-module-cloudpinyin qt5-style-plugins zenity fcitx5-module-lua fcitx5-material-color fonts-noto-cjk fonts-noto-color-emoji git curl im-config ⇒ sudo apt-get install -y --install-recommends fcitx5 fcitx5-rime fcitx5-chinese-addons fcitx5-frontend-gtk2 fcitx5-frontend-gtk3 fcitx5-frontend-qt5 fcitx5-module-cloudpinyin qt5-style-plugins zenity fcitx5-module-lua fcitx5-material-color fonts-noto-cjk fonts-noto-color-emoji git curl im-config[0m
+[1;36m[2025-12-20 16:39:21] [INFO] Configuring Environment Variables...[0m
+[1;36m[2025-12-20 16:39:22] [INFO] Using im-config to set fcitx5 as default...[0m
+DRY-RUN (sudo): -u Andyyu im-config -n fcitx5
+[1;36m[2025-12-20 16:39:22] [INFO] Stopping running Fcitx5 process to apply configurations...[0m
+[1;36m[2025-12-20 16:39:24] [INFO] Installing Rime-Ice (雾凇拼音)...[0m
+[1;36m[2025-12-20 16:39:24] [INFO] 已存在命令：git[0m
+Cloning into '/tmp/rime-ice-install'...
+[1;36m[2025-12-20 16:39:28] [INFO] Copying Rime-Ice configurations...[0m
+[1;36m[2025-12-20 16:39:29] [INFO] Setting Rime-Ice to default to English (ASCII mode)...[0m
+[1;36m[2025-12-20 16:39:29] [INFO] Rime (Fcitx5+Ice) installation complete.[0m
+[1;33m[2025-12-20 16:39:29] [WARN] Please RESTART your session (logout/login) for changes to take effect.[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:39:29] [INFO] ==> Snap Package Manager [install][0m
+[1;36m[2025-12-20 16:39:29] [INFO] Simulating Install: Snap Package Manager[0m
+[1;36m[2025-12-20 16:39:29] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:39:29] [INFO] DRY-RUN: apt 安装 snapd ⇒ sudo apt-get install -y --install-recommends snapd[0m
+[1;36m[2025-12-20 16:39:29] [INFO] DRY-RUN: Installing snap-store ⇒ sudo snap install snap-store[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:39:29] [INFO] ==> SpaceFM [install][0m
+[1;36m[2025-12-20 16:39:29] [INFO] Simulating Install: SpaceFM[0m
+[1;36m[2025-12-20 16:39:29] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:39:29] [INFO] DRY-RUN: apt 安装 spacefm ⇒ sudo apt-get install -y --install-recommends spacefm[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:39:29] [INFO] ==> SSHFS [install][0m
+[1;36m[2025-12-20 16:39:29] [INFO] Simulating Install: SSHFS[0m
+[1;36m[2025-12-20 16:39:29] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:39:29] [INFO] DRY-RUN: apt 安装 sshfs ⇒ sudo apt-get install -y --install-recommends sshfs[0m
+[1;36m[2025-12-20 16:39:29] [INFO] Adding Andyyu to fuse group (if exists)...[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:39:29] [INFO] ==> Stretchly [install][0m
+[1;36m[2025-12-20 16:39:29] [INFO] Simulating Install: Stretchly[0m
+[1;36m[2025-12-20 16:39:29] [INFO] 已存在命令：curl[0m
+[1;36m[2025-12-20 16:39:29] [INFO] 已存在命令：jq[0m
+[1;36m[2025-12-20 16:39:30] [INFO] DRY-RUN: Downloading Stretchly ⇒ curl -L -o /tmp/stretchly_install.deb https://github.com/hovancik/stretchly/releases/download/v1.19.0/Stretchly_1.19.0_amd64.deb[0m
+[1;36m[2025-12-20 16:39:30] [INFO] Installing package...[0m
+[1;36m[2025-12-20 16:39:30] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:39:30] [INFO] DRY-RUN: apt 安装 /tmp/stretchly_install.deb ⇒ sudo apt-get install -y --install-recommends /tmp/stretchly_install.deb[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:39:30] [INFO] ==> Double-ESC Sudo [install][0m
+[1;36m[2025-12-20 16:39:30] [INFO] Simulating Install: Double-ESC Sudo[0m
+[1;36m[2025-12-20 16:39:30] [INFO] Double-ESC Sudo already configured.[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:39:30] [INFO] ==> Tabby Terminal [install][0m
+[1;36m[2025-12-20 16:39:30] [INFO] Simulating Install: Tabby Terminal[0m
+[1;36m[2025-12-20 16:39:30] [INFO] 已存在命令：curl[0m
+[1;36m[2025-12-20 16:39:30] [INFO] 已存在命令：jq[0m
+[1;36m[2025-12-20 16:39:30] [INFO] DRY-RUN: Downloading Tabby ⇒ curl -L -o /tmp/tabby_install.deb https://github.com/Eugeny/tabby/releases/download/v1.0.229/tabby-1.0.229-linux-x64.deb[0m
+[1;36m[2025-12-20 16:39:30] [INFO] Installing package...[0m
+[1;36m[2025-12-20 16:39:30] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:39:30] [INFO] DRY-RUN: apt 安装 /tmp/tabby_install.deb ⇒ sudo apt-get install -y --install-recommends /tmp/tabby_install.deb[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:39:30] [INFO] ==> Telegram [install][0m
+[1;36m[2025-12-20 16:39:30] [INFO] Simulating Install: Telegram[0m
+[1;36m[2025-12-20 16:39:30] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:39:30] [INFO] DRY-RUN: apt 安装 curl xz-utils ⇒ sudo apt-get install -y --install-recommends curl xz-utils[0m
+[1;36m[2025-12-20 16:39:30] [INFO] DRY-RUN: Downloading Telegram ⇒ curl -L -o /tmp/telegram.tar.xz https://telegram.org/dl/desktop/linux[0m
+[1;36m[2025-12-20 16:39:30] [INFO] Installing to /opt/Telegram...[0m
+DRY-RUN (sudo): tar -xf /tmp/telegram.tar.xz -C /opt/
+[1;36m[2025-12-20 16:39:30] [INFO] DRY-RUN: Linking binary ⇒ sudo ln -sf /opt/Telegram/Telegram /usr/bin/telegram-desktop[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:39:30] [INFO] ==> VLC Media Player [install][0m
+[1;36m[2025-12-20 16:39:30] [INFO] Simulating Install: VLC Media Player[0m
+[1;36m[2025-12-20 16:39:30] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:39:30] [INFO] DRY-RUN: apt 安装 vlc ⇒ sudo apt-get install -y --install-recommends vlc[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:39:30] [INFO] ==> Warp Terminal [install][0m
+[1;36m[2025-12-20 16:39:30] [INFO] Simulating Install: Warp Terminal[0m
+[1;36m[2025-12-20 16:39:31] [INFO] Warp installed (0.2025.12.17.17.17.stable.02). Re-installing to ensure latest...[0m
+[1;36m[2025-12-20 16:39:31] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:39:31] [INFO] DRY-RUN: apt 安装 curl ⇒ sudo apt-get install -y --install-recommends curl[0m
+[1;36m[2025-12-20 16:39:31] [INFO] DRY-RUN: Downloading Warp ⇒ curl -L -o /tmp/warp_install.deb https://app.warp.dev/download?package=deb[0m
+[1;36m[2025-12-20 16:39:31] [INFO] Installing Warp...[0m
+[1;36m[2025-12-20 16:39:31] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:39:31] [INFO] DRY-RUN: apt 安装 /tmp/warp_install.deb ⇒ sudo apt-get install -y --install-recommends /tmp/warp_install.deb[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:39:31] [INFO] ==> Windsurf IDE [install][0m
+[1;36m[2025-12-20 16:39:31] [INFO] Simulating Install: Windsurf IDE[0m
+[1;36m[2025-12-20 16:39:31] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:39:31] [INFO] DRY-RUN: apt 安装 curl gnupg ⇒ sudo apt-get install -y --install-recommends curl gnupg[0m
+[1;36m[2025-12-20 16:39:31] [INFO] Adding Windsurf GPG key...[0m
+[1;36m[2025-12-20 16:39:31] [INFO] DRY-RUN: Saving GPG key ⇒ sudo gpg --dearmor --yes -o /usr/share/keyrings/windsurf-stable-archive-keyring.gpg[0m
+[1;36m[2025-12-20 16:39:31] [INFO] Adding Windsurf repository...[0m
+[1;36m[2025-12-20 16:39:31] [INFO] DRY-RUN: Writing sources list ⇒ sudo tee /etc/apt/sources.list.d/windsurf.list[0m
+[1;36m[2025-12-20 16:39:31] [INFO] DRY-RUN: Updating apt ⇒ sudo apt-get update[0m
+[1;36m[2025-12-20 16:39:31] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:39:31] [INFO] DRY-RUN: apt 安装 windsurf ⇒ sudo apt-get install -y --install-recommends windsurf[0m
+------------------------------------------------
+[1;36m[2025-12-20 16:39:31] [INFO] ==> WPS Office [install][0m
+[1;36m[2025-12-20 16:39:31] [INFO] Simulating Install: WPS Office[0m
+[1;36m[2025-12-20 16:39:31] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:39:31] [INFO] DRY-RUN: apt 安装 wget ⇒ sudo apt-get install -y --install-recommends wget[0m
+[1;36m[2025-12-20 16:39:31] [INFO] DRY-RUN: Downloading WPS Office ⇒ wget -O /tmp/wps_install.deb https://wps-linux-365.wpscdn.cn/wps/download/ep/Linux365/19829/wps-office_12.8.2.19829.AK.preload.sw_amd64.deb[0m
+[1;36m[2025-12-20 16:39:31] [INFO] Installing WPS Office...[0m
+[1;36m[2025-12-20 16:39:31] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:39:31] [INFO] DRY-RUN: apt 安装 /tmp/wps_install.deb ⇒ sudo apt-get install -y --install-recommends /tmp/wps_install.deb[0m
+[1;36m[2025-12-20 16:39:31] [INFO] Preventing WPS auto-update (holding package)...[0m
+DRY-RUN (sudo): apt-mark hold wps-office
+------------------------------------------------
+[1;36m[2025-12-20 16:39:31] [INFO] ==> Zsh Integration [install][0m
+[1;36m[2025-12-20 16:39:31] [INFO] Simulating Install: Zsh Integration[0m
+[1;36m[2025-12-20 16:39:31] [INFO] Target user: Andyyu (/home/Andyyu)[0m
+[1;36m[2025-12-20 16:39:31] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:39:31] [INFO] DRY-RUN: apt 安装 zsh ⇒ sudo apt-get install -y --install-recommends zsh[0m
+[1;36m[2025-12-20 16:39:31] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:39:31] [INFO] DRY-RUN: apt 安装 git ⇒ sudo apt-get install -y --install-recommends git[0m
+[1;36m[2025-12-20 16:39:31] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:39:31] [INFO] DRY-RUN: apt 安装 curl ⇒ sudo apt-get install -y --install-recommends curl[0m
+[1;36m[2025-12-20 16:39:31] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:39:31] [INFO] DRY-RUN: apt 安装 fzf ⇒ sudo apt-get install -y --install-recommends fzf[0m
+[1;36m[2025-12-20 16:39:31] [INFO] DRY-RUN: apt 更新索引 ⇒ sudo apt-get update -y[0m
+[1;36m[2025-12-20 16:39:31] [INFO] DRY-RUN: apt 安装 autojump ⇒ sudo apt-get install -y --install-recommends autojump[0m
+[1;36m[2025-12-20 16:39:31] [INFO] Installing Oh My Zsh...[0m
+DRY-RUN (sudo): -u Andyyu sh -c #!/bin/sh
+#
+# This script should be run via curl:
+#   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# or via wget:
+#   sh -c "$(wget -qO- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# or via fetch:
+#   sh -c "$(fetch -o - https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+#
+# As an alternative, you can first download the install script and run it afterwards:
+#   wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+#   sh install.sh
+#
+# You can tweak the install behavior by setting variables when running the script. For
+# example, to change the path to the Oh My Zsh repository:
+#   ZSH=~/.zsh sh install.sh
+#
+# Respects the following environment variables:
+#   ZDOTDIR - path to Zsh dotfiles directory (default: unset). See [1][2]
+#             [1] https://zsh.sourceforge.io/Doc/Release/Parameters.html#index-ZDOTDIR
+#             [2] https://zsh.sourceforge.io/Doc/Release/Files.html#index-ZDOTDIR_002c-use-of
+#   ZSH     - path to the Oh My Zsh repository folder (default: $HOME/.oh-my-zsh)
+#   REPO    - name of the GitHub repo to install from (default: ohmyzsh/ohmyzsh)
+#   REMOTE  - full remote URL of the git repo to install (default: GitHub via HTTPS)
+#   BRANCH  - branch to check out immediately after install (default: master)
+#
+# Other options:
+#   CHSH                   - 'no' means the installer will not change the default shell (default: yes)
+#   RUNZSH                 - 'no' means the installer will not run zsh after the install (default: yes)
+#   KEEP_ZSHRC             - 'yes' means the installer will not replace an existing .zshrc (default: no)
+#   OVERWRITE_CONFIRMATION - 'no' means the installer will not ask for confirmation to overwrite the existing .zshrc (default: yes)
+#
+# You can also pass some arguments to the install script to set some these options:
+#   --skip-chsh: has the same behavior as setting CHSH to 'no'
+#   --unattended: sets both CHSH and RUNZSH to 'no'
+#   --keep-zshrc: sets KEEP_ZSHRC to 'yes'
+# For example:
+#   sh install.sh --unattended
+# or:
+#   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+#
+set -e
+
+# Make sure important variables exist if not already defined
+#
+# $USER is defined by login(1) which is not always executed (e.g. containers)
+# POSIX: https://pubs.opengroup.org/onlinepubs/009695299/utilities/id.html
+USER=${USER:-$(id -u -n)}
+# $HOME is defined at the time of login, but it could be unset. If it is unset,
+# a tilde by itself (~) will not be expanded to the current user's home directory.
+# POSIX: https://pubs.opengroup.org/onlinepubs/009696899/basedefs/xbd_chap08.html#tag_08_03
+HOME="${HOME:-$(getent passwd $USER 2>/dev/null | cut -d: -f6)}"
+# macOS does not have getent, but this works even if $HOME is unset
+HOME="${HOME:-$(eval echo ~$USER)}"
+
+
+# Track if $ZSH was provided
+custom_zsh=${ZSH:+yes}
+
+# Use $zdot to keep track of where the directory is for zsh dotfiles
+# To check if $ZDOTDIR was provided, explicitly check for $ZDOTDIR
+zdot="${ZDOTDIR:-$HOME}"
+
+# Default value for $ZSH
+# a) if $ZDOTDIR is supplied and not $HOME: $ZDOTDIR/ohmyzsh
+# b) otherwise, $HOME/.oh-my-zsh
+if [ -n "$ZDOTDIR" ] && [ "$ZDOTDIR" != "$HOME" ]; then
+  ZSH="${ZSH:-$ZDOTDIR/ohmyzsh}"
+fi
+ZSH="${ZSH:-$HOME/.oh-my-zsh}"
+
+# Default settings
+REPO=${REPO:-ohmyzsh/ohmyzsh}
+REMOTE=${REMOTE:-https://github.com/${REPO}.git}
+BRANCH=${BRANCH:-master}
+
+# Other options
+CHSH=${CHSH:-yes}
+RUNZSH=${RUNZSH:-yes}
+KEEP_ZSHRC=${KEEP_ZSHRC:-no}
+OVERWRITE_CONFIRMATION=${OVERWRITE_CONFIRMATION:-yes}
+
+
+command_exists() {
+  command -v "$@" >/dev/null 2>&1
+}
+
+user_can_sudo() {
+  # Check if sudo is installed
+  command_exists sudo || return 1
+  # Termux can't run sudo, so we can detect it and exit the function early.
+  case "$PREFIX" in
+  *com.termux*) return 1 ;;
+  esac
+  # The following command has 3 parts:
+  #
+  # 1. Run `sudo` with `-v`. Does the following:
+  #    • with privilege: asks for a password immediately.
+  #    • without privilege: exits with error code 1 and prints the message:
+  #      Sorry, user <username> may not run sudo on <hostname>
+  #
+  # 2. Pass `-n` to `sudo` to tell it to not ask for a password. If the
+  #    password is not required, the command will finish with exit code 0.
+  #    If one is required, sudo will exit with error code 1 and print the
+  #    message:
+  #    sudo: a password is required
+  #
+  # 3. Check for the words "may not run sudo" in the output to really tell
+  #    whether the user has privileges or not. For that we have to make sure
+  #    to run `sudo` in the default locale (with `LANG=`) so that the message
+  #    stays consistent regardless of the user's locale.
+  #
+  ! LANG= sudo -n -v 2>&1 | grep -q "may not run sudo"
+}
+
+# The [ -t 1 ] check only works when the function is not called from
+# a subshell (like in `$(...)` or `(...)`, so this hack redefines the
+# function at the top level to always return false when stdout is not
+# a tty.
+if [ -t 1 ]; then
+  is_tty() {
+    true
+  }
+else
+  is_tty() {
+    false
+  }
+fi
+
+# This function uses the logic from supports-hyperlinks[1][2], which is
+# made by Kat Marchán (@zkat) and licensed under the Apache License 2.0.
+# [1] https://github.com/zkat/supports-hyperlinks
+# [2] https://crates.io/crates/supports-hyperlinks
+#
+# Copyright (c) 2021 Kat Marchán
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+supports_hyperlinks() {
+  # $FORCE_HYPERLINK must be set and be non-zero (this acts as a logic bypass)
+  if [ -n "$FORCE_HYPERLINK" ]; then
+    [ "$FORCE_HYPERLINK" != 0 ]
+    return $?
+  fi
+
+  # If stdout is not a tty, it doesn't support hyperlinks
+  is_tty || return 1
+
+  # DomTerm terminal emulator (domterm.org)
+  if [ -n "$DOMTERM" ]; then
+    return 0
+  fi
+
+  # VTE-based terminals above v0.50 (Gnome Terminal, Guake, ROXTerm, etc)
+  if [ -n "$VTE_VERSION" ]; then
+    [ $VTE_VERSION -ge 5000 ]
+    return $?
+  fi
+
+  # If $TERM_PROGRAM is set, these terminals support hyperlinks
+  case "$TERM_PROGRAM" in
+  Hyper|iTerm.app|terminology|WezTerm|vscode) return 0 ;;
+  esac
+
+  # These termcap entries support hyperlinks
+  case "$TERM" in
+  xterm-kitty|alacritty|alacritty-direct) return 0 ;;
+  esac
+
+  # xfce4-terminal supports hyperlinks
+  if [ "$COLORTERM" = "xfce4-terminal" ]; then
+    return 0
+  fi
+
+  # Windows Terminal also supports hyperlinks
+  if [ -n "$WT_SESSION" ]; then
+    return 0
+  fi
+
+  # Konsole supports hyperlinks, but it's an opt-in setting that can't be detected
+  # https://github.com/ohmyzsh/ohmyzsh/issues/10964
+  # if [ -n "$KONSOLE_VERSION" ]; then
+  #   return 0
+  # fi
+
+  return 1
+}
+
+# Adapted from code and information by Anton Kochkov (@XVilka)
+# Source: https://gist.github.com/XVilka/8346728
+supports_truecolor() {
+  case "$COLORTERM" in
+  truecolor|24bit) return 0 ;;
+  esac
+
+  case "$TERM" in
+  iterm           |\
+  tmux-truecolor  |\
+  linux-truecolor |\
+  xterm-truecolor |\
+  screen-truecolor) return 0 ;;
+  esac
+
+  return 1
+}
+
+fmt_link() {
+  # $1: text, $2: url, $3: fallback mode
+  if supports_hyperlinks; then
+    printf '\033]8;;%s\033\\%s\033]8;;\033\\\n' "$2" "$1"
+    return
+  fi
+
+  case "$3" in
+  --text) printf '%s\n' "$1" ;;
+  --url|*) fmt_underline "$2" ;;
+  esac
+}
+
+fmt_underline() {
+  is_tty && printf '\033[4m%s\033[24m\n' "$*" || printf '%s\n' "$*"
+}
+
+# shellcheck disable=SC2016 # backtick in single-quote
+fmt_code() {
+  is_tty && printf '`\033[2m%s\033[22m`\n' "$*" || printf '`%s`\n' "$*"
+}
+
+fmt_error() {
+  printf '%sError: %s%s\n' "${FMT_BOLD}${FMT_RED}" "$*" "$FMT_RESET" >&2
+}
+
+setup_color() {
+  # Only use colors if connected to a terminal
+  if ! is_tty; then
+    FMT_RAINBOW=""
+    FMT_RED=""
+    FMT_GREEN=""
+    FMT_YELLOW=""
+    FMT_BLUE=""
+    FMT_BOLD=""
+    FMT_RESET=""
+    return
+  fi
+
+  if supports_truecolor; then
+    FMT_RAINBOW="
+      $(printf '\033[38;2;255;0;0m')
+      $(printf '\033[38;2;255;97;0m')
+      $(printf '\033[38;2;247;255;0m')
+      $(printf '\033[38;2;0;255;30m')
+      $(printf '\033[38;2;77;0;255m')
+      $(printf '\033[38;2;168;0;255m')
+      $(printf '\033[38;2;245;0;172m')
+    "
+  else
+    FMT_RAINBOW="
+      $(printf '\033[38;5;196m')
+      $(printf '\033[38;5;202m')
+      $(printf '\033[38;5;226m')
+      $(printf '\033[38;5;082m')
+      $(printf '\033[38;5;021m')
+      $(printf '\033[38;5;093m')
+      $(printf '\033[38;5;163m')
+    "
+  fi
+
+  FMT_RED=$(printf '\033[31m')
+  FMT_GREEN=$(printf '\033[32m')
+  FMT_YELLOW=$(printf '\033[33m')
+  FMT_BLUE=$(printf '\033[34m')
+  FMT_BOLD=$(printf '\033[1m')
+  FMT_RESET=$(printf '\033[0m')
+}
+
+setup_ohmyzsh() {
+  # Prevent the cloned repository from having insecure permissions. Failing to do
+  # so causes compinit() calls to fail with "command not found: compdef" errors
+  # for users with insecure umasks (e.g., "002", allowing group writability). Note
+  # that this will be ignored under Cygwin by default, as Windows ACLs take
+  # precedence over umasks except for filesystems mounted with option "noacl".
+  umask g-w,o-w
+
+  echo "${FMT_BLUE}Cloning Oh My Zsh...${FMT_RESET}"
+
+  command_exists git || {
+    fmt_error "git is not installed"
+    exit 1
+  }
+
+  ostype=$(uname)
+  if [ -z "${ostype%CYGWIN*}" ] && git --version | grep -Eq 'msysgit|windows'; then
+    fmt_error "Windows/MSYS Git is not supported on Cygwin"
+    fmt_error "Make sure the Cygwin git package is installed and is first on the \$PATH"
+    exit 1
+  fi
+
+  # Manual clone with git config options to support git < v1.7.2
+  git init --quiet "$ZSH" && cd "$ZSH" \
+  && git config core.eol lf \
+  && git config core.autocrlf false \
+  && git config fsck.zeroPaddedFilemode ignore \
+  && git config fetch.fsck.zeroPaddedFilemode ignore \
+  && git config receive.fsck.zeroPaddedFilemode ignore \
+  && git config oh-my-zsh.remote origin \
+  && git config oh-my-zsh.branch "$BRANCH" \
+  && git remote add origin "$REMOTE" \
+  && git fetch --depth=1 origin \
+  && git checkout -b "$BRANCH" "origin/$BRANCH" || {
+    [ ! -d "$ZSH" ] || {
+      cd -
+      rm -rf "$ZSH" 2>/dev/null
+    }
+    fmt_error "git clone of oh-my-zsh repo failed"
+    exit 1
+  }
+  # Exit installation directory
+  cd -
+
+  echo
+}
+
+setup_zshrc() {
+  # Keep most recent old .zshrc at .zshrc.pre-oh-my-zsh, and older ones
+  # with datestamp of installation that moved them aside, so we never actually
+  # destroy a user's original zshrc
+  echo "${FMT_BLUE}Looking for an existing zsh config...${FMT_RESET}"
+
+  # Must use this exact name so uninstall.sh can find it
+  OLD_ZSHRC="$zdot/.zshrc.pre-oh-my-zsh"
+  if [ -f "$zdot/.zshrc" ] || [ -h "$zdot/.zshrc" ]; then
+    # Skip this if the user doesn't want to replace an existing .zshrc
+    if [ "$KEEP_ZSHRC" = yes ]; then
+      echo "${FMT_YELLOW}Found ${zdot}/.zshrc.${FMT_RESET} ${FMT_GREEN}Keeping...${FMT_RESET}"
+      return
+    fi
+    
+    if [ $OVERWRITE_CONFIRMATION != "no" ]; then
+      # Ask user for confirmation before backing up and overwriting
+      echo "${FMT_YELLOW}Found ${zdot}/.zshrc."
+      echo "The existing .zshrc will be backed up to .zshrc.pre-oh-my-zsh if overwritten."
+      echo "Make sure your .zshrc contains the following minimal configuration if you choose not to overwrite it:${FMT_RESET}"
+      echo "----------------------------------------"
+      cat "$ZSH/templates/minimal.zshrc"
+      echo "----------------------------------------"
+      printf '%sDo you want to overwrite it with the Oh My Zsh template? [Y/n]%s ' \
+        "$FMT_YELLOW" "$FMT_RESET"
+      read -r opt
+      case $opt in
+        [Yy]*|"") ;;
+        [Nn]*) echo "Overwrite skipped. Existing .zshrc will be kept."; return ;;
+        *) echo "Invalid choice. Overwrite skipped. Existing .zshrc will be kept."; return ;;
+      esac
+    fi
+
+    if [ -e "$OLD_ZSHRC" ]; then
+      OLD_OLD_ZSHRC="${OLD_ZSHRC}-$(date +%Y-%m-%d_%H-%M-%S)"
+      if [ -e "$OLD_OLD_ZSHRC" ]; then
+        fmt_error "$OLD_OLD_ZSHRC exists. Can't back up ${OLD_ZSHRC}"
+        fmt_error "re-run the installer again in a couple of seconds"
+        exit 1
+      fi
+      mv "$OLD_ZSHRC" "${OLD_OLD_ZSHRC}"
+
+      echo "${FMT_YELLOW}Found old .zshrc.pre-oh-my-zsh." \
+        "${FMT_GREEN}Backing up to ${OLD_OLD_ZSHRC}${FMT_RESET}"
+    fi
+    echo "${FMT_GREEN}Backing up to ${OLD_ZSHRC}${FMT_RESET}"
+    mv "$zdot/.zshrc" "$OLD_ZSHRC"
+  fi
+
+  echo "${FMT_GREEN}Using the Oh My Zsh template file and adding it to $zdot/.zshrc.${FMT_RESET}"
+
+  # Modify $ZSH variable in .zshrc directory to use the literal $ZDOTDIR or $HOME
+  omz="$ZSH"
+  if [ -n "$ZDOTDIR" ] && [ "$ZDOTDIR" != "$HOME" ]; then
+    omz=$(echo "$omz" | sed "s|^$ZDOTDIR/|\$ZDOTDIR/|")
+  fi
+  omz=$(echo "$omz" | sed "s|^$HOME/|\$HOME/|")
+
+  sed "s|^export ZSH=.*$|export ZSH=\"${omz}\"|" "$ZSH/templates/zshrc.zsh-template" > "$zdot/.zshrc-omztemp"
+  mv -f "$zdot/.zshrc-omztemp" "$zdot/.zshrc"
+
+  echo
+}
+
+setup_shell() {
+  # Skip setup if the user wants or stdin is closed (not running interactively).
+  if [ "$CHSH" = no ]; then
+    return
+  fi
+
+  # If this user's login shell is already "zsh", do not attempt to switch.
+  if [ "$(basename -- "$SHELL")" = "zsh" ]; then
+    return
+  fi
+
+  # If this platform doesn't provide a "chsh" command, bail out.
+  if ! command_exists chsh; then
+    cat <<EOF
+I can't change your shell automatically because this system does not have chsh.
+${FMT_BLUE}Please manually change your default shell to zsh${FMT_RESET}
+EOF
+    return
+  fi
+
+  echo "${FMT_BLUE}Time to change your default shell to zsh:${FMT_RESET}"
+
+  # Prompt for user choice on changing the default login shell
+  printf '%sDo you want to change your default shell to zsh? [Y/n]%s ' \
+    "$FMT_YELLOW" "$FMT_RESET"
+  read -r opt
+  case $opt in
+    [Yy]*|"") ;;
+    [Nn]*) echo "Shell change skipped."; return ;;
+    *) echo "Invalid choice. Shell change skipped."; return ;;
+  esac
+
+  # Check if we're running on Termux
+  case "$PREFIX" in
+    *com.termux*) termux=true; zsh=zsh ;;
+    *) termux=false ;;
+  esac
+
+  if [ "$termux" != true ]; then
+    # Test for the right location of the "shells" file
+    if [ -f /etc/shells ]; then
+      shells_file=/etc/shells
+    elif [ -f /usr/share/defaults/etc/shells ]; then # Solus OS
+      shells_file=/usr/share/defaults/etc/shells
+    else
+      fmt_error "could not find /etc/shells file. Change your default shell manually."
+      return
+    fi
+
+    # Get the path to the right zsh binary
+    # 1. Use the most preceding one based on $PATH, then check that it's in the shells file
+    # 2. If that fails, get a zsh path from the shells file, then check it actually exists
+    if ! zsh=$(command -v zsh) || ! grep -qx "$zsh" "$shells_file"; then
+      if ! zsh=$(grep '^/.*/zsh$' "$shells_file" | tail -n 1) || [ ! -f "$zsh" ]; then
+        fmt_error "no zsh binary found or not present in '$shells_file'"
+        fmt_error "change your default shell manually."
+        return
+      fi
+    fi
+  fi
+
+  # We're going to change the default shell, so back up the current one
+  if [ -n "$SHELL" ]; then
+    echo "$SHELL" > "$zdot/.shell.pre-oh-my-zsh"
+  else
+    grep "^$USER:" /etc/passwd | awk -F: '{print $7}' > "$zdot/.shell.pre-oh-my-zsh"
+  fi
+
+  echo "Changing your shell to $zsh..."
+
+  # Check if user has sudo privileges to run `chsh` with or without `sudo`
+  #
+  # This allows the call to succeed without password on systems where the
+  # user does not have a password but does have sudo privileges, like in
+  # Google Cloud Shell.
+  #
+  # On systems that don't have a user with passwordless sudo, the user will
+  # be prompted for the password either way, so this shouldn't cause any issues.
+  #
+  if user_can_sudo; then
+    sudo -k chsh -s "$zsh" "$USER"  # -k forces the password prompt
+  else
+    chsh -s "$zsh" "$USER"          # run chsh normally
+  fi
+
+  # Check if the shell change was successful
+  if [ $? -ne 0 ]; then
+    fmt_error "chsh command unsuccessful. Change your default shell manually."
+  else
+    export SHELL="$zsh"
+    echo "${FMT_GREEN}Shell successfully changed to '$zsh'.${FMT_RESET}"
+  fi
+
+  echo
+}
+
+# shellcheck disable=SC2183  # printf string has more %s than arguments ($FMT_RAINBOW expands to multiple arguments)
+print_success() {
+  printf '%s         %s__      %s           %s        %s       %s     %s__   %s\n'      $FMT_RAINBOW $FMT_RESET
+  printf '%s  ____  %s/ /_    %s ____ ___  %s__  __  %s ____  %s_____%s/ /_  %s\n'      $FMT_RAINBOW $FMT_RESET
+  printf '%s / __ \\%s/ __ \\  %s / __ `__ \\%s/ / / / %s /_  / %s/ ___/%s __ \\ %s\n'  $FMT_RAINBOW $FMT_RESET
+  printf '%s/ /_/ /%s / / / %s / / / / / /%s /_/ / %s   / /_%s(__  )%s / / / %s\n'      $FMT_RAINBOW $FMT_RESET
+  printf '%s\\____/%s_/ /_/ %s /_/ /_/ /_/%s\\__, / %s   /___/%s____/%s_/ /_/  %s\n'    $FMT_RAINBOW $FMT_RESET
+  printf '%s    %s        %s           %s /____/ %s       %s     %s          %s....is now installed!%s\n' $FMT_RAINBOW $FMT_GREEN $FMT_RESET
+  printf '\n'
+  printf '\n'
+  printf "%s %s %s\n" "Before you scream ${FMT_BOLD}${FMT_YELLOW}Oh My Zsh!${FMT_RESET} look over the" \
+    "$(fmt_code "$(fmt_link ".zshrc" "file://$zdot/.zshrc" --text)")" \
+    "file to select plugins, themes, and options."
+  printf '\n'
+  printf '%s\n' "• Follow us on X: $(fmt_link @ohmyzsh https://x.com/ohmyzsh)"
+  printf '%s\n' "• Join our Discord community: $(fmt_link "Discord server" https://discord.gg/ohmyzsh)"
+  printf '%s\n' "• Get stickers, t-shirts, coffee mugs and more: $(fmt_link "CommitGoods Shop" https://commitgoods.com/collections/oh-my-zsh)"
+  printf '%s\n' $FMT_RESET
+}
+
+main() {
+  # Run as unattended if stdin is not a tty
+  if [ ! -t 0 ]; then
+    RUNZSH=no
+    CHSH=no
+    OVERWRITE_CONFIRMATION=no
+  fi
+
+  # Parse arguments
+  while [ $# -gt 0 ]; do
+    case $1 in
+      --unattended) RUNZSH=no; CHSH=no; OVERWRITE_CONFIRMATION=no ;;
+      --skip-chsh) CHSH=no ;;
+      --keep-zshrc) KEEP_ZSHRC=yes ;;
+    esac
+    shift
+  done
+
+  setup_color
+
+  if ! command_exists zsh; then
+    echo "${FMT_YELLOW}Zsh is not installed.${FMT_RESET} Please install zsh first."
+    exit 1
+  fi
+
+  if [ -d "$ZSH" ]; then
+    echo "${FMT_YELLOW}The \$ZSH folder already exists ($ZSH).${FMT_RESET}"
+    if [ "$custom_zsh" = yes ]; then
+      cat <<EOF
+
+You ran the installer with the \$ZSH setting or the \$ZSH variable is
+exported. You have 3 options:
+
+1. Unset the ZSH variable when calling the installer:
+   $(fmt_code "ZSH= sh install.sh")
+2. Install Oh My Zsh to a directory that doesn't exist yet:
+   $(fmt_code "ZSH=path/to/new/ohmyzsh/folder sh install.sh")
+3. (Caution) If the folder doesn't contain important information,
+   you can just remove it with $(fmt_code "rm -r $ZSH")
+
+EOF
+    else
+      echo "You'll need to remove it if you want to reinstall."
+    fi
+    exit 1
+  fi
+
+  # Create ZDOTDIR folder structure if it doesn't exist
+  if [ -n "$ZDOTDIR" ]; then
+    mkdir -p "$ZDOTDIR"
+  fi
+
+  setup_ohmyzsh
+  setup_zshrc
+  setup_shell
+
+  print_success
+
+  if [ $RUNZSH = no ]; then
+    echo "${FMT_YELLOW}Run zsh to try it out.${FMT_RESET}"
+    exit
+  fi
+
+  exec zsh -l
+}
+
+main "$@"  --unattended
+[1;36m[2025-12-20 16:39:32] [INFO] DRY-RUN: Installing zsh-autosuggestions ⇒ sudo -u Andyyu git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions /home/Andyyu/.oh-my-zsh/custom/plugins/zsh-autosuggestions[0m
+[1;36m[2025-12-20 16:39:32] [INFO] DRY-RUN: Installing zsh-syntax-highlighting ⇒ sudo -u Andyyu git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git /home/Andyyu/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting[0m
+[1;36m[2025-12-20 16:39:32] [INFO] DRY-RUN: Installing Powerlevel10k ⇒ sudo -u Andyyu git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /home/Andyyu/.oh-my-zsh/custom/themes/powerlevel10k[0m
+[1;36m[2025-12-20 16:39:32] [INFO] Updating plugins in .zshrc[0m
+DRY-RUN (sudo): -u Andyyu sed -i s/^plugins=(.*)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting autojump fzf)/ /home/Andyyu/.zshrc
+[1;36m[2025-12-20 16:39:32] [INFO] Changing shell to  for Andyyu[0m
+DRY-RUN (sudo): chsh -s  Andyyu
+[1;36m[2025-12-20 16:39:32] [INFO] Zsh setup complete. Please log out and back in.[0m
+------------------------------------------------
+=== Summary Generation check ===
+
+[36m==================================================[0m
+[36m               Processing Summary                 [0m
+[36m==================================================[0m
+[90mNo.  [0m| Module                    | Action     | Result
+[90m-----+---------------------------+------------+-------[0m
+1    | AB Download Manager       | install    | [31mFailed (1)[0m
+2    | AngrySearch               | install    | [31mFailed (1)[0m
+3    | Autostart Configuration   | install    | [32mSuccess[0m
+4    | Brave Browser             | install    | [32mSuccess[0m
+5    | Cheat.sh                  | install    | [32mSuccess[0m
+6    | WebDAV (davfs2)           | install    | [32mSuccess[0m
+7    | Docker                    | install    | [32mSuccess[0m
+8    | Penguins' Eggs            | install    | [32mSuccess[0m
+9    | Eg (TLDR Client)          | install    | [32mSuccess[0m
+10   | Flatpak Package Manager   | install    | [32mSuccess[0m
+11   | Fonts & Typography        | install    | [32mSuccess[0m
+12   | FSearch                   | install    | [32mSuccess[0m
+13   | Geany                     | install    | [32mSuccess[0m
+14   | Homebrew                  | install    | [32mSuccess[0m
+15   | Konsole                   | install    | [32mSuccess[0m
+16   | Krusader                  | install    | [32mSuccess[0m
+17   | LocalSend                 | install    | [32mSuccess[0m
+18   | Micro Editor              | install    | [31mFailed (1)[0m
+19   | Neofetch                  | install    | [32mSuccess[0m
+20   | PDF Arranger              | install    | [32mSuccess[0m
+21   | Plank Dock                | install    | [32mSuccess[0m
+22   | Pot Desktop               | install    | [32mSuccess[0m
+23   | Cloud Storage (rclone)    | install    | [32mSuccess[0m
+24   | Rime Input Method (Fcitx5) | install    | [32mSuccess[0m
+25   | Snap Package Manager      | install    | [32mSuccess[0m
+26   | SpaceFM                   | install    | [32mSuccess[0m
+27   | SSHFS                     | install    | [32mSuccess[0m
+28   | Stretchly                 | install    | [32mSuccess[0m
+29   | Double-ESC Sudo           | install    | [32mSuccess[0m
+30   | Tabby Terminal            | install    | [32mSuccess[0m
+31   | Telegram                  | install    | [32mSuccess[0m
+32   | VLC Media Player          | install    | [32mSuccess[0m
+33   | Warp Terminal             | install    | [32mSuccess[0m
+34   | Windsurf IDE              | install    | [32mSuccess[0m
+35   | WPS Office                | install    | [32mSuccess[0m
+36   | Zsh Integration           | install    | [32mSuccess[0m
+[90m--------------------------------------------------[0m
+[31m3 tasks failed.[0m
+
+Done in 37 seconds.

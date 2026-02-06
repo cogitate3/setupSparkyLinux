@@ -7,6 +7,15 @@ mod_check() {
   command -v plank >/dev/null 2>&1
 }
 
+mod_status() {
+  local v_local=$(get_pkg_version "plank")
+  local v_remote=$(apt-cache policy "plank" | grep "Candidate:" | awk '{print $2}' | sed 's/^[0-9]*://')
+  echo "$v_local|$v_remote"
+  [ "$v_local" = "unknown" ] && return 2
+  version_ge "$v_local" "$v_remote" && return 0
+  return 1
+}
+
 mod_install() {
   ensure_pkg "plank"
 
@@ -35,7 +44,7 @@ EOF
 
 mod_uninstall() {
   log_info "Uninstalling Plank..."
-  sudo apt-get purge -y plank
+  sudo apt-get purge -y plank < /dev/null
   
   local target_user="${SUDO_USER:-$USER}"
   local target_home=$(getent passwd "$target_user" | cut -d: -f6)

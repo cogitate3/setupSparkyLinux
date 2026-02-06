@@ -9,6 +9,18 @@ mod_check() {
   return 1
 }
 
+mod_status() {
+  local brew_bin="/home/linuxbrew/.linuxbrew/bin/brew"
+  local v_local="unknown"
+  [ -x "$brew_bin" ] && v_local=$("$brew_bin" --version | head -n1 | awk '{print $2}')
+  
+  local v_remote=$(gh_get_latest_tag "Homebrew/brew")
+  echo "$v_local|$v_remote"
+  [ "$v_local" = "unknown" ] && return 2
+  version_ge "$v_local" "$v_remote" && return 0
+  return 1
+}
+
 mod_install() {
   ensure_pkg "curl" "git"
   
@@ -23,7 +35,7 @@ mod_install() {
   fi
 
   log_info "Running Homebrew install script..."
-  log_cmd "Installing Homebrew" /bin/bash -c "NONINTERACTIVE=1 $(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  log_cmd "Installing Homebrew" /bin/bash -c "NONINTERACTIVE=1 $(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh < /dev/null)"
 
   local brew_bin="/home/linuxbrew/.linuxbrew/bin/brew"
   if [ -x "$brew_bin" ]; then

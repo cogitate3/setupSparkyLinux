@@ -1,0 +1,181 @@
+modules/abdm.mod.sh: line 112: register_module: command not found
+Checking AB Download Manager (abdm)...
+1.8.1|1.8.1
+Return code: 0
+----------------
+modules/angrysearch.mod.sh: line 109: register_module: command not found
+Checking AngrySearch (angrysearch)...
+unknown|1.0.4
+Return code: 2
+----------------
+modules/autostart.mod.sh: line 38: register_module: command not found
+Checking Autostart Configuration (autostart)...
+active|current
+Return code: 0
+----------------
+modules/brave.mod.sh: line 53: register_module: command not found
+Checking Brave Browser (brave)...
+unknown|
+Return code: 2
+----------------
+modules/cheat.mod.sh: line 53: register_module: command not found
+Checking Cheat.sh (cheat)...
+unknown|latest
+Return code: 2
+----------------
+modules/davfs2.mod.sh: line 77: register_module: command not found
+Checking WebDAV (davfs2) (davfs2)...
+unknown|1.7.1-1
+Return code: 2
+----------------
+modules/docker.mod.sh: line 70: register_module: command not found
+Checking Docker (docker)...
+unknown|(none)
+Return code: 2
+----------------
+modules/eggs.mod.sh: line 82: register_module: command not found
+Checking Penguins' Eggs (eggs)...
+unknown|25.12.16
+Return code: 2
+----------------
+modules/eg.mod.sh: line 39: register_module: command not found
+Checking Eg (TLDR Client) (eg)...
+unknown|latest
+Return code: 2
+----------------
+modules/flatpak.mod.sh: line 34: register_module: command not found
+Checking Flatpak Package Manager (flatpak)...
+1.16.1|1.16.1-1
+Return code: 1
+----------------
+modules/fonts.mod.sh: line 55: register_module: command not found
+Checking Fonts & Typography (fonts)...
+unknown|v3.0.2
+Return code: 2
+----------------
+modules/fsearch.mod.sh: line 58: register_module: command not found
+Checking FSearch (fsearch)...
+0.2.3|0.2.3
+Return code: 0
+----------------
+modules/geany.mod.sh: line 28: register_module: command not found
+Checking Geany (geany)...
+2.1|2.1-0.1~mx25+1
+Return code: 1
+----------------
+modules/homebrew.mod.sh: line 80: register_module: command not found
+Checking Homebrew (homebrew)...
+unknown|5.0.6
+Return code: 2
+----------------
+modules/konsole.mod.sh: line 28: register_module: command not found
+Checking Konsole (konsole)...
+unknown|25.04.2-1
+Return code: 2
+----------------
+modules/krusader.mod.sh: line 28: register_module: command not found
+Checking Krusader (krusader)...
+unknown|2.9.0-2
+Return code: 2
+----------------
+modules/localsend.mod.sh: line 48: register_module: command not found
+Checking LocalSend (localsend)...
+1.17.0+58|1.17.0
+Return code: 0
+----------------
+modules/micro.mod.sh: line 69: register_module: command not found
+Checking Micro Editor (micro)...
+modules/micro.mod.sh: line 12: micro: command not found
+unknown|2.0.14
+Return code: 2
+----------------
+modules/neofetch.mod.sh: line 30: register_module: command not found
+Checking Neofetch (neofetch)...
+unknown|
+Return code: 2
+----------------
+modules/pdfarranger.mod.sh: line 69: register_module: command not found
+Checking PDF Arranger (pdfarranger)...
+1.12.1|1.12.1
+Return code: 0
+----------------
+modules/plank.mod.sh: line 54: register_module: command not found
+Checking Plank Dock (plank)...
+unknown|0.11.89-6+b1
+Return code: 2
+----------------
+modules/pot.mod.sh: line 89: register_module: command not found
+Checking Pot Desktop (pot)...
+3.0.7|3.0.7
+Return code: 0
+----------------
+modules/rclone.mod.sh: line 47: register_module: command not found
+Checking Cloud Storage (rclone) (rclone)...
+unknown|1.72.1
+Return code: 2
+----------------
+modules/rime.mod.sh: line 380: register_module: command not found
+Checking Rime Input Method (Fcitx5) (rime)...
+5.1.10|5.1.10-2
+Return code: 1
+----------------
+modules/snap.mod.sh: line 30: register_module: command not found
+Checking Snap Package Manager (snap)...
+unknown|2.68.3-3+b2
+Return code: 2
+----------------
+modules/spacefm.mod.sh: line 28: register_module: command not found
+Checking SpaceFM (spacefm)...
+unknown|1.0.6-9
+Return code: 2
+----------------
+modules/sshfs.mod.sh: line 34: register_module: command not found
+Checking SSHFS (sshfs)...
+3.7.3|3.7.3-1.1+b2
+Return code: 1
+----------------
+modules/stretchly.mod.sh: line 48: register_module: command not found
+Checking Stretchly (stretchly)...
+1.19.0|1.19.0
+Return code: 0
+----------------
+modules/sudo-esc.mod.sh: line 80: register_module: command not found
+Checking Double-ESC Sudo (sudo-esc)...
+active|latest
+Return code: 0
+----------------
+modules/tabby.mod.sh: line 48: register_module: command not found
+Checking Tabby Terminal (tabby)...
+unknown|1.0.229
+Return code: 2
+----------------
+modules/telegram.mod.sh: line 28: register_module: command not found
+Checking Telegram (telegram)...
+unknown|
+Return code: 2
+----------------
+modules/vlc.mod.sh: line 28: register_module: command not found
+Checking VLC Media Player (vlc)...
+3.0.22|3.0.22-0+deb13u1
+Return code: 1
+----------------
+modules/warp.mod.sh: line 43: register_module: command not found
+Checking Warp Terminal (warp)...
+0.2025.12.17.17.17.stable.02|latest
+Return code: 0
+----------------
+modules/windsurf.mod.sh: line 50: register_module: command not found
+Checking Windsurf IDE (windsurf)...
+unknown|latest
+Return code: 2
+----------------
+modules/wps.mod.sh: line 47: register_module: command not found
+Checking WPS Office (wps)...
+unknown|12.8.2.19829
+Return code: 2
+----------------
+modules/zsh.mod.sh: line 136: register_module: command not found
+Checking Zsh Integration (zsh)...
+unknown|5.9-8+b14
+Return code: 2
+----------------

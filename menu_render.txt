@@ -1,0 +1,82 @@
+modules/abdm.mod.sh: line 112: register_module: command not found
+modules/angrysearch.mod.sh: line 111: register_module: command not found
+modules/autostart.mod.sh: line 38: register_module: command not found
+modules/brave.mod.sh: line 53: register_module: command not found
+modules/cheat.mod.sh: line 53: register_module: command not found
+modules/davfs2.mod.sh: line 77: register_module: command not found
+modules/docker.mod.sh: line 77: register_module: command not found
+modules/eg.mod.sh: line 39: register_module: command not found
+modules/flatpak.mod.sh: line 34: register_module: command not found
+modules/fonts.mod.sh: line 55: register_module: command not found
+modules/fsearch.mod.sh: line 58: register_module: command not found
+modules/geany.mod.sh: line 28: register_module: command not found
+modules/homebrew.mod.sh: line 80: register_module: command not found
+modules/konsole.mod.sh: line 28: register_module: command not found
+modules/krusader.mod.sh: line 28: register_module: command not found
+modules/localsend.mod.sh: line 48: register_module: command not found
+modules/micro.mod.sh: line 69: register_module: command not found
+modules/neofetch.mod.sh: line 35: register_module: command not found
+modules/pdfarranger.mod.sh: line 75: register_module: command not found
+modules/plank.mod.sh: line 54: register_module: command not found
+modules/pot.mod.sh: line 89: register_module: command not found
+modules/rclone.mod.sh: line 47: register_module: command not found
+modules/rime.mod.sh: line 380: register_module: command not found
+modules/snap.mod.sh: line 30: register_module: command not found
+modules/spacefm.mod.sh: line 28: register_module: command not found
+modules/sshfs.mod.sh: line 34: register_module: command not found
+modules/stretchly.mod.sh: line 48: register_module: command not found
+modules/sudo-esc.mod.sh: line 80: register_module: command not found
+modules/tabby.mod.sh: line 48: register_module: command not found
+modules/telegram.mod.sh: line 70: register_module: command not found
+modules/vlc.mod.sh: line 28: register_module: command not found
+modules/warp.mod.sh: line 43: register_module: command not found
+modules/windsurf.mod.sh: line 50: register_module: command not found
+modules/wps.mod.sh: line 47: register_module: command not found
+modules/zsh.mod.sh: line 174: register_module: command not found
+--- CLEAR ---
+[32m===================================[0m
+[32m   SparkyLinux Modular Setup[0m
+[32m   Github: https://github.com/cogitate3/setupSparkyLinux[0m
+[32m===================================[0m
+[33m Usage: Enter number to Install/Update. Add 100 to Uninstall (e.g. 1 -> Install, 101 -> Uninstall)[0m
+
+[36m:: Desktop Apps[0m
+[32m01.[0m AB Download Manager        [32m02.[0m AngrySearch                
+[32m03.[0m FSearch                    [32m04.[0m Geany                      
+[32m05.[0m LocalSend                  [32m06.[0m Pot Desktop                
+[32m07.[0m Stretchly                  [32m08.[0m WPS Office                 
+
+[36m:: Browsers[0m
+[32m09.[0m Brave Browser              
+
+[36m:: Multimedia[0m
+[32m10.[0m PDF Arranger               [32m11.[0m VLC Media Player           
+
+[36m:: Dev Tools[0m
+[32m12.[0m Tabby Terminal             [32m13.[0m Warp Terminal              
+[32m14.[0m Windsurf IDE               
+
+[36m:: CLI Tools[0m
+[32m15.[0m Cheat.sh                   [32m16.[0m Eg (TLDR Client)           
+[32m17.[0m Micro Editor               [32m18.[0m Neofetch                   
+
+[36m:: System[0m
+[32m19.[0m Autostart Configuration    [32m20.[0m Docker                     
+[32m21.[0m Flatpak Package Manager    [32m22.[0m Homebrew                   
+[32m23.[0m Konsole                    [32m24.[0m Krusader                   
+[32m25.[0m Snap Package Manager       [32m26.[0m SpaceFM                    
+[32m27.[0m Double-ESC Sudo            [32m28.[0m Telegram                   
+
+[36m:: Appearance[0m
+[32m29.[0m Fonts & Typography         [32m30.[0m Plank Dock                 
+
+[36m:: Input Method[0m
+[32m31.[0m Rime Input Method (Fcitx5) 
+
+[36m:: Network & Storage[0m
+[32m32.[0m WebDAV (davfs2)            [32m33.[0m Cloud Storage (rclone)     
+[32m34.[0m SSHFS                      
+
+[33m 0. Exit[0m
+[33m A. Install All  |  U. Uninstall All[0m
+

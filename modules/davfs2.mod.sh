@@ -7,6 +7,15 @@ mod_check() {
   check_pkg_installed "davfs2"
 }
 
+mod_status() {
+  local v_local=$(get_pkg_version "davfs2")
+  local v_remote=$(apt-cache policy "davfs2" | grep "Candidate:" | awk '{print $2}' | sed 's/^[0-9]*://')
+  echo "$v_local|$v_remote"
+  [ "$v_local" = "unknown" ] && return 2
+  version_ge "$v_local" "$v_remote" && return 0
+  return 1
+}
+
 mod_install() {
   ensure_pkg "davfs2"
   
@@ -61,7 +70,7 @@ mod_install() {
 
 mod_uninstall() {
   log_info "Uninstalling Davfs2..."
-  sudo apt-get purge -y davfs2
+  sudo apt-get purge -y davfs2 < /dev/null
   log_warn "Note: /etc/davfs2/secrets and /etc/fstab were NOT modified. Please clean them manually if needed."
 }
 

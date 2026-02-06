@@ -7,10 +7,16 @@ mod_check() {
   command -v wps >/dev/null 2>&1
 }
 
+mod_status() {
+  local v_local=$(get_pkg_version "wps-office")
+  local v_remote="12.8.2.19829"
+  echo "$v_local|$v_remote"
+  [ "$v_local" = "unknown" ] && return 2
+  version_ge "$v_local" "$v_remote" && return 0
+  return 1
+}
+
 mod_install() {
-  # Fixed URL logic as before, version check strictly hard to automate without API.
-  # We will reinstall if user requests install.
-  
   if mod_check; then
      log_info "WPS Office is installed. Reinstalling/Updating..."
   fi
@@ -20,7 +26,7 @@ mod_install() {
   
   ensure_pkg "wget"
   
-  log_cmd "Downloading WPS Office" wget -O "$tmp_deb" "$url"
+  download_file "$url" "$tmp_deb"
   
   log_info "Installing WPS Office..."
   ensure_pkg "$tmp_deb"
@@ -33,7 +39,7 @@ mod_install() {
 mod_uninstall() {
   log_info "Uninstalling WPS Office..."
   sudo apt-mark unhold wps-office
-  log_cmd "Purging wps-office" sudo apt-get purge -y wps-office
+  log_cmd "Purging wps-office" sudo apt-get purge -y wps-office < /dev/null
   
   # Clean fonts or others? Legacy didn't specify.
 }
